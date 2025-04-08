@@ -2,8 +2,9 @@
 
 I'm **T3lluz**, or as other humans call me: **Fredrik Stalsberg**
 
-## Social Media
-
+<p align="center">
+  ## Social Media
+</p>
 <p align="center">
   <a href="https://x.com/T3lluz_">
     <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter" />
@@ -16,8 +17,9 @@ I'm **T3lluz**, or as other humans call me: **Fredrik Stalsberg**
   </a>
 </p>
 
-## Languages and Tools
-
+<p align="center">
+  ## Languages and Tools
+</p>
 <p align="center">
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML" />
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS" />
@@ -30,8 +32,9 @@ I'm **T3lluz**, or as other humans call me: **Fredrik Stalsberg**
   <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
 </p>
 
-## IDEs
-
+<p align="center">
+  ## IDEs
+</p>
 <p align="center">
   <img src="https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="VSCode" />
   <img src="https://img.shields.io/badge/IntelliJ%20IDEA-000000?style=for-the-badge&logo=intellij-idea&logoColor=white" alt="IntelliJ IDEA" />
@@ -44,8 +47,9 @@ I am a student working with fullstack (Mern, Pern), HTML, CSS, Java, JavaFX, Jav
 * 🪟 Modding systems like Windows
 * 🎨 Tweaking the look, feel, and features of programs
 
-## 📫 How to reach me:
-
+<p align="center">
+  ## 📫 How to reach me:
+</p>
 <p align="center">
   <a href="mailto:fstalsberg@gmail.com">
     <img src="https://img.shields.io/badge/Email-fstalsberg@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
