@@ -31,5 +31,4 @@ I also burn time modding systems like ![Windows](https://img.shields.io/badge/Wi
 
 📫 How to reach me: 
 **fstalsberg(at)gmail.com**
-![Discord](https://discord-readme-badge.vercel.app/api?id=288320042700111872)
-
+![Discord](https://img.shields.io/badge/Discord-T3lluz-7289DA?style=for-the-badge&logo=discord&logoColor=white)
