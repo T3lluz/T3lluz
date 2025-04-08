@@ -34,7 +34,7 @@ I am a student working with fullstack (Mern, Pern), HTML, CSS, Java, JavaFX, Jav
 
 ## 📫 How to reach me: 
 
-**fstalsberg(at)gmail.com**
+**fstalsberg@gmail.com**
 
 ![Discord](https://img.shields.io/badge/Discord-T3lluz1337-7289DA?style=for-the-badge&logo=discord&logoColor=white)
 
