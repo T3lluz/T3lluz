@@ -32,9 +32,8 @@ I am a student working with fullstack (Mern, Pern), HTML, CSS, Java, JavaFX, Jav
 * 🪟 Modding systems like Windows
 * 🎨 Tweaking the look, feel and features of programs
 
-## 📫 How to reach me: 
+## 📫 How to reach me:
 
-**fstalsberg@gmail.com**
+[![Email](https://img.shields.io/badge/Email-fstalsberg@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:fstalsberg@gmail.com)
 
 ![Discord](https://img.shields.io/badge/Discord-T3lluz1337-7289DA?style=for-the-badge&logo=discord&logoColor=white)
-
