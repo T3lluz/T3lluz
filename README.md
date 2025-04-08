@@ -33,4 +33,4 @@ I also burn time modding systems like ![Windows](https://img.shields.io/badge/Wi
 
 **fstalsberg(at)gmail.com**
 
-![Discord](https://img.shields.io/badge/Discord-T3lluz-7289DA?style=for-the-badge&logo=discord&logoColor=white)
+![Discord](https://img.shields.io/badge/Discord-T3lluz1337-7289DA?style=for-the-badge&logo=discord&logoColor=white)
