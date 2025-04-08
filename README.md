@@ -27,7 +27,7 @@ Im **T3lluz**, or as other human call me: **Fredrik Stalsberg**
 
 I am a student working with fullstack (Mern, Pern), HTML, CSS, Java, JavaFX, JavaScript, SQL, NoSQL, using VSCode and IntelliJ.
 
-I also burn time modding systems like ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white), and I enjoy tweaking the look of programs.
+I also burn time modding systems like Windows🪟, and I enjoy tweaking the look, feel and features of programs.
 
 ## 📫 How to reach me: 
 
