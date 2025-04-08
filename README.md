@@ -10,8 +10,8 @@ Im **T3lluz**, or as other human call me: **Fredrik Stalsberg**
 
 ## Languages and Tools
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 ![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)
 ![JavaFX](https://img.shields.io/badge/JavaFX-003B57?style=for-the-badge&logo=java&logoColor=white)
@@ -29,6 +29,8 @@ I am a student working with fullstack (Mern, Pern), HTML, CSS, Java, JavaFX, Jav
 
 I also burn time modding systems like ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white), and I enjoy tweaking the look of programs.
 
-📫 How to reach me: 
+## 📫 How to reach me: 
+
 **fstalsberg(at)gmail.com**
+
 ![Discord](https://img.shields.io/badge/Discord-T3lluz-7289DA?style=for-the-badge&logo=discord&logoColor=white)
