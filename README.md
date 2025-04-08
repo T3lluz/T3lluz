@@ -56,7 +56,7 @@
 </div>
 
 <div align="center">
-  <ul>
+  <ul style="list-style-type:none;">
     <li>🪟 Modding systems like Windows</li>
     <li>🎨 Tweaking the look, feel, and features of programs</li>
   </ul>
