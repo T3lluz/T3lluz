@@ -1,8 +1,14 @@
-## Good Afternoon 👋 
+<div align="center">
+  <h2>Good Afternoon 👋</h2>
+</div>
 
-I'm **T3lluz**, or as other humans call me: **Fredrik Stalsberg**
+<p align="center">
+  I'm <strong>T3lluz</strong>, or as other humans call me: <strong>Fredrik Stalsberg</strong>
+</p>
 
-## Social Media
+<div align="center">
+  <h2>Social Media</h2>
+</div>
 
 <p align="center">
   <a href="https://x.com/T3lluz_">
@@ -16,7 +22,9 @@ I'm **T3lluz**, or as other humans call me: **Fredrik Stalsberg**
   </a>
 </p>
 
-## Languages and Tools
+<div align="center">
+  <h2>Languages and Tools</h2>
+</div>
 
 <p align="center">
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML" />
@@ -30,21 +38,33 @@ I'm **T3lluz**, or as other humans call me: **Fredrik Stalsberg**
   <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
 </p>
 
-## IDEs
+<div align="center">
+  <h2>IDEs</h2>
+</div>
 
 <p align="center">
   <img src="https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="VSCode" />
   <img src="https://img.shields.io/badge/IntelliJ%20IDEA-000000?style=for-the-badge&logo=intellij-idea&logoColor=white" alt="IntelliJ IDEA" />
 </p>
 
-I am a student working with fullstack (Mern, Pern), HTML, CSS, Java, JavaFX, JavaScript, SQL, NoSQL, using VSCode and IntelliJ.
+<p align="center">
+  I am a student working with fullstack (Mern, Pern), HTML, CSS, Java, JavaFX, JavaScript, SQL, NoSQL, using VSCode and IntelliJ.
+</p>
 
-## 🔧 I also burn time...
+<div align="center">
+  <h2>🔧 I also burn time...</h2>
+</div>
 
-* 🪟 Modding systems like Windows
-* 🎨 Tweaking the look, feel, and features of programs
+<p align="center">
+  <ul>
+    <li>🪟 Modding systems like Windows</li>
+    <li>🎨 Tweaking the look, feel, and features of programs</li>
+  </ul>
+</p>
 
-## 📫 How to reach me:
+<div align="center">
+  <h2>📫 How to reach me:</h2>
+</div>
 
 <p align="center">
   <a href="mailto:fstalsberg@gmail.com">
