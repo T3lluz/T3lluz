@@ -3,7 +3,7 @@
 </div>
 
 <p align="center">
-  I'm <strong>T3lluz</strong>, or as other humans call me: <strong>Fredrik Stalsberg</strong>
+  I'm <strong>T3lluz</strong>, or as humans call me: <strong>Fredrik Stalsberg</strong>
 </p>
 
 <div align="center">
