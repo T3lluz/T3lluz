@@ -55,12 +55,10 @@
   <h2>🔧 I also burn time...</h2>
 </div>
 
-<div align="center">
-  <ul style="list-style-type:none;">
-    <li>🪟 Modding systems like Windows</li>
-    <li>🎨 Tweaking the look, feel, and features of programs</li>
-  </ul>
-</div>
+<p align="center">
+  🪟 Modding systems like Windows<br>
+  🎨 Tweaking the look, feel, and features of programs
+</p>
 
 <div align="center">
   <h2>📫 How to reach me:</h2>
