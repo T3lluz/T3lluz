@@ -27,11 +27,14 @@
 </div>
 
 <p align="center">
-  <img src="https://cdn-icons-png.freepik.com/512/5968/5968267.png" alt="HTML" height="80" style="margin: 0 20px;" />
-  <img src="https://static-00.iconduck.com/assets.00/css-3-icon-726x1024-610441pl.png" alt="CSS" height="80" style="margin: 0 20px;" />
-  <img src="https://cdn.iconscout.com/icon/free/png-256/free-javascript-logo-icon-download-in-svg-png-gif-file-formats--html-programming-language-coding-logos-icons-1720087.png" alt="JavaScript" height="80" style="margin: 0 20px;" />
-  <img src="https://static-00.iconduck.com/assets.00/postgresql-plain-wordmark-icon-2048x2042-up54u54l.png" alt="PostgreSQL" height="80" style="margin: 0 20px;" />
-  <img src="https://cdn.iconscout.com/icon/free/png-256/free-mongodb-logo-icon-download-in-svg-png-gif-file-formats--wordmark-programming-langugae-freebies-pack-logos-icons-1175138.png" alt="MongoDB" height="80" style="margin: 0 20px;" />
+  <img src="https://cdn-icons-png.flaticon.com/512/5968/5968267.png" alt="HTML" height="80" style="margin: 0 20px;" />
+  <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS" height="80" style="margin: 0 20px;" />
+  <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript" height="80" style="margin: 0 20px;" />
+  <img src="https://cdn-icons-png.flaticon.com/512/1126/1126012.png" alt="React" height="80" style="margin: 0 20px;" />
+  <img src="https://cdn-icons-png.flaticon.com/512/5968/5968381.png" alt="Express" height="80" style="margin: 0 20px;" />
+  <img src="https://cdn-icons-png.flaticon.com/512/5968/5968255.png" alt="PostgreSQL" height="80" style="margin: 0 20px;" />
+  <img src="https://cdn-icons-png.flaticon.com/512/919/919834.png" alt="MongoDB" height="80" style="margin: 0 20px;" />
+  <img src="https://cdn-icons-png.flaticon.com/512/919/919825.png" alt="Node.js" height="80" style="margin: 0 20px;" />
 </p>
 
 <div align="center">
@@ -45,7 +48,7 @@
 </p>
 
 <p align="center">
-  I am a student working with fullstack (Mern, Pern), HTML, CSS, Java, JavaFX, JavaScript, SQL, NoSQL, using VSCode and IntelliJ.
+  I am a student working with fullstack (MERN, PERN), HTML, CSS, Java, JavaFX, JavaScript, SQL, NoSQL, using VSCode and IntelliJ.
 </p>
 
 <div align="center">
