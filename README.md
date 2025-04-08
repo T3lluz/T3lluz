@@ -28,7 +28,7 @@
 
 <p align="center">
   <img src="https://cdn-icons-png.freepik.com/512/5968/5968267.png" alt="HTML" height="40" style="margin: 0 10px;" />
-  <img src="https://static-00.iconduck.com/assets.00/css-3-icon-726x1024-610441pl.png" alt="CSS" height="40" style="margin: 0 10px;" />
+  <img src="https://static-00.iconduck.com/assets.00/css-3-icon-726x1024-610441pl.png" alt="CSS" height="40" style="margin: 0 50px;" />
   <img src="https://cdn.iconscout.com/icon/free/png-256/free-javascript-logo-icon-download-in-svg-png-gif-file-formats--html-programming-language-coding-logos-icons-1720087.png" alt="JavaScript" height="40" style="margin: 0 10px;" />
   <img src="https://static-00.iconduck.com/assets.00/postgresql-plain-wordmark-icon-2048x2042-up54u54l.png" alt="PostgreSQL" height="40" style="margin: 0 10px;" />
   <img src="https://cdn.iconscout.com/icon/free/png-256/free-mongodb-logo-icon-download-in-svg-png-gif-file-formats--wordmark-programming-langugae-freebies-pack-logos-icons-1175138.png" alt="MongoDB" height="40" style="margin: 0 10px;" />
@@ -39,7 +39,6 @@
 </div>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="VSCode" height="40" style="margin: 0 10px;" />
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png" alt="VSCode Icon" height="40" style="margin: 0 10px;" />
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/2048px-IntelliJ_IDEA_Icon.svg.png" alt="IntelliJ IDEA" height="40" style="margin: 0 10px;" />
 </p>
