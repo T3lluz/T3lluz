@@ -2,9 +2,6 @@
   <h2>Good Afternoon 👋</h2>
 </div>
 
-
-
-
 <p align="center">
   I'm <strong>T3lluz</strong>, or as humans call me: <strong>Fredrik Stalsberg</strong>
 </p>
@@ -46,8 +43,8 @@
 </div>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="VSCode" />
-  <img src="https://img.shields.io/badge/IntelliJ%20IDEA-000000?style=for-the-badge&logo=intellij-idea&logoColor=white" alt="IntelliJ IDEA" />
+  <img src="https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="VSCode" height="40" />
+  <img src="https://img.shields.io/badge/IntelliJ%20IDEA-000000?style=for-the-badge&logo=intellij-idea&logoColor=white" alt="IntelliJ IDEA" height="40" />
 </p>
 
 <p align="center">
