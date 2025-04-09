@@ -1,4 +1,4 @@
-![](https://media.discordapp.net/attachments/796820563599032330/1359578855450476574/HelloWorldTransparent.png?ex=67f7fdfa&is=67f6ac7a&hm=52b8bf2156793736f5ff55902e8ae54aec2eb439e15e9646fb6dabe87e86e7c0&=&quality=lossless)
+![](https://cdn.discordapp.com/attachments/796820563599032330/1359579570394632322/HelloWorld.png?ex=67f7fea5&is=67f6ad25&hm=affb5197fea104bc746c23e505153e28dbc0b9fadf1254ec8a93384c102a1e24&)
 
 
 <p align="center">
