@@ -1,5 +1,5 @@
 <div align="center">
-  <h2>Good Afternoon 👋</h2>
+  <h2>System.out.println('Good afternoon, World!');</h2>
 </div>
 
 <p align="center">
