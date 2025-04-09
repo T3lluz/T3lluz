@@ -27,15 +27,15 @@
 </div>
 
 <p align="center">
-  <img src="https://cdn-icons-png.flaticon.com/512/5968/5968267.png" alt="HTML" height="80" style="margin: 0 20px;" />
-  <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS" height="80" style="margin: 0 20px;" />
-  <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript" height="80" style="margin: 0 20px;" />
-  <img src="https://cdn-icons-png.flaticon.com/512/1126/1126012.png" alt="React" height="80" style="margin: 0 20px;" />
-  <img src="https://img.icons8.com/color/452/express-js.png" alt="Express" height="80" style="margin: 0 20px;" />
-  <img src="https://cdn.iconscout.com/icon/free/png-256/free-postgresql-226047.png" alt="PostgreSQL" height="80" style="margin: 0 20px;" />
-  <img src="https://img.icons8.com/color/452/mongodb.png" alt="MongoDB" height="80" style="margin: 0 20px;" />
-  <img src="https://img.icons8.com/color/452/nodejs.png" alt="Node.js" height="80" style="margin: 0 20px;" />
-  <img src="https://img.shields.io/badge/-npm-CB3837?logo=npm](https://raw.githubusercontent.com/devicons/devicon/master/icons/npm/npm-original-wordmark.svg" alt="npm" height="80" style="margin: 0 20px;" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML" height="80" style="margin: 0 20px;" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS" height="80" style="margin: 0 20px;" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" height="80" style="margin: 0 20px;" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" height="80" style="margin: 0 20px;" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original-wordmark.svg" alt="Express" height="80" style="margin: 0 20px;" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" height="80" style="margin: 0 20px;" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB" height="80" style="margin: 0 20px;" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" height="80" style="margin: 0 20px;" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg" alt="npm" height="80" style="margin: 0 20px;" /> 
 </p>
 
 <div align="center">
