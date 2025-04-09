@@ -42,12 +42,12 @@
 </div>
 
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png" alt="VSCode Icon" height="25" style="margin: 0 10px;" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/2048px-IntelliJ_IDEA_Icon.svg.png" alt="IntelliJ IDEA" height="25" style="margin: 0 10px;" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png" alt="VSCode Icon" height="80" style="margin: 0 10px;" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/2048px-IntelliJ_IDEA_Icon.svg.png" alt="IntelliJ IDEA" height="80" style="margin: 0 10px;" />
 </p>
 
 <p align="center">
-  I am a student working with fullstack (MERN, PERN), HTML, CSS, Java, JavaFX, JavaScript, SQL, NoSQL, using VSCode and IntelliJ.
+  I am a student working with fullstack (MERN, PERN), HTML, CSS, Java, JavaFX, JavaScript, SQL, NoSQL, Express, Node and React, using VSCode and IntelliJ.
 </p>
 
 <div align="center">
@@ -65,7 +65,7 @@
 
 <p align="center">
   <a href="mailto:fstalsberg@gmail.com">
-    <img src="https://img.shields.io/badge/Email-fstalsberg@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" height="40" style="margin: 0 10px;" />
+    <img src="https://img.shields.io/badge/Email-fstalsberg@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" height="25" style="margin: 0 10px;" />
   </a>
-  <img src="https://img.shields.io/badge/Discord-T3lluz1337-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" height="40" style="margin: 0 10px;" />
+  <img src="https://img.shields.io/badge/Discord-T3lluz1337-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" height="25" style="margin: 0 10px;" />
 </p>
