@@ -1,9 +1,9 @@
 ![](https://cdn.discordapp.com/attachments/796820563599032330/1359579570394632322/HelloWorld.png?ex=67f7fea5&is=67f6ad25&hm=affb5197fea104bc746c23e505153e28dbc0b9fadf1254ec8a93384c102a1e24&)
 
 
-<p align="center">
+<h1 align="center">
   I'm <strong>T3lluz</strong>, or as humans call me: <strong>Fredrik Stalsberg</strong>
-</p>
+</h1>
 
 <div align="center">
   <h2>Social Media</h2>
