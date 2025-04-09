@@ -68,5 +68,6 @@
   <a href="mailto:fstalsberg@gmail.com">
     <img src="https://img.shields.io/badge/Email-fstalsberg@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" height="32" style="margin: 0 10px;" />
   </a>
+  <br>
   <img src="https://img.shields.io/badge/Discord-T3lluz1337-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" height="32" style="margin: 0 10px;" />
 </p>
