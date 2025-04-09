@@ -1,6 +1,5 @@
-<div align="center">
-  <h2>System.out.println('Good afternoon, World!');👋</h2>
-</div>
+![](https://media.discordapp.net/attachments/796820563599032330/1359578209083195613/HelloWorld.png?ex=67f7fd60&is=67f6abe0&hm=e820af292b8ba55c383f24a79d6ccdbe3b21970dcaba6a2e448571e7d2c68099&=&quality=lossless)
+
 
 <p align="center">
   I'm <strong>T3lluz</strong>, or as humans call me: <strong>Fredrik Stalsberg</strong>
