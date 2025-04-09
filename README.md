@@ -35,6 +35,7 @@
   <img src="https://cdn.iconscout.com/icon/free/png-256/free-postgresql-226047.png" alt="PostgreSQL" height="80" style="margin: 0 20px;" />
   <img src="https://img.icons8.com/color/452/mongodb.png" alt="MongoDB" height="80" style="margin: 0 20px;" />
   <img src="https://img.icons8.com/color/452/nodejs.png" alt="Node.js" height="80" style="margin: 0 20px;" />
+  <img src="https://img.shields.io/badge/-npm-CB3837?logo=npm" alt="npm" height="80" style="margin: 0 20px;" />
 </p>
 
 <div align="center">
