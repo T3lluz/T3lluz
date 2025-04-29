@@ -52,7 +52,7 @@
 <p align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo-ubuntu_cof-orange-hex.svg" alt="Ubuntu" height="80" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
   <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Linux_Mint_logo_without_wordmark.svg" alt="Linux Mint" height="80" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Windows_logo_-_2021.svg" alt="Windows" height="80" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
+  <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/windows-color-icon.png" alt="Windows" height="80" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
 </p>
 
 <div> </div>
