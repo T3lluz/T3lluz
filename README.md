@@ -55,7 +55,7 @@
   <img src="[https://upload.wikimedia.org/wikipedia/commons/4/48/Windows_logo_-_2021.svg](https://commons.wikimedia.org/wiki/File:Windows_logo_-_2012.svg#/media/File:Windows_logo_-_2021.svg)" alt="Windows" height="80" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
 </p>
 
-
+<div> </div>
 <p align="center">
   I am a student working with fullstack (MERN, PERN), HTML, CSS, Java, JavaFX, JavaScript, SQL, NoSQL, Express, Node and React, using VSCode and IntelliJ.
 </p>
