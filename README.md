@@ -1,7 +1,7 @@
 <h2 align="center"> Hello World !</h2>
 
 <h2 align="center">
-  I'm <strong>T3lluz</strong>, or as humans call me: <strong>Fredrik Stalsberg</strong>
+  I'm <strong>T3lluz</strong>, or as humans call me: <strong>Fredrik</strong>
 </h2>
 
 <div align="center">
