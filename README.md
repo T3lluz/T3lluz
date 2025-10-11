@@ -61,7 +61,7 @@
 </p>
 
 <div align="center">
-  <h2>🔧 I also burn time...</h2>
+  <h2>🔧 I also burn time..</h2>
 </div>
 
 <p align="center">
