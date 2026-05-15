@@ -21,23 +21,37 @@
       attributeName="transform"
       type="translate"
       from="0 0"
-      to="-900 0"
+      to="-452 0"
       dur="16s"
       repeatCount="indefinite"
     />
 
-    <g filter="url(#neon)" fill="#58a6ff" font-family="'Fira Code', 'Cascadia Code', Consolas, monospace" font-size="22" font-weight="700">
-      <text x="30" y="62" xml:space="preserve">  _____ _____ _         </text>
-      <text x="30" y="92" xml:space="preserve"> |_   _|__ / | |_  _ ___</text>
-      <text x="30" y="122" xml:space="preserve">   | |  |_ \ | | || |_ /</text>
-      <text x="30" y="152" xml:space="preserve">   |_| |___/_|_|\_,_/__|</text>
+    <g filter="url(#neon)" fill="#58a6ff" font-family="'Fira Code', 'Cascadia Code', Consolas, monospace" font-size="28" font-weight="700">
+      <text x="20" y="70" xml:space="preserve">  _____ _____ _         </text>
+      <text x="20" y="106" xml:space="preserve"> |_   _|__ / | |_  _ ___</text>
+      <text x="20" y="142" xml:space="preserve">   | |  |_ \ | | || |_ /</text>
+      <text x="20" y="178" xml:space="preserve">   |_| |___/_|_|\_,_/__|</text>
     </g>
 
-    <g filter="url(#neon)" fill="#58a6ff" font-family="'Fira Code', 'Cascadia Code', Consolas, monospace" font-size="22" font-weight="700">
-      <text x="930" y="62" xml:space="preserve">  _____ _____ _         </text>
-      <text x="930" y="92" xml:space="preserve"> |_   _|__ / | |_  _ ___</text>
-      <text x="930" y="122" xml:space="preserve">   | |  |_ \ | | || |_ /</text>
-      <text x="930" y="152" xml:space="preserve">   |_| |___/_|_|\_,_/__|</text>
+    <g filter="url(#neon)" fill="#58a6ff" font-family="'Fira Code', 'Cascadia Code', Consolas, monospace" font-size="28" font-weight="700">
+      <text x="472" y="70" xml:space="preserve">  _____ _____ _         </text>
+      <text x="472" y="106" xml:space="preserve"> |_   _|__ / | |_  _ ___</text>
+      <text x="472" y="142" xml:space="preserve">   | |  |_ \ | | || |_ /</text>
+      <text x="472" y="178" xml:space="preserve">   |_| |___/_|_|\_,_/__|</text>
+    </g>
+
+    <g filter="url(#neon)" fill="#58a6ff" font-family="'Fira Code', 'Cascadia Code', Consolas, monospace" font-size="28" font-weight="700">
+      <text x="924" y="70" xml:space="preserve">  _____ _____ _         </text>
+      <text x="924" y="106" xml:space="preserve"> |_   _|__ / | |_  _ ___</text>
+      <text x="924" y="142" xml:space="preserve">   | |  |_ \ | | || |_ /</text>
+      <text x="924" y="178" xml:space="preserve">   |_| |___/_|_|\_,_/__|</text>
+    </g>
+
+    <g filter="url(#neon)" fill="#58a6ff" font-family="'Fira Code', 'Cascadia Code', Consolas, monospace" font-size="28" font-weight="700">
+      <text x="1376" y="70" xml:space="preserve">  _____ _____ _         </text>
+      <text x="1376" y="106" xml:space="preserve"> |_   _|__ / | |_  _ ___</text>
+      <text x="1376" y="142" xml:space="preserve">   | |  |_ \ | | || |_ /</text>
+      <text x="1376" y="178" xml:space="preserve">   |_| |___/_|_|\_,_/__|</text>
     </g>
   </g>
 </svg>

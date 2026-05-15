@@ -9,7 +9,7 @@
 </p>
 
 <!-- TYPING_SVG_START -->
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2600&pause=900&color=58A6FF&center=true&vCenter=true&width=900&lines=Public+repos%3A+12+%7C+Followers%3A+5%3BStars+%28own+%2B+contributed%29%3A+6%3BRecently+updated%3A+T3lluz%2C+proslides-overview%2C+MacroTracker%3BTop+langs%3A+HTML%2C+CSS%2C+JavaScript+%7C+Focus%3A+Stream+Deck+plugins%2C+HID+tooling" alt="Typing intro" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2600&pause=900&color=58A6FF&center=true&vCenter=true&width=900&lines=Public+repos%3A+12+%7C+Followers%3A+5%3BContributed+repos+tracked%3A+0%3BRecently+updated%3A+T3lluz%2C+proslides-overview%2C+MacroTracker%3BTop+langs%3A+HTML%2C+CSS%2C+JavaScript+%7C+Focus%3A+Stream+Deck+plugins%2C+HID+tooling%3BFun+fact%3A+I+tweak+configs+until+the+config+tweaks+me+back.%3BStatus%3A+shipping+small+commits+and+pretending+tabs+are+temporary.%3BDebug+mode%3A+print%28%29%2C+pray%28%29%2C+and+one+more+coffee." alt="Typing intro" />
 <!-- TYPING_SVG_END -->
 
 <br />
@@ -67,6 +67,10 @@
 
 <br />
 <img width="100%" src="https://readme-jokes.vercel.app/api?hideBorder&theme=github-dark" alt="Random dev joke" />
+<br />
+<img width="100%" src="https://readme-jokes.vercel.app/api?hideBorder&theme=tokyonight" alt="Another random dev joke" />
+<br />
+<img width="100%" src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" alt="Random dev quote" />
 
 </details>
 
@@ -85,6 +89,15 @@
 <div align="center">
   <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=T3lluz&theme=github_dark" alt="Repos per language" />
   <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=T3lluz&theme=github_dark" alt="Most commit language" />
+</div>
+
+<div align="center">
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=T3lluz&theme=github_dark" alt="GitHub stats overview" />
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=T3lluz&theme=github_dark&utcOffset=1" alt="Most productive time card" />
+</div>
+
+<div align="center">
+  <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=T3lluz&theme=github-dark&hide_border=true" alt="GitHub activity graph" />
 </div>
 
 <div align="center">

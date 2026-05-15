@@ -203,9 +203,12 @@ def main() -> int:
 
     lines = [
         f"Public repos: {user.get('public_repos', 0)} | Followers: {user.get('followers', 0)}",
-        f"Stars (own + contributed): {total_stars}",
+        f"Contributed repos tracked: {len(contributed_repo_names)}",
         f"Recently updated: {recent_display}",
         f"Top langs: {lang_display} | Focus: {theme_display}",
+        "Fun fact: I tweak configs until the config tweaks me back.",
+        "Status: shipping small commits and pretending tabs are temporary.",
+        "Debug mode: print(), pray(), and one more coffee.",
     ]
 
     svg_url = build_typing_url(lines)
