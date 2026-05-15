@@ -89,7 +89,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/output/github-contribution-grid-snake-dark.svg" />
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/output/github-contribution-grid-snake.svg" />
-    <img alt="Snake eating contribution graph" src="https://raw.githubusercontent.com/T3lluz/T3lluz/output/github-contribution-grid-snake.svg" />
+    <img alt="Snake eating contribution graph" src="https://github.com/T3lluz/T3lluz/blob/output/github-contribution-grid-snake.svg?raw=1" />
   </picture>
 </div>
 
