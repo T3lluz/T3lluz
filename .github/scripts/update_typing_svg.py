@@ -5,6 +5,7 @@ import json
 import os
 import re
 from collections import Counter
+from datetime import datetime, timedelta, timezone
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -23,6 +24,107 @@ def api_get(url: str, token: str | None) -> dict | list:
     req = urllib.request.Request(url, headers=headers)
     with urllib.request.urlopen(req, timeout=20) as response:
         return json.loads(response.read().decode("utf-8"))
+
+
+def graphql_get(query: str, variables: dict, token: str) -> dict:
+    req = urllib.request.Request(
+        "https://api.github.com/graphql",
+        headers={
+            "Accept": "application/vnd.github+json",
+            "Authorization": f"Bearer {token}",
+            "Content-Type": "application/json",
+        },
+        data=json.dumps({"query": query, "variables": variables}).encode("utf-8"),
+        method="POST",
+    )
+    with urllib.request.urlopen(req, timeout=20) as response:
+        payload = json.loads(response.read().decode("utf-8"))
+    if "errors" in payload:
+        raise RuntimeError(f"GraphQL error: {payload['errors']}")
+    return payload
+
+
+def fetch_contributed_repo_names_graphql(username: str, token: str | None) -> set[str]:
+    if not token:
+        return set()
+
+    query = """
+    query($login: String!, $from: DateTime!, $to: DateTime!) {
+      user(login: $login) {
+        contributionsCollection(from: $from, to: $to) {
+          commitContributionsByRepository(maxRepositories: 100) {
+            repository { nameWithOwner owner { login } }
+          }
+          pullRequestContributionsByRepository(maxRepositories: 100) {
+            repository { nameWithOwner owner { login } }
+          }
+        }
+      }
+    }
+    """
+    now = datetime.now(timezone.utc)
+    variables = {
+        "login": username,
+        "from": (now - timedelta(days=365 * 5)).isoformat(),
+        "to": now.isoformat(),
+    }
+    payload = graphql_get(query, variables, token)
+    user_data = payload.get("data", {}).get("user", {})
+    collection = user_data.get("contributionsCollection", {})
+
+    names: set[str] = set()
+    own_login = username.lower()
+    for key in ("commitContributionsByRepository", "pullRequestContributionsByRepository"):
+        for item in collection.get(key, []):
+            repo = item.get("repository", {})
+            owner = str(repo.get("owner", {}).get("login", "")).lower()
+            name_with_owner = str(repo.get("nameWithOwner", "")).strip()
+            if name_with_owner and owner and owner != own_login:
+                names.add(name_with_owner)
+    return names
+
+
+def fetch_contributed_repo_names(username: str, token: str | None) -> set[str]:
+    # Prefer GraphQL contribution data for accuracy, then fall back to public events.
+    try:
+        graphql_names = fetch_contributed_repo_names_graphql(username, token)
+        if graphql_names:
+            return graphql_names
+    except Exception:
+        pass
+
+    contributed: set[str] = set()
+    own_prefix = f"{username.lower()}/"
+
+    # Public events give us a good approximation of repositories the user has
+    # contributed to outside their own profile repos.
+    for page in range(1, 6):
+        events = api_get(
+            f"https://api.github.com/users/{username}/events/public?per_page=100&page={page}",
+            token,
+        )
+        if not isinstance(events, list) or not events:
+            break
+
+        for event in events:
+            event_type = str(event.get("type", ""))
+            if event_type not in {
+                "PushEvent",
+                "PullRequestEvent",
+                "PullRequestReviewEvent",
+                "IssueCommentEvent",
+                "IssuesEvent",
+            }:
+                continue
+
+            repo_name = str(event.get("repo", {}).get("name", "")).strip()
+            if not repo_name:
+                continue
+            if repo_name.lower().startswith(own_prefix):
+                continue
+            contributed.add(repo_name)
+
+    return contributed
 
 
 def build_typing_url(lines: list[str]) -> str:
@@ -52,7 +154,19 @@ def main() -> int:
     )
 
     non_fork_repos = [repo for repo in repos if not repo.get("fork", False)]
-    total_stars = sum(int(repo.get("stargazers_count", 0)) for repo in non_fork_repos)
+    own_stars = sum(int(repo.get("stargazers_count", 0)) for repo in non_fork_repos)
+    contributed_repo_names = fetch_contributed_repo_names(username, token)
+    contributed_stars = 0
+    for full_name in sorted(contributed_repo_names):
+        try:
+            repo_data = api_get(f"https://api.github.com/repos/{full_name}", token)
+            if isinstance(repo_data, dict):
+                contributed_stars += int(repo_data.get("stargazers_count", 0))
+        except Exception:
+            # Keep the updater resilient if one repo cannot be fetched.
+            continue
+
+    total_stars = own_stars + contributed_stars
     recent_names = [repo.get("name", "") for repo in non_fork_repos[:3] if repo.get("name")]
     primary_langs = Counter(
         repo.get("language")
@@ -89,7 +203,7 @@ def main() -> int:
 
     lines = [
         f"Public repos: {user.get('public_repos', 0)} | Followers: {user.get('followers', 0)}",
-        f"Total stars across repos: {total_stars}",
+        f"Stars (own + contributed): {total_stars}",
         f"Recently updated: {recent_display}",
         f"Top langs: {lang_display} | Focus: {theme_display}",
     ]

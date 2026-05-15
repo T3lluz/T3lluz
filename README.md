@@ -7,7 +7,7 @@
 </p>
 
 <!-- TYPING_SVG_START -->
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2600&pause=900&color=58A6FF&center=true&vCenter=true&width=900&lines=Public+repos%3A+12+%7C+Followers%3A+5%3BTotal+stars+across+repos%3A+6%3BRecently+updated%3A+T3lluz%2C+proslides-overview%2C+MacroTracker%3BTop+langs%3A+HTML%2C+CSS%2C+JavaScript+%7C+Focus%3A+Stream+Deck+plugins%2C+HID+tooling" alt="Typing intro" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2600&pause=900&color=58A6FF&center=true&vCenter=true&width=900&lines=Public+repos%3A+12+%7C+Followers%3A+5%3BStars+%28own+%2B+contributed%29%3A+6%3BRecently+updated%3A+T3lluz%2C+proslides-overview%2C+MacroTracker%3BTop+langs%3A+HTML%2C+CSS%2C+JavaScript+%7C+Focus%3A+Stream+Deck+plugins%2C+HID+tooling" alt="Typing intro" />
 <!-- TYPING_SVG_END -->
 
 <br />
@@ -86,33 +86,52 @@
 </div>
 
 <div align="center">
-  <img width="100%" src="https://raw.githubusercontent.com/T3lluz/T3lluz/output/github-contribution-grid-snake-dark.svg" alt="Snake eating contribution graph" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/output/github-contribution-grid-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/output/github-contribution-grid-snake.svg" />
+    <img alt="Snake eating contribution graph" src="https://raw.githubusercontent.com/T3lluz/T3lluz/output/github-contribution-grid-snake.svg" />
+  </picture>
 </div>
 
 ---
 
 ## Stack and tools
 
-<table>
-  <tr>
-    <td><strong>Frontend</strong></td>
-    <td>
-      <img src="https://skillicons.dev/icons?i=html,css,js,react,ts&theme=dark" alt="Frontend stack" />
-    </td>
-  </tr>
-  <tr>
-    <td><strong>Backend</strong></td>
-    <td>
-      <img src="https://skillicons.dev/icons?i=nodejs,express,postgres,mongodb,python,kotlin,java&theme=dark" alt="Backend stack" />
-    </td>
-  </tr>
-  <tr>
-    <td><strong>Tooling & systems</strong></td>
-    <td>
-      <img src="https://skillicons.dev/icons?i=vscode,idea,powershell,ubuntu,linux,arch&theme=dark" alt="Tooling and OS" />
-    </td>
-  </tr>
-</table>
+<div align="center">
+  <sub>Core stack</sub>
+</div>
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/react/react-original.svg" alt="React" width="66" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/javascript/javascript-original.svg" alt="JavaScript" width="58" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/typescript/typescript-original.svg" alt="TypeScript" width="52" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/nodejs/nodejs-original.svg" alt="Node.js" width="62" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/express/express-original.svg" alt="Express" width="54" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="56" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="56" />
+</p>
+
+<div align="center">
+  <sub>Also building with</sub>
+</div>
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/kotlin/kotlin-original.svg" alt="Kotlin" width="60" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/python/python-original.svg" alt="Python" width="52" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/java/java-original.svg" alt="Java" width="52" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/html5/html5-original.svg" alt="HTML5" width="58" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/css3/css3-original.svg" alt="CSS3" width="58" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/powershell/powershell-original.svg" alt="PowerShell" width="50" />
+</p>
+
+<div align="center">
+  <sub>Environment and tooling</sub>
+</div>
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/vscode/vscode-original.svg" alt="VS Code" width="58" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/intellij/intellij-original.svg" alt="IntelliJ IDEA" width="58" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/ubuntu/ubuntu-original.svg" alt="Ubuntu" width="54" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/linux/linux-original.svg" alt="Linux" width="54" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/archlinux/archlinux-original.svg" alt="Arch Linux" width="54" />
+</p>
 
 ---
 
