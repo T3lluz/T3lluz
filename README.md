@@ -25,15 +25,15 @@
 </div>
 
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML" height="80" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS" height="80" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" height="80" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" height="80" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original-wordmark.svg" alt="Express" height="80" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" height="80" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB" height="80" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" height="80" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg" alt="npm" height="80" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/html5/html5-original.svg" alt="HTML" height="80" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/css3/css3-original.svg" alt="CSS" height="80" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/javascript/javascript-original.svg" alt="JavaScript" height="80" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/react/react-original.svg" alt="React" height="80" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/express/express-original-wordmark.svg" alt="Express" height="80" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" height="80" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/mongodb/mongodb-original.svg" alt="MongoDB" height="80" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/nodejs/nodejs-original.svg" alt="Node.js" height="80" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/npm/npm-original-wordmark.svg" alt="npm" height="80" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
 </p>
 
 <div align="center">
@@ -41,8 +41,8 @@
 </div>
 
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png" alt="VSCode Icon" height="65" style="margin: 0 10px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/2048px-IntelliJ_IDEA_Icon.svg.png" alt="IntelliJ IDEA" height="65" style="margin: 0 10px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
+  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/visualstudiocode.svg" alt="VSCode Icon" height="65" style="margin: 0 10px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
+  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/intellijidea.svg" alt="IntelliJ IDEA" height="65" style="margin: 0 10px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
 </p>
 
 <div align="center">
@@ -50,10 +50,10 @@
 </div>
 
 <p align="center"> 
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo-ubuntu_cof-orange-hex.svg" alt="Ubuntu" height="60" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Linux_Mint_logo_without_wordmark.svg" alt="Linux Mint" height="60" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
-<img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/windows-color-icon.png" alt="Windows" height="60" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);"> 
-<img src="https://www.svgrepo.com/show/349296/arch-linux.svg" alt="Arch Linux" height="60" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);"></p>
+<img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/ubuntu.svg" alt="Ubuntu" height="60" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
+<img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linuxmint.svg" alt="Linux Mint" height="60" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
+<img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/windows11.svg" alt="Windows" height="60" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);"> 
+<img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/archlinux.svg" alt="Arch Linux" height="60" style="margin: 0 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);"></p>
 
 <div> </div>
 <p align="center">
