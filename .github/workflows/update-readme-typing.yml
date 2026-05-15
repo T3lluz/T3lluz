@@ -1,0 +1,39 @@
+name: Update README typing banner
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "25 4 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Update typing SVG lines
+        env:
+          README_USERNAME: T3lluz
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python .github/scripts/update_typing_svg.py
+
+      - name: Commit and push if changed
+        run: |
+          git add README.md
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: refresh README typing banner"
+          git push
