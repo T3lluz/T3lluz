@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import os
 import re
+from collections import Counter
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -53,14 +54,44 @@ def main() -> int:
     non_fork_repos = [repo for repo in repos if not repo.get("fork", False)]
     total_stars = sum(int(repo.get("stargazers_count", 0)) for repo in non_fork_repos)
     recent_names = [repo.get("name", "") for repo in non_fork_repos[:3] if repo.get("name")]
+    primary_langs = Counter(
+        repo.get("language")
+        for repo in non_fork_repos
+        if isinstance(repo.get("language"), str) and repo.get("language")
+    )
+    top_langs = ", ".join(lang for lang, _ in primary_langs.most_common(3))
+
+    theme_keywords = {
+        "streamdeck": "Stream Deck plugins",
+        "stream deck": "Stream Deck plugins",
+        "hid": "HID tooling",
+        "battery": "Battery integrations",
+        "animation": "UI animations",
+        "theme": "Theme customization",
+        "portfolio": "Portfolio/web projects",
+    }
+    theme_counts: Counter[str] = Counter()
+    for repo in non_fork_repos:
+        haystack = " ".join(
+            [
+                str(repo.get("name", "")).lower(),
+                str(repo.get("description", "")).lower(),
+            ]
+        )
+        for keyword, label in theme_keywords.items():
+            if keyword in haystack:
+                theme_counts[label] += 1
+    top_themes = ", ".join(label for label, _ in theme_counts.most_common(2))
 
     recent_display = ", ".join(recent_names) if recent_names else "no public repos yet"
+    lang_display = top_langs if top_langs else "JavaScript, HTML, CSS"
+    theme_display = top_themes if top_themes else "Web apps, customization"
 
     lines = [
         f"Public repos: {user.get('public_repos', 0)} | Followers: {user.get('followers', 0)}",
         f"Total stars across repos: {total_stars}",
         f"Recently updated: {recent_display}",
-        "Full-stack student | MERN + PERN | Linux + Windows tweaks",
+        f"Top langs: {lang_display} | Focus: {theme_display}",
     ]
 
     svg_url = build_typing_url(lines)
