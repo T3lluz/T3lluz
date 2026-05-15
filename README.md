@@ -12,11 +12,12 @@
 
 <br />
 
+<img width="72%" src="https://readme-jokes.vercel.app/api?hideBorder&theme=github-dark" alt="Random dev joke" />
+
+<br />
+
 <a href="https://x.com/T3lluz_"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X" /></a>
 <a href="https://www.linkedin.com/in/fredrik-stalsberg-427821151/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-<a href="https://github.com/T3lluz"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
-<a href="mailto:fstalsberg@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
-<img src="https://img.shields.io/badge/Discord-T3lluz1337-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
 
 </div>
 
@@ -51,15 +52,6 @@
   <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=T3lluz&theme=github_dark" alt="Most commit language" />
 </div>
 
-<div align="center">
-  <img width="49%" src="https://streak-stats.demolab.com?user=T3lluz&theme=tokyonight&hide_border=true" alt="GitHub streak" />
-  <img width="49%" src="https://readme-jokes.vercel.app/api?hideBorder&theme=tokyonight" alt="Random dev joke" />
-</div>
-
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=T3lluz&color=58A6FF&style=flat-square&label=README+views" alt="Profile views" />
-</div>
-
 ---
 
 ## Stack and tools
@@ -72,6 +64,8 @@
 
 ## Contact
 
-- Email: `fstalsberg@gmail.com`
-- Discord: `T3lluz1337`
-- GitHub: [github.com/T3lluz](https://github.com/T3lluz)
+<div align="center">
+  <a href="https://github.com/T3lluz"><img src="https://img.shields.io/badge/GitHub-T3lluz-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub profile" /></a>
+  <a href="mailto:fstalsberg@gmail.com"><img src="https://img.shields.io/badge/Email-fstalsberg%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Fredrik" /></a>
+  <img src="https://img.shields.io/badge/Discord-T3lluz1337-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord T3lluz1337" />
+</div>
