@@ -82,21 +82,7 @@
 ## GitHub Pulse
 
 <div align="center">
-  <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=T3lluz&theme=github-dark&hide_border=true&days=180&custom_title=T3lluz%20Contribution%20Timeline%20(Last%206%20Months)" alt="GitHub activity graph" />
-</div>
-
-<div align="center">
-  <sub><strong>Recent repo themes</strong>: Stream Deck plugins · Battery tooling · UI animations</sub>
-</div>
-
-<div align="center">
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=T3lluz&theme=github_dark" alt="Repos per language" />
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=T3lluz&theme=github_dark" alt="Most commit language" />
-</div>
-
-<div align="center">
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=T3lluz&theme=github_dark" alt="GitHub stats overview" />
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=T3lluz&theme=github_dark&utcOffset=1" alt="Most productive time card" />
+  <img width="100%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=T3lluz&theme=github_dark&utcOffset=1" alt="Commits by hour (UTC+1)" />
 </div>
 
 <div align="center">
