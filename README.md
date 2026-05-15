@@ -113,38 +113,38 @@
 
 <div align="center">
   <sub><strong>Core stack</strong></sub><br />
-  <img src="https://cdn.simpleicons.org/react" alt="React" width="44" />
-  <img src="https://cdn.simpleicons.org/javascript" alt="JavaScript" width="44" />
-  <img src="https://cdn.simpleicons.org/typescript" alt="TypeScript" width="44" />
-  <img src="https://cdn.simpleicons.org/nodedotjs" alt="Node.js" width="44" />
-  <img src="https://cdn.simpleicons.org/express" alt="Express" width="44" />
-  <img src="https://cdn.simpleicons.org/postgresql" alt="PostgreSQL" width="44" />
-  <img src="https://cdn.simpleicons.org/mongodb" alt="MongoDB" width="44" />
+  <img src="https://cdn.simpleicons.org/react" alt="React" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.simpleicons.org/javascript" alt="JavaScript" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.simpleicons.org/typescript" alt="TypeScript" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.simpleicons.org/nodedotjs" alt="Node.js" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.simpleicons.org/express/F0F6FC" alt="Express" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.simpleicons.org/postgresql" alt="PostgreSQL" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.simpleicons.org/mongodb" alt="MongoDB" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
 </div>
 
 <br />
 
 <div align="center">
   <sub><strong>Also building with</strong></sub><br />
-  <img src="https://cdn.simpleicons.org/kotlin" alt="Kotlin" width="44" />
-  <img src="https://cdn.simpleicons.org/python" alt="Python" width="44" />
-  <img src="https://cdn.simpleicons.org/openjdk" alt="Java" width="44" />
-  <img src="https://cdn.simpleicons.org/html5" alt="HTML5" width="44" />
-  <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/css.svg" alt="CSS3" width="44" />
-  <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/powershell.svg" alt="PowerShell" width="44" />
+  <img src="https://cdn.simpleicons.org/kotlin" alt="Kotlin" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.simpleicons.org/python" alt="Python" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.simpleicons.org/openjdk" alt="Java" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.simpleicons.org/html5" alt="HTML5" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.simpleicons.org/css/1572B6" alt="CSS3" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.simpleicons.org/powershell/5391FE" alt="PowerShell" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
 </div>
 
 <br />
 
 <div align="center">
   <sub><strong>Environment and tooling</strong></sub><br />
-  <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/visualstudiocode.svg" alt="VS Code" width="44" />
-  <img src="https://cdn.simpleicons.org/intellijidea" alt="IntelliJ IDEA" width="44" />
-  <img src="https://cdn.simpleicons.org/ubuntu" alt="Ubuntu" width="44" />
-  <img src="https://cdn.simpleicons.org/linux" alt="Linux" width="44" />
-  <img src="https://cdn.simpleicons.org/archlinux" alt="Arch Linux" width="44" />
-  <img src="https://img.shields.io/badge/Cursor%20IDE-93C5FD?style=flat-square&logoColor=0d1117" alt="Cursor IDE" />
-  <img src="https://img.shields.io/badge/VM%20Lab-60A5FA?style=flat-square&logoColor=0d1117" alt="Virtual machines" />
+  <img src="https://cdn.simpleicons.org/visualstudiocode/007ACC" alt="VS Code" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.simpleicons.org/intellijidea/F7DF1E" alt="IntelliJ IDEA" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.simpleicons.org/ubuntu/E95420" alt="Ubuntu" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.simpleicons.org/linux/FCC624" alt="Linux" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.simpleicons.org/archlinux/1793D1" alt="Arch Linux" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.simpleicons.org/cursor/93C5FD" alt="Cursor IDE" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.simpleicons.org/virtualbox/60A5FA" alt="Virtual machines" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
 </div>
 
 <br />
