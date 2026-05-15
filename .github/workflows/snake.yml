@@ -35,13 +35,13 @@ jobs:
           npx -y generate-snake-animation@3 \
             --github_user=T3lluz \
             --output=assets/snake/github-contribution-grid-snake.svg \
-            --output='assets/snake/github-contribution-grid-snake-dark.svg?palette=github-dark'
+            --output='assets/snake/github-contribution-grid-snake-neon.svg?palette=github-dark&color_snake=#00f0ff&color_dots=#0d1520,#164564,#1c6a8a,#21a3c4,#00e5ff'
 
       - name: Commit and push updated snake files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/snake/github-contribution-grid-snake.svg assets/snake/github-contribution-grid-snake-dark.svg
+          git add assets/snake/github-contribution-grid-snake.svg assets/snake/github-contribution-grid-snake-neon.svg
           if git diff --cached --quiet; then
             echo "No snake changes to commit."
             exit 0
