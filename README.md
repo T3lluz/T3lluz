@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="100%" src="https://raw.githubusercontent.com/x0rzavi/github-readme-terminal/main/docs/assets/sample.gif" alt="ASCII-style terminal banner" />
+<img width="100%" src="./assets/banner/ascii-neon-scroll.svg" alt="Animated ASCII neon banner" />
 
 ## Hey, I'm T3lluz
 
@@ -91,7 +91,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/snake/github-contribution-grid-snake-dark.svg" />
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/snake/github-contribution-grid-snake.svg" />
-    <img alt="Snake eating contribution graph" src="https://ghchart.rshah.org/58A6FF/T3lluz" />
+    <img alt="Snake eating contribution graph" src="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/snake/github-contribution-grid-snake.svg" />
   </picture>
 </div>
 
