@@ -27,31 +27,31 @@
     />
 
     <g filter="url(#neon)" fill="#58a6ff" font-family="'Fira Code', 'Cascadia Code', Consolas, monospace" font-size="28" font-weight="700">
-      <text x="20" y="70" xml:space="preserve">  _____ _____ _         </text>
-      <text x="20" y="106" xml:space="preserve"> |_   _|__ / | |_  _ ___</text>
-      <text x="20" y="142" xml:space="preserve">   | |  |_ \ | | || |_ /</text>
-      <text x="20" y="178" xml:space="preserve">   |_| |___/_|_|\_,_/__|</text>
+      <text x="20" y="70" xml:space="preserve">  _____ _____ _   git push --dry-run  </text>
+      <text x="20" y="106" xml:space="preserve"> |_   _|__ / | |_  _ ___  local_llm() </text>
+      <text x="20" y="142" xml:space="preserve">   | |  |_ \ | | || |_ /  vm.snapshot </text>
+      <text x="20" y="178" xml:space="preserve">   |_| |___/_|_|\_,_/__|  openclaw.ai </text>
     </g>
 
     <g filter="url(#neon)" fill="#58a6ff" font-family="'Fira Code', 'Cascadia Code', Consolas, monospace" font-size="28" font-weight="700">
-      <text x="472" y="70" xml:space="preserve">  _____ _____ _         </text>
-      <text x="472" y="106" xml:space="preserve"> |_   _|__ / | |_  _ ___</text>
-      <text x="472" y="142" xml:space="preserve">   | |  |_ \ | | || |_ /</text>
-      <text x="472" y="178" xml:space="preserve">   |_| |___/_|_|\_,_/__|</text>
+      <text x="472" y="70" xml:space="preserve">  _____ _____ _   cursor://agent      </text>
+      <text x="472" y="106" xml:space="preserve"> |_   _|__ / | |_  _ ___  lmstudio:// </text>
+      <text x="472" y="142" xml:space="preserve">   | |  |_ \ | | || |_ /  exec plan() </text>
+      <text x="472" y="178" xml:space="preserve">   |_| |___/_|_|\_,_/__|  sudo vibe   </text>
     </g>
 
     <g filter="url(#neon)" fill="#58a6ff" font-family="'Fira Code', 'Cascadia Code', Consolas, monospace" font-size="28" font-weight="700">
-      <text x="924" y="70" xml:space="preserve">  _____ _____ _         </text>
-      <text x="924" y="106" xml:space="preserve"> |_   _|__ / | |_  _ ___</text>
-      <text x="924" y="142" xml:space="preserve">   | |  |_ \ | | || |_ /</text>
-      <text x="924" y="178" xml:space="preserve">   |_| |___/_|_|\_,_/__|</text>
+      <text x="924" y="70" xml:space="preserve">  _____ _____ _   if (build) ship();  </text>
+      <text x="924" y="106" xml:space="preserve"> |_   _|__ / | |_  _ ___  while(debug) </text>
+      <text x="924" y="142" xml:space="preserve">   | |  |_ \ | | || |_ /  print("ok") </text>
+      <text x="924" y="178" xml:space="preserve">   |_| |___/_|_|\_,_/__|  // no sleep </text>
     </g>
 
     <g filter="url(#neon)" fill="#58a6ff" font-family="'Fira Code', 'Cascadia Code', Consolas, monospace" font-size="28" font-weight="700">
-      <text x="1376" y="70" xml:space="preserve">  _____ _____ _         </text>
-      <text x="1376" y="106" xml:space="preserve"> |_   _|__ / | |_  _ ___</text>
-      <text x="1376" y="142" xml:space="preserve">   | |  |_ \ | | || |_ /</text>
-      <text x="1376" y="178" xml:space="preserve">   |_| |___/_|_|\_,_/__|</text>
+      <text x="1376" y="70" xml:space="preserve">  _____ _____ _   T3lluz::deploy()    </text>
+      <text x="1376" y="106" xml:space="preserve"> |_   _|__ / | |_  _ ___  merge(main) </text>
+      <text x="1376" y="142" xml:space="preserve">   | |  |_ \ | | || |_ /  docker up   </text>
+      <text x="1376" y="178" xml:space="preserve">   |_| |___/_|_|\_,_/__|  commit++    </text>
     </g>
   </g>
 </svg>
