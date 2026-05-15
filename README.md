@@ -83,17 +83,17 @@
 </div>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/Recent%20repo%20themes-Stream%20Deck%20Plugins%20%C2%B7%20Battery%20Tooling%20%C2%B7%20UI%20Animations-0D1117?style=for-the-badge" alt="Recent repo themes" />
+  <img src="https://img.shields.io/badge/Recent%20repo%20themes-Stream%20Deck%20Plugins%20%C2%B7%20Battery%20Tooling%20%C2%B7%20UI%20Animations-1F6FEB?style=for-the-badge" alt="Recent repo themes" />
 </div>
 
 <div align="center">
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=T3lluz&theme=github_dark" alt="Repos per language" />
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=T3lluz&theme=github_dark" alt="Most commit language" />
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=T3lluz&theme=tokyonight" alt="Repos per language" />
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=T3lluz&theme=tokyonight" alt="Most commit language" />
 </div>
 
 <div align="center">
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=T3lluz&theme=github_dark" alt="GitHub stats overview" />
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=T3lluz&theme=github_dark&utcOffset=1" alt="Most productive time card" />
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=T3lluz&theme=tokyonight" alt="GitHub stats overview" />
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=T3lluz&theme=tokyonight&utcOffset=1" alt="Most productive time card" />
 </div>
 
 <div align="center">
@@ -109,40 +109,38 @@
 ## Stack and tools
 
 <div align="center">
-  <sub>Core stack</sub>
+  <sub><strong>Core stack</strong></sub><br />
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=111827" alt="React" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111827" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
+  <img src="https://img.shields.io/badge/Express-111111?style=for-the-badge&logo=express&logoColor=white" alt="Express" />
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
 </div>
-<p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/react/react-original.svg" alt="React" width="66" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/javascript/javascript-original.svg" alt="JavaScript" width="58" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/typescript/typescript-original.svg" alt="TypeScript" width="52" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/nodejs/nodejs-original.svg" alt="Node.js" width="62" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/express/express-original.svg" alt="Express" width="54" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="56" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="56" />
-</p>
+
+<br />
 
 <div align="center">
-  <sub>Also building with</sub>
+  <sub><strong>Also building with</strong></sub><br />
+  <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Java-EA2D2E?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+  <img src="https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white" alt="PowerShell" />
 </div>
-<p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/kotlin/kotlin-original.svg" alt="Kotlin" width="60" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/python/python-original.svg" alt="Python" width="52" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/java/java-original.svg" alt="Java" width="52" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/html5/html5-original.svg" alt="HTML5" width="58" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/css3/css3-original.svg" alt="CSS3" width="58" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/powershell/powershell-original.svg" alt="PowerShell" width="50" />
-</p>
+
+<br />
 
 <div align="center">
-  <sub>Environment and tooling</sub>
+  <sub><strong>Environment and tooling</strong></sub><br />
+  <img src="https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white" alt="VS Code" />
+  <img src="https://img.shields.io/badge/IntelliJ-000000?style=for-the-badge&logo=intellijidea&logoColor=white" alt="IntelliJ IDEA" />
+  <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" alt="Ubuntu" />
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=111827" alt="Linux" />
+  <img src="https://img.shields.io/badge/Arch-1793D1?style=for-the-badge&logo=archlinux&logoColor=white" alt="Arch Linux" />
 </div>
-<p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/vscode/vscode-original.svg" alt="VS Code" width="58" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/intellij/intellij-original.svg" alt="IntelliJ IDEA" width="58" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/ubuntu/ubuntu-original.svg" alt="Ubuntu" width="54" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/linux/linux-original.svg" alt="Linux" width="54" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/archlinux/archlinux-original.svg" alt="Arch Linux" width="54" />
-</p>
 
 ---
 
