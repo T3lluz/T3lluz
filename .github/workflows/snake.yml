@@ -7,6 +7,8 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - "assets/snake/**"
 
 permissions:
   contents: write
@@ -20,20 +22,29 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Generate snake SVGs
-        uses: Platane/snk/svg-only@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          github_user_name: T3lluz
-          outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+          node-version: "22"
 
-      - name: Publish to output branch
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: output
-          publish_dir: dist
-          force_orphan: true
+      - name: Generate snake SVGs into repository
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p assets/snake
+          npx -y generate-snake-animation@3 \
+            --github_user=T3lluz \
+            --output=assets/snake/github-contribution-grid-snake.svg \
+            --output='assets/snake/github-contribution-grid-snake-dark.svg?palette=github-dark'
+
+      - name: Commit and push updated snake files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/snake/github-contribution-grid-snake.svg assets/snake/github-contribution-grid-snake-dark.svg
+          if git diff --cached --quiet; then
+            echo "No snake changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: update contribution snake [skip ci]"
+          git push
