@@ -113,38 +113,38 @@
 
 <div align="center">
   <sub><strong>Core stack</strong></sub><br />
-  <img src="https://cdn.simpleicons.org/react" alt="React" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
-  <img src="https://cdn.simpleicons.org/javascript" alt="JavaScript" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
-  <img src="https://cdn.simpleicons.org/typescript" alt="TypeScript" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
-  <img src="https://cdn.simpleicons.org/nodedotjs" alt="Node.js" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
-  <img src="https://cdn.simpleicons.org/express/F0F6FC" alt="Express" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
-  <img src="https://cdn.simpleicons.org/postgresql" alt="PostgreSQL" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
-  <img src="https://cdn.simpleicons.org/mongodb" alt="MongoDB" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/react/react-original.svg" alt="React" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/javascript/javascript-original.svg" alt="JavaScript" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/typescript/typescript-original.svg" alt="TypeScript" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/nodejs/nodejs-original.svg" alt="Node.js" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://api.iconify.design/simple-icons:express.svg?color=%23F0F6FC" alt="Express" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
 </div>
 
 <br />
 
 <div align="center">
   <sub><strong>Also building with</strong></sub><br />
-  <img src="https://cdn.simpleicons.org/kotlin" alt="Kotlin" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
-  <img src="https://cdn.simpleicons.org/python" alt="Python" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
-  <img src="https://cdn.simpleicons.org/openjdk" alt="Java" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
-  <img src="https://cdn.simpleicons.org/html5" alt="HTML5" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
-  <img src="https://cdn.simpleicons.org/css/1572B6" alt="CSS3" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
-  <img src="https://cdn.simpleicons.org/powershell/5391FE" alt="PowerShell" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/kotlin/kotlin-original.svg" alt="Kotlin" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/python/python-original.svg" alt="Python" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/java/java-original.svg" alt="Java" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/html5/html5-original.svg" alt="HTML5" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/css3/css3-original.svg" alt="CSS3" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/powershell/powershell-original.svg" alt="PowerShell" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
 </div>
 
 <br />
 
 <div align="center">
   <sub><strong>Environment and tooling</strong></sub><br />
-  <img src="https://cdn.simpleicons.org/visualstudiocode/007ACC" alt="VS Code" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
-  <img src="https://cdn.simpleicons.org/intellijidea/F7DF1E" alt="IntelliJ IDEA" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
-  <img src="https://cdn.simpleicons.org/ubuntu/E95420" alt="Ubuntu" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
-  <img src="https://cdn.simpleicons.org/linux/FCC624" alt="Linux" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
-  <img src="https://cdn.simpleicons.org/archlinux/1793D1" alt="Arch Linux" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
-  <img src="https://cdn.simpleicons.org/cursor/93C5FD" alt="Cursor IDE" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
-  <img src="https://cdn.simpleicons.org/virtualbox/60A5FA" alt="Virtual machines" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/vscode/vscode-original.svg" alt="VS Code" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/intellij/intellij-original.svg" alt="IntelliJ IDEA" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/ubuntu/ubuntu-original.svg" alt="Ubuntu" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/linux/linux-original.svg" alt="Linux" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/archlinux/archlinux-original.svg" alt="Arch Linux" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://api.iconify.design/simple-icons:cursor.svg?color=%2393C5FD" alt="Cursor IDE" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
+  <img src="https://api.iconify.design/simple-icons:virtualbox.svg?color=%2360A5FA" alt="Virtual machines" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
 </div>
 
 <br />
