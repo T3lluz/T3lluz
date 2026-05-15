@@ -90,13 +90,13 @@
 </div>
 
 <div align="center">
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=T3lluz&theme=nord_dark" alt="Repos per language" />
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=T3lluz&theme=nord_dark" alt="Most commit language" />
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=T3lluz&theme=github_dark" alt="Repos per language" />
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=T3lluz&theme=github_dark" alt="Most commit language" />
 </div>
 
 <div align="center">
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=T3lluz&theme=nord_dark" alt="GitHub stats overview" />
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=T3lluz&theme=nord_dark&utcOffset=1" alt="Most productive time card" />
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=T3lluz&theme=github_dark" alt="GitHub stats overview" />
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=T3lluz&theme=github_dark&utcOffset=1" alt="Most productive time card" />
 </div>
 
 <div align="center">
@@ -113,36 +113,36 @@
 
 <div align="center">
   <sub><strong>Core stack</strong></sub><br />
-  <img src="https://cdn.simpleicons.org/react/93C5FD" alt="React" width="44" />
-  <img src="https://cdn.simpleicons.org/javascript/BFDBFE" alt="JavaScript" width="44" />
-  <img src="https://cdn.simpleicons.org/typescript/60A5FA" alt="TypeScript" width="44" />
-  <img src="https://cdn.simpleicons.org/nodedotjs/3B82F6" alt="Node.js" width="44" />
-  <img src="https://cdn.simpleicons.org/express/FFFFFF" alt="Express" width="44" />
-  <img src="https://cdn.simpleicons.org/postgresql/1D4ED8" alt="PostgreSQL" width="44" />
-  <img src="https://cdn.simpleicons.org/mongodb/2563EB" alt="MongoDB" width="44" />
+  <img src="https://cdn.simpleicons.org/react" alt="React" width="44" />
+  <img src="https://cdn.simpleicons.org/javascript" alt="JavaScript" width="44" />
+  <img src="https://cdn.simpleicons.org/typescript" alt="TypeScript" width="44" />
+  <img src="https://cdn.simpleicons.org/nodedotjs" alt="Node.js" width="44" />
+  <img src="https://cdn.simpleicons.org/express" alt="Express" width="44" />
+  <img src="https://cdn.simpleicons.org/postgresql" alt="PostgreSQL" width="44" />
+  <img src="https://cdn.simpleicons.org/mongodb" alt="MongoDB" width="44" />
 </div>
 
 <br />
 
 <div align="center">
   <sub><strong>Also building with</strong></sub><br />
-  <img src="https://cdn.simpleicons.org/kotlin/60A5FA" alt="Kotlin" width="44" />
-  <img src="https://cdn.simpleicons.org/python/93C5FD" alt="Python" width="44" />
-  <img src="https://cdn.simpleicons.org/openjdk/FFFFFF" alt="Java" width="44" />
-  <img src="https://cdn.simpleicons.org/html5/3B82F6" alt="HTML5" width="44" />
-  <img src="https://cdn.simpleicons.org/css3/BFDBFE" alt="CSS3" width="44" />
-  <img src="https://cdn.simpleicons.org/powershell/2563EB" alt="PowerShell" width="44" />
+  <img src="https://cdn.simpleicons.org/kotlin" alt="Kotlin" width="44" />
+  <img src="https://cdn.simpleicons.org/python" alt="Python" width="44" />
+  <img src="https://cdn.simpleicons.org/openjdk" alt="Java" width="44" />
+  <img src="https://cdn.simpleicons.org/html5" alt="HTML5" width="44" />
+  <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/css.svg" alt="CSS3" width="44" />
+  <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/powershell.svg" alt="PowerShell" width="44" />
 </div>
 
 <br />
 
 <div align="center">
   <sub><strong>Environment and tooling</strong></sub><br />
-  <img src="https://cdn.simpleicons.org/visualstudiocode/60A5FA" alt="VS Code" width="44" />
-  <img src="https://cdn.simpleicons.org/intellijidea/FFFFFF" alt="IntelliJ IDEA" width="44" />
-  <img src="https://cdn.simpleicons.org/ubuntu/3B82F6" alt="Ubuntu" width="44" />
-  <img src="https://cdn.simpleicons.org/linux/BFDBFE" alt="Linux" width="44" />
-  <img src="https://cdn.simpleicons.org/archlinux/1D4ED8" alt="Arch Linux" width="44" />
+  <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/visualstudiocode.svg" alt="VS Code" width="44" />
+  <img src="https://cdn.simpleicons.org/intellijidea" alt="IntelliJ IDEA" width="44" />
+  <img src="https://cdn.simpleicons.org/ubuntu" alt="Ubuntu" width="44" />
+  <img src="https://cdn.simpleicons.org/linux" alt="Linux" width="44" />
+  <img src="https://cdn.simpleicons.org/archlinux" alt="Arch Linux" width="44" />
   <img src="https://img.shields.io/badge/Cursor%20IDE-93C5FD?style=flat-square&logoColor=0d1117" alt="Cursor IDE" />
   <img src="https://img.shields.io/badge/VM%20Lab-60A5FA?style=flat-square&logoColor=0d1117" alt="Virtual machines" />
 </div>
