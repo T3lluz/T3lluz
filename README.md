@@ -83,17 +83,17 @@
 </div>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/Recent%20repo%20themes-Stream%20Deck%20Plugins%20%C2%B7%20Battery%20Tooling%20%C2%B7%20UI%20Animations-1F6FEB?style=for-the-badge" alt="Recent repo themes" />
+  <sub><strong>Recent repo themes</strong>: Stream Deck plugins · Battery tooling · UI animations</sub>
 </div>
 
 <div align="center">
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=T3lluz&theme=tokyonight" alt="Repos per language" />
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=T3lluz&theme=tokyonight" alt="Most commit language" />
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=T3lluz&theme=nord_dark" alt="Repos per language" />
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=T3lluz&theme=nord_dark" alt="Most commit language" />
 </div>
 
 <div align="center">
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=T3lluz&theme=tokyonight" alt="GitHub stats overview" />
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=T3lluz&theme=tokyonight&utcOffset=1" alt="Most productive time card" />
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=T3lluz&theme=nord_dark" alt="GitHub stats overview" />
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=T3lluz&theme=nord_dark&utcOffset=1" alt="Most productive time card" />
 </div>
 
 <div align="center">
@@ -110,36 +110,36 @@
 
 <div align="center">
   <sub><strong>Core stack</strong></sub><br />
-  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=111827" alt="React" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111827" alt="JavaScript" />
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
-  <img src="https://img.shields.io/badge/Express-111111?style=for-the-badge&logo=express&logoColor=white" alt="Express" />
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
-  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
+  <img src="https://cdn.simpleicons.org/react/93C5FD" alt="React" width="44" />
+  <img src="https://cdn.simpleicons.org/javascript/BFDBFE" alt="JavaScript" width="44" />
+  <img src="https://cdn.simpleicons.org/typescript/60A5FA" alt="TypeScript" width="44" />
+  <img src="https://cdn.simpleicons.org/nodedotjs/3B82F6" alt="Node.js" width="44" />
+  <img src="https://cdn.simpleicons.org/express/FFFFFF" alt="Express" width="44" />
+  <img src="https://cdn.simpleicons.org/postgresql/1D4ED8" alt="PostgreSQL" width="44" />
+  <img src="https://cdn.simpleicons.org/mongodb/2563EB" alt="MongoDB" width="44" />
 </div>
 
 <br />
 
 <div align="center">
   <sub><strong>Also building with</strong></sub><br />
-  <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/Java-EA2D2E?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
-  <img src="https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white" alt="PowerShell" />
+  <img src="https://cdn.simpleicons.org/kotlin/60A5FA" alt="Kotlin" width="44" />
+  <img src="https://cdn.simpleicons.org/python/93C5FD" alt="Python" width="44" />
+  <img src="https://cdn.simpleicons.org/openjdk/FFFFFF" alt="Java" width="44" />
+  <img src="https://cdn.simpleicons.org/html5/3B82F6" alt="HTML5" width="44" />
+  <img src="https://cdn.simpleicons.org/css3/BFDBFE" alt="CSS3" width="44" />
+  <img src="https://cdn.simpleicons.org/powershell/2563EB" alt="PowerShell" width="44" />
 </div>
 
 <br />
 
 <div align="center">
   <sub><strong>Environment and tooling</strong></sub><br />
-  <img src="https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white" alt="VS Code" />
-  <img src="https://img.shields.io/badge/IntelliJ-000000?style=for-the-badge&logo=intellijidea&logoColor=white" alt="IntelliJ IDEA" />
-  <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" alt="Ubuntu" />
-  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=111827" alt="Linux" />
-  <img src="https://img.shields.io/badge/Arch-1793D1?style=for-the-badge&logo=archlinux&logoColor=white" alt="Arch Linux" />
+  <img src="https://cdn.simpleicons.org/visualstudiocode/60A5FA" alt="VS Code" width="44" />
+  <img src="https://cdn.simpleicons.org/intellijidea/FFFFFF" alt="IntelliJ IDEA" width="44" />
+  <img src="https://cdn.simpleicons.org/ubuntu/3B82F6" alt="Ubuntu" width="44" />
+  <img src="https://cdn.simpleicons.org/linux/BFDBFE" alt="Linux" width="44" />
+  <img src="https://cdn.simpleicons.org/archlinux/1D4ED8" alt="Arch Linux" width="44" />
 </div>
 
 ---
