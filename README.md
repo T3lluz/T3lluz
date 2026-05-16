@@ -9,7 +9,7 @@
 </p>
 
 <!-- TYPING_SVG_START -->
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2600&pause=900&color=58A6FF&center=true&vCenter=true&width=1100&lines=Building+with+local+LLMs+in+LM+Studio+and+Cursor+IDE%3BOpenCLAW+is+configured+with+LM+Studio+for+local+agent+flows%3BCurrent+focus%3A+Stream+Deck+plugins%2C+HID+battery+tooling%2C+and+UI+animation%3BAlso+working+with+VM+setups+for+safe+testing+and+reproducible+dev+environments%3BDebug+mode%3A+print%28%29%2C+pray%28%29%2C+and+one+more+coffee." alt="Typing intro" />
+<img width="910" src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2600&pause=900&color=58A6FF&center=true&vCenter=true&width=1100&lines=Building+with+local+LLMs+in+LM+Studio+and+Cursor+IDE%3BOpenCLAW+is+configured+with+LM+Studio+for+local+agent+flows%3BCurrent+focus%3A+Stream+Deck+plugins%2C+HID+battery+tooling%2C+and+UI+animation%3BAlso+working+with+VM+setups+for+safe+testing+and+reproducible+dev+environments%3BDebug+mode%3A+print%28%29%2C+pray%28%29%2C+and+one+more+coffee." alt="Typing intro" />
 <!-- TYPING_SVG_END -->
 
 <br />
@@ -28,7 +28,7 @@
   <img src="https://img.shields.io/badge/Focus-Full--stack%20Web-58A6FF?style=flat-square" alt="Focus badge" />
   <img src="https://img.shields.io/badge/Repo%20themes-Stream%20Deck%20%7C%20UI%20Animations-1F6FEB?style=flat-square" alt="Repo themes badge" />
   <img src="https://img.shields.io/badge/AI%20workflow-LM%20Studio%20%7C%20OpenCLAW%20%7C%20Cursor-58A6FF?style=flat-square" alt="AI workflow badge" /><br /><br />
-  <img width="100%" src="./assets/about/about-carousel.svg" alt="About: three lines per beat, pause, then next slide" />
+  <img width="910" src="./assets/about/about-carousel.svg" alt="About: three lines per beat, pause, then next slide" />
 </div>
 
 <details>
