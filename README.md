@@ -2,7 +2,7 @@
 
 <img width="100%" src="./assets/banner/ascii-neon-scroll.svg" alt="Animated ASCII neon banner" />
 
-<img src="./assets/titles/glitch-hey.svg" alt="Hey, I'm T3lluz" width="460" height="54" />
+<img src="./assets/titles/glitch-hey.svg" alt="Hey, I'm T3lluz" width="644" height="76" />
 
 <p>
   Full-stack student building MERN/PERN apps, Stream Deck tools, local LLM workflows in LM Studio, and UI animation experiments.
@@ -21,7 +21,7 @@
 ---
 
 <div align="center">
-  <img src="./assets/titles/glitch-about.svg" alt="About" width="200" height="52" /><br /><br />
+  <img src="./assets/titles/glitch-about.svg" alt="About" width="280" height="73" /><br /><br />
   <img src="https://img.shields.io/badge/Focus-Full--stack%20Web-58A6FF?style=flat-square" alt="Focus badge" />
   <img src="https://img.shields.io/badge/Repo%20themes-Stream%20Deck%20%7C%20UI%20Animations-1F6FEB?style=flat-square" alt="Repo themes badge" />
   <img src="https://img.shields.io/badge/AI%20workflow-LM%20Studio%20%7C%20OpenCLAW%20%7C%20Cursor-58A6FF?style=flat-square" alt="AI workflow badge" /><br /><br />
@@ -83,7 +83,7 @@
 ---
 
 <div align="center">
-  <img src="./assets/titles/glitch-pulse.svg" alt="GitHub Pulse" width="320" height="52" /><br /><br />
+  <img src="./assets/titles/glitch-pulse.svg" alt="GitHub Pulse" width="448" height="73" /><br /><br />
   <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=T3lluz&theme=github-dark&hide_border=true&days=180&custom_title=T3lluz%20Contribution%20Timeline%20(Last%206%20Months)" alt="GitHub activity graph" />
 </div>
 
@@ -98,7 +98,7 @@
 ---
 
 <div align="center">
-  <img src="./assets/titles/glitch-stack.svg" alt="Stack and tools" width="380" height="52" /><br /><br />
+  <img src="./assets/titles/glitch-stack.svg" alt="Stack and tools" width="532" height="73" /><br /><br />
   <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%" style="max-width:1100px;">
     <tbody>
       <tr valign="top">
@@ -154,7 +154,7 @@
 ---
 
 <div align="center">
-  <img src="./assets/titles/glitch-contact.svg" alt="Contact" width="220" height="52" /><br /><br />
+  <img src="./assets/titles/glitch-contact.svg" alt="Contact" width="308" height="73" /><br /><br />
   <a href="https://github.com/T3lluz"><img src="https://img.shields.io/badge/GitHub-T3lluz-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub profile" /></a>
   <a href="mailto:fstalsberg@gmail.com"><img src="https://img.shields.io/badge/Email-fstalsberg%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Fredrik" /></a>
   <img src="https://img.shields.io/badge/Discord-T3lluz1337-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord T3lluz1337" />
