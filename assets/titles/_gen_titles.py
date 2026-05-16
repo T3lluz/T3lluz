@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Regenerate glitch-*.svg title reels: 32 fast shuffle frames in first 25%% of dur, hold final 75%%; sparse per-char dim via tspans + CSS."""
+"""Regenerate glitch-*.svg title reels: 32 fast shuffle frames in first 25%% of dur, hold final 75%%; per-char tspans with dim + chroma/skew/blur glitches."""
+
+from __future__ import annotations
 
 def keytimes_shuffle_hold(shuffle_steps: int = 32, shuffle_frac: float = 0.25) -> str:
     # shuffle_steps keyTimes in [0, shuffle_frac), then shuffle_frac, then 1.0 (duplicate final state)
@@ -53,24 +55,174 @@ def tspans_for_line(s: str, row_idx: int, dur: str, anim_delay: str) -> str:
     return "".join(parts)
 
 
-def build_char_dim_keyframes() -> str:
-    """Few narrow opacity dips (shuffle busier than hold); paired with per-tspan animation-delay."""
-    events: list[tuple[float, float]] = []
-    for p in (0.7, 2.1, 3.8, 5.9, 8.4, 11.2, 14.0, 17.5, 20.8, 23.5):
-        events.append((p, 0.34))
-        events.append((min(p + 0.16, 24.95), 1.0))
-    for p in (34, 48, 58, 69, 79, 90):
-        events.append((p, 0.4))
-        events.append((min(p + 0.14, 99.92), 1.0))
-    events.append((0.0, 1.0))
-    events.append((100.0, 1.0))
-    by_t: dict[float, float] = {}
-    for t, op in events:
-        t = round(t, 2)
-        by_t[t] = op
-    return "\n".join(
-        f"        {t}% {{ opacity: {by_t[t]}; }}" for t in sorted(by_t)
+CALM_CHAR = (
+    "opacity:1;"
+    "transform:translate(0,0) skewX(0deg) scaleX(1);"
+    "filter:none;"
+    "text-shadow:0 0 6px rgba(56,189,248,.14),0 0 1px rgba(120,190,255,.28);"
+)
+
+
+def _glitch_shuffle(i: int) -> tuple[dict[str, float | str], dict[str, float | str]]:
+    """Peak + tail (motion smear) keyframe payloads for shuffle-phase glitches."""
+    peaks = (
+        dict(
+            op=0.32,
+            dx=-5.0,
+            skew=-6.0,
+            sx=0.91,
+            blur=0.95,
+            sh=(
+                "-6px 0 0 rgba(255,75,130,.58),6px 0 0 rgba(55,220,255,.55),"
+                "-12px 0 14px rgba(160,210,255,.42),12px 0 14px rgba(70,195,255,.32),"
+                "0 0 10px rgba(230,245,255,.5)"
+            ),
+        ),
+        dict(
+            op=0.36,
+            dx=5.0,
+            skew=5.5,
+            sx=1.08,
+            blur=0.8,
+            sh=(
+                "7px 0 0 rgba(255,90,150,.52),-7px 0 0 rgba(50,210,255,.58),"
+                "13px 0 12px rgba(100,190,255,.38),-13px 0 12px rgba(180,220,255,.35),"
+                "0 0 8px rgba(255,255,255,.45)"
+            ),
+        ),
+        dict(
+            op=0.3,
+            dx=-3.5,
+            skew=7.0,
+            sx=0.88,
+            blur=1.05,
+            sh=(
+                "-5px 0 0 rgba(255,120,180,.5),5px 0 0 rgba(40,200,245,.55),"
+                "-10px 0 18px rgba(130,200,255,.45),10px 0 18px rgba(60,170,255,.3),"
+                "-2px 0 6px rgba(255,255,255,.4)"
+            ),
+        ),
+        dict(
+            op=0.35,
+            dx=4.0,
+            skew=-4.0,
+            sx=1.05,
+            blur=0.72,
+            sh=(
+                "-4px 0 0 rgba(255,70,120,.55),4px 0 0 rgba(65,230,255,.52),"
+                "-9px 0 10px rgba(200,230,255,.4),9px 0 10px rgba(80,185,255,.35),"
+                "0 1px 8px rgba(220,240,255,.42)"
+            ),
+        ),
     )
+    p = peaks[i % len(peaks)]
+    tail = dict(
+        op=min(float(p["op"]) + 0.22, 0.78),
+        dx=-float(p["dx"]) * 0.45,
+        skew=-float(p["skew"]) * 0.35,
+        sx=float(p["sx"]) + (1.0 - float(p["sx"])) * 0.4,
+        blur=max(float(p["blur"]) * 0.42, 0.35),
+        sh=(
+            "-3px 0 0 rgba(255,100,160,.35),3px 0 0 rgba(80,210,255,.38),"
+            "-6px 0 8px rgba(140,200,255,.28),6px 0 8px rgba(90,190,255,.22),"
+            "0 0 5px rgba(200,230,255,.32)"
+        ),
+    )
+    return p, tail
+
+
+def _glitch_hold(i: int) -> tuple[dict[str, float | str], dict[str, float | str]]:
+    peaks = (
+        dict(
+            op=0.38,
+            dx=-3.0,
+            skew=-3.5,
+            sx=0.94,
+            blur=0.55,
+            sh=(
+                "-4px 0 0 rgba(255,95,140,.45),4px 0 0 rgba(70,215,255,.48),"
+                "-8px 0 10px rgba(150,210,255,.32),8px 0 10px rgba(85,195,255,.25),"
+                "0 0 6px rgba(220,240,255,.38)"
+            ),
+        ),
+        dict(
+            op=0.42,
+            dx=3.0,
+            skew=3.0,
+            sx=1.04,
+            blur=0.48,
+            sh=(
+                "4px 0 0 rgba(255,85,130,.42),-4px 0 0 rgba(60,220,255,.45),"
+                "8px 0 8px rgba(120,200,255,.28),-8px 0 8px rgba(160,220,255,.26),"
+                "0 0 5px rgba(230,245,255,.35)"
+            ),
+        ),
+        dict(
+            op=0.4,
+            dx=-2.0,
+            skew=4.0,
+            sx=0.96,
+            blur=0.62,
+            sh=(
+                "-3px 0 0 rgba(255,110,170,.4),3px 0 0 rgba(55,205,250,.44),"
+                "-7px 0 12px rgba(170,220,255,.3),7px 0 12px rgba(75,185,255,.24),"
+                "0 0 7px rgba(210,235,255,.36)"
+            ),
+        ),
+    )
+    p = peaks[i % len(peaks)]
+    tail = dict(
+        op=min(float(p["op"]) + 0.18, 0.82),
+        dx=-float(p["dx"]) * 0.4,
+        skew=-float(p["skew"]) * 0.3,
+        sx=float(p["sx"]) + (1.0 - float(p["sx"])) * 0.35,
+        blur=max(float(p["blur"]) * 0.38, 0.28),
+        sh=(
+            "-2px 0 0 rgba(255,120,170,.28),2px 0 0 rgba(90,215,255,.32),"
+            "-4px 0 6px rgba(150,210,255,.22),4px 0 6px rgba(100,195,255,.18),"
+            "0 0 4px rgba(200,230,255,.25)"
+        ),
+    )
+    return p, tail
+
+
+def _css_glitch(g: dict[str, float | str]) -> str:
+    op = round(float(g["op"]), 2)
+    dx = round(float(g["dx"]), 2)
+    skew = round(float(g["skew"]), 2)
+    sx = round(float(g["sx"]), 3)
+    blur = round(float(g["blur"]), 2)
+    sh = str(g["sh"])
+    return (
+        f"opacity:{op};"
+        f"transform:translate({dx}px,0) skewX({skew}deg) scaleX({sx});"
+        f"filter:blur({blur}px);"
+        f"text-shadow:{sh};"
+    )
+
+
+def build_char_dim_keyframes() -> str:
+    """Sparse glitches: peak (chroma + skew + blur + dim), short tail, then calm."""
+    by_t: dict[float, str] = {}
+    for i, p in enumerate((0.7, 2.1, 3.8, 5.9, 8.4, 11.2, 14.0, 17.5, 20.8, 23.5)):
+        peak, tail = _glitch_shuffle(i)
+        t0 = round(p, 2)
+        t1 = round(min(p + 0.055, 24.9), 2)
+        t2 = round(min(p + 0.15, 24.98), 2)
+        by_t[t0] = _css_glitch(peak)
+        by_t[t1] = _css_glitch(tail)
+        by_t[t2] = CALM_CHAR
+    for i, p in enumerate((34, 48, 58, 69, 79, 90)):
+        peak, tail = _glitch_hold(i)
+        t0 = round(float(p), 2)
+        t1 = round(min(p + 0.05, 99.88), 2)
+        t2 = round(min(p + 0.13, 99.95), 2)
+        by_t[t0] = _css_glitch(peak)
+        by_t[t1] = _css_glitch(tail)
+        by_t[t2] = CALM_CHAR
+    by_t[0.0] = CALM_CHAR
+    by_t[100.0] = CALM_CHAR
+    return "\n".join(f"        {t}% {{{by_t[t]}}}" for t in sorted(by_t))
 
 
 def wrap_svg(
@@ -112,6 +264,8 @@ def wrap_svg(
       .row{{{font_row}text-shadow:0 0 6px rgba(56,189,248,.14),0 0 1px rgba(120,190,255,.28);}}
       .final{{{font_final}text-shadow:0 0 6px rgba(56,189,248,.14),0 0 1px rgba(120,190,255,.28);}}
       .row tspan.ch, .final tspan.ch {{
+        transform-box: fill-box;
+        transform-origin: 50% 50%;
         animation: charDim-{vid} {dur} linear infinite;
       }}
       #slotwrap-{vid}{{
