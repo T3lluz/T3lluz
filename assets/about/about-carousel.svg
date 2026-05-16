@@ -1,133 +1,143 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 128" width="1000" height="128" role="img" aria-label="About">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 -10 1000 150" width="1000" height="150" overflow="visible" role="img" aria-label="About">
   <title>About</title>
   <rect width="100%" height="100%" fill="transparent"/>
-  <defs><style type="text/css"><![CDATA[.ln{font:18px/1.35 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#58A6FF;}]]></style></defs>
+  <defs><style type="text/css"><![CDATA[.ln{font:18px/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#58A6FF;}]]></style></defs>
   <g id="g0" opacity="1">
     <clipPath id="cp0_0">
-      <rect id="r0_0" x="14" y="12" width="0" height="28">
-        <animate id="type0_0" attributeName="width" from="0" to="972" dur="0.200s" begin="0s; cycl.end+0.080s" fill="freeze"/>
+      <rect id="r0_0" x="20" y="10" width="0" height="32">
+        <animate id="type0_0" attributeName="width" from="0" to="960" dur="0.200s" begin="0s; cycl.end+0.080s" fill="freeze"/>
+        <animate id="back0_0" attributeName="width" from="960" to="0" dur="0.120s" begin="back0_1.end+0.028s" fill="freeze"/>
       </rect>
     </clipPath>
-    <text class="ln" x="14" y="34" clip-path="url(#cp0_0)">› who: student dev · practical web · clean UX</text>
+    <text class="ln" x="20" y="34" clip-path="url(#cp0_0)">› who: student dev · practical web · clean UX</text>
     <clipPath id="cp0_1">
-      <rect id="r0_1" x="14" y="46" width="0" height="28">
-        <animate id="type0_1" attributeName="width" from="0" to="972" dur="0.200s" begin="type0_0.end+0.030s" fill="freeze"/>
+      <rect id="r0_1" x="20" y="44" width="0" height="32">
+        <animate id="type0_1" attributeName="width" from="0" to="960" dur="0.200s" begin="type0_0.end+0.030s" fill="freeze"/>
+        <animate id="back0_1" attributeName="width" from="960" to="0" dur="0.120s" begin="back0_2.end+0.028s" fill="freeze"/>
       </rect>
     </clipPath>
-    <text class="ln" x="14" y="68" clip-path="url(#cp0_1)">› web: JavaScript · React · Node · HTML/CSS</text>
+    <text class="ln" x="20" y="68" clip-path="url(#cp0_1)">› web: JavaScript · React · Node · HTML/CSS</text>
     <clipPath id="cp0_2">
-      <rect id="r0_2" x="14" y="80" width="0" height="28">
-        <animate id="type0_2" attributeName="width" from="0" to="972" dur="0.200s" begin="type0_1.end+0.030s" fill="freeze"/>
+      <rect id="r0_2" x="20" y="78" width="0" height="32">
+        <animate id="type0_2" attributeName="width" from="0" to="960" dur="0.200s" begin="type0_1.end+0.030s" fill="freeze"/>
+        <animate id="back0_2" attributeName="width" from="960" to="0" dur="0.120s" begin="hold0.end+0.070s" fill="freeze"/>
       </rect>
     </clipPath>
-    <text class="ln" x="14" y="102" clip-path="url(#cp0_2)">› data: Postgres · Mongo · SQL + NoSQL</text>
+    <text class="ln" x="20" y="102" clip-path="url(#cp0_2)">› data: Postgres · Mongo · SQL + NoSQL</text>
     <rect width="0" height="0" opacity="0" pointer-events="none">
       <animate id="hold0" attributeName="x" from="0" to="0" dur="6.200s" begin="type0_2.end" fill="freeze"/>
     </rect>
-    <animate id="wipe0" attributeName="opacity" from="1" to="0" dur="0.200s" begin="hold0.end" fill="freeze"/>
   </g>
   <g id="g1" opacity="0">
-    <animate id="show1" attributeName="opacity" from="0" to="1" dur="0.020s" begin="wipe0.end+0.080s" fill="freeze"/>
+    <animate id="show1" attributeName="opacity" from="0" to="1" dur="0.020s" begin="back0_0.end+0.080s" fill="freeze"/>
     <clipPath id="cp1_0">
-      <rect id="r1_0" x="14" y="12" width="0" height="28">
-        <animate id="type1_0" attributeName="width" from="0" to="972" dur="0.200s" begin="wipe0.end+0.080s" fill="freeze"/>
+      <rect id="r1_0" x="20" y="10" width="0" height="32">
+        <animate id="type1_0" attributeName="width" from="0" to="960" dur="0.200s" begin="back0_0.end+0.080s" fill="freeze"/>
+        <animate id="back1_0" attributeName="width" from="960" to="0" dur="0.120s" begin="back1_1.end+0.028s" fill="freeze"/>
       </rect>
     </clipPath>
-    <text class="ln" x="14" y="34" clip-path="url(#cp1_0)">› langs: Kotlin · TypeScript · Python · Java</text>
+    <text class="ln" x="20" y="34" clip-path="url(#cp1_0)">› langs: Kotlin · TypeScript · Python · Java</text>
     <clipPath id="cp1_1">
-      <rect id="r1_1" x="14" y="46" width="0" height="28">
-        <animate id="type1_1" attributeName="width" from="0" to="972" dur="0.200s" begin="type1_0.end+0.030s" fill="freeze"/>
+      <rect id="r1_1" x="20" y="44" width="0" height="32">
+        <animate id="type1_1" attributeName="width" from="0" to="960" dur="0.200s" begin="type1_0.end+0.030s" fill="freeze"/>
+        <animate id="back1_1" attributeName="width" from="960" to="0" dur="0.120s" begin="back1_2.end+0.028s" fill="freeze"/>
       </rect>
     </clipPath>
-    <text class="ln" x="14" y="68" clip-path="url(#cp1_1)">› local AI: LM Studio + OpenCLAW + Cursor</text>
+    <text class="ln" x="20" y="68" clip-path="url(#cp1_1)">› local AI: LM Studio + OpenCLAW + Cursor</text>
     <clipPath id="cp1_2">
-      <rect id="r1_2" x="14" y="80" width="0" height="28">
-        <animate id="type1_2" attributeName="width" from="0" to="972" dur="0.200s" begin="type1_1.end+0.030s" fill="freeze"/>
+      <rect id="r1_2" x="20" y="78" width="0" height="32">
+        <animate id="type1_2" attributeName="width" from="0" to="960" dur="0.200s" begin="type1_1.end+0.030s" fill="freeze"/>
+        <animate id="back1_2" attributeName="width" from="960" to="0" dur="0.120s" begin="hold1.end+0.070s" fill="freeze"/>
       </rect>
     </clipPath>
-    <text class="ln" x="14" y="102" clip-path="url(#cp1_2)">› work: small deliverables you can ship</text>
+    <text class="ln" x="20" y="102" clip-path="url(#cp1_2)">› work: small deliverables you can ship</text>
     <rect width="0" height="0" opacity="0" pointer-events="none">
       <animate id="hold1" attributeName="x" from="0" to="0" dur="6.200s" begin="type1_2.end" fill="freeze"/>
     </rect>
-    <animate id="wipe1" attributeName="opacity" from="1" to="0" dur="0.200s" begin="hold1.end" fill="freeze"/>
   </g>
   <g id="g2" opacity="0">
-    <animate id="show2" attributeName="opacity" from="0" to="1" dur="0.020s" begin="wipe1.end+0.080s" fill="freeze"/>
+    <animate id="show2" attributeName="opacity" from="0" to="1" dur="0.020s" begin="back1_0.end+0.080s" fill="freeze"/>
     <clipPath id="cp2_0">
-      <rect id="r2_0" x="14" y="12" width="0" height="28">
-        <animate id="type2_0" attributeName="width" from="0" to="972" dur="0.200s" begin="wipe1.end+0.080s" fill="freeze"/>
+      <rect id="r2_0" x="20" y="10" width="0" height="32">
+        <animate id="type2_0" attributeName="width" from="0" to="960" dur="0.200s" begin="back1_0.end+0.080s" fill="freeze"/>
+        <animate id="back2_0" attributeName="width" from="960" to="0" dur="0.120s" begin="back2_1.end+0.028s" fill="freeze"/>
       </rect>
     </clipPath>
-    <text class="ln" x="14" y="34" clip-path="url(#cp2_0)">› ship: maintainability over cleverness</text>
+    <text class="ln" x="20" y="34" clip-path="url(#cp2_0)">› ship: maintainability over cleverness</text>
     <clipPath id="cp2_1">
-      <rect id="r2_1" x="14" y="46" width="0" height="28">
-        <animate id="type2_1" attributeName="width" from="0" to="972" dur="0.200s" begin="type2_0.end+0.030s" fill="freeze"/>
+      <rect id="r2_1" x="20" y="44" width="0" height="32">
+        <animate id="type2_1" attributeName="width" from="0" to="960" dur="0.200s" begin="type2_0.end+0.030s" fill="freeze"/>
+        <animate id="back2_1" attributeName="width" from="960" to="0" dur="0.120s" begin="back2_2.end+0.028s" fill="freeze"/>
       </rect>
     </clipPath>
-    <text class="ln" x="14" y="68" clip-path="url(#cp2_1)">› feel: DX + performance from day one</text>
+    <text class="ln" x="20" y="68" clip-path="url(#cp2_1)">› feel: DX + performance from day one</text>
     <clipPath id="cp2_2">
-      <rect id="r2_2" x="14" y="80" width="0" height="28">
-        <animate id="type2_2" attributeName="width" from="0" to="972" dur="0.200s" begin="type2_1.end+0.030s" fill="freeze"/>
+      <rect id="r2_2" x="20" y="78" width="0" height="32">
+        <animate id="type2_2" attributeName="width" from="0" to="960" dur="0.200s" begin="type2_1.end+0.030s" fill="freeze"/>
+        <animate id="back2_2" attributeName="width" from="960" to="0" dur="0.120s" begin="hold2.end+0.070s" fill="freeze"/>
       </rect>
     </clipPath>
-    <text class="ln" x="14" y="102" clip-path="url(#cp2_2)">› sandbox: VMs for isolated experiments</text>
+    <text class="ln" x="20" y="102" clip-path="url(#cp2_2)">› sandbox: VMs for isolated experiments</text>
     <rect width="0" height="0" opacity="0" pointer-events="none">
       <animate id="hold2" attributeName="x" from="0" to="0" dur="6.200s" begin="type2_2.end" fill="freeze"/>
     </rect>
-    <animate id="wipe2" attributeName="opacity" from="1" to="0" dur="0.200s" begin="hold2.end" fill="freeze"/>
   </g>
   <g id="g3" opacity="0">
-    <animate id="show3" attributeName="opacity" from="0" to="1" dur="0.020s" begin="wipe2.end+0.080s" fill="freeze"/>
+    <animate id="show3" attributeName="opacity" from="0" to="1" dur="0.020s" begin="back2_0.end+0.080s" fill="freeze"/>
     <clipPath id="cp3_0">
-      <rect id="r3_0" x="14" y="12" width="0" height="28">
-        <animate id="type3_0" attributeName="width" from="0" to="972" dur="0.200s" begin="wipe2.end+0.080s" fill="freeze"/>
+      <rect id="r3_0" x="20" y="10" width="0" height="32">
+        <animate id="type3_0" attributeName="width" from="0" to="960" dur="0.200s" begin="back2_0.end+0.080s" fill="freeze"/>
+        <animate id="back3_0" attributeName="width" from="960" to="0" dur="0.120s" begin="back3_1.end+0.028s" fill="freeze"/>
       </rect>
     </clipPath>
-    <text class="ln" x="14" y="34" clip-path="url(#cp3_0)">› beyond: Stream Deck + HID batteries</text>
+    <text class="ln" x="20" y="34" clip-path="url(#cp3_0)">› beyond: Stream Deck + HID batteries</text>
     <clipPath id="cp3_1">
-      <rect id="r3_1" x="14" y="46" width="0" height="28">
-        <animate id="type3_1" attributeName="width" from="0" to="972" dur="0.200s" begin="type3_0.end+0.030s" fill="freeze"/>
+      <rect id="r3_1" x="20" y="44" width="0" height="32">
+        <animate id="type3_1" attributeName="width" from="0" to="960" dur="0.200s" begin="type3_0.end+0.030s" fill="freeze"/>
+        <animate id="back3_1" attributeName="width" from="960" to="0" dur="0.120s" begin="back3_2.end+0.028s" fill="freeze"/>
       </rect>
     </clipPath>
-    <text class="ln" x="14" y="68" clip-path="url(#cp3_1)">› polish: UI themes + Linux/Windows tuning</text>
+    <text class="ln" x="20" y="68" clip-path="url(#cp3_1)">› polish: UI themes + Linux/Windows tuning</text>
     <clipPath id="cp3_2">
-      <rect id="r3_2" x="14" y="80" width="0" height="28">
-        <animate id="type3_2" attributeName="width" from="0" to="972" dur="0.200s" begin="type3_1.end+0.030s" fill="freeze"/>
+      <rect id="r3_2" x="20" y="78" width="0" height="32">
+        <animate id="type3_2" attributeName="width" from="0" to="960" dur="0.200s" begin="type3_1.end+0.030s" fill="freeze"/>
+        <animate id="back3_2" attributeName="width" from="960" to="0" dur="0.120s" begin="hold3.end+0.070s" fill="freeze"/>
       </rect>
     </clipPath>
-    <text class="ln" x="14" y="102" clip-path="url(#cp3_2)">› LLMs: local tinkering with LM Studio</text>
+    <text class="ln" x="20" y="102" clip-path="url(#cp3_2)">› LLMs: local tinkering with LM Studio</text>
     <rect width="0" height="0" opacity="0" pointer-events="none">
       <animate id="hold3" attributeName="x" from="0" to="0" dur="6.200s" begin="type3_2.end" fill="freeze"/>
     </rect>
-    <animate id="wipe3" attributeName="opacity" from="1" to="0" dur="0.200s" begin="hold3.end" fill="freeze"/>
   </g>
   <g id="g4" opacity="0">
-    <animate id="show4" attributeName="opacity" from="0" to="1" dur="0.020s" begin="wipe3.end+0.080s" fill="freeze"/>
+    <animate id="show4" attributeName="opacity" from="0" to="1" dur="0.020s" begin="back3_0.end+0.080s" fill="freeze"/>
     <clipPath id="cp4_0">
-      <rect id="r4_0" x="14" y="12" width="0" height="28">
-        <animate id="type4_0" attributeName="width" from="0" to="972" dur="0.200s" begin="wipe3.end+0.080s" fill="freeze"/>
+      <rect id="r4_0" x="20" y="10" width="0" height="32">
+        <animate id="type4_0" attributeName="width" from="0" to="960" dur="0.200s" begin="back3_0.end+0.080s" fill="freeze"/>
+        <animate id="back4_0" attributeName="width" from="960" to="0" dur="0.120s" begin="back4_1.end+0.028s" fill="freeze"/>
       </rect>
     </clipPath>
-    <text class="ln" x="14" y="34" clip-path="url(#cp4_0)">› fun: print(), pray(), more coffee</text>
+    <text class="ln" x="20" y="34" clip-path="url(#cp4_0)">› fun: print(), pray(), more coffee</text>
     <clipPath id="cp4_1">
-      <rect id="r4_1" x="14" y="46" width="0" height="28">
-        <animate id="type4_1" attributeName="width" from="0" to="972" dur="0.200s" begin="type4_0.end+0.030s" fill="freeze"/>
+      <rect id="r4_1" x="20" y="44" width="0" height="32">
+        <animate id="type4_1" attributeName="width" from="0" to="960" dur="0.200s" begin="type4_0.end+0.030s" fill="freeze"/>
+        <animate id="back4_1" attributeName="width" from="960" to="0" dur="0.120s" begin="back4_2.end+0.028s" fill="freeze"/>
       </rect>
     </clipPath>
-    <text class="ln" x="14" y="68" clip-path="url(#cp4_1)">› lore: one tweak → whole desktop saga</text>
+    <text class="ln" x="20" y="68" clip-path="url(#cp4_1)">› lore: one tweak → whole desktop saga</text>
     <clipPath id="cp4_2">
-      <rect id="r4_2" x="14" y="80" width="0" height="28">
-        <animate id="type4_2" attributeName="width" from="0" to="972" dur="0.200s" begin="type4_1.end+0.030s" fill="freeze"/>
+      <rect id="r4_2" x="20" y="78" width="0" height="32">
+        <animate id="type4_2" attributeName="width" from="0" to="960" dur="0.200s" begin="type4_1.end+0.030s" fill="freeze"/>
+        <animate id="back4_2" attributeName="width" from="960" to="0" dur="0.120s" begin="hold4.end+0.070s" fill="freeze"/>
       </rect>
     </clipPath>
-    <text class="ln" x="14" y="102" clip-path="url(#cp4_2)">› muscle: openclaw + lmstudio on repeat</text>
+    <text class="ln" x="20" y="102" clip-path="url(#cp4_2)">› muscle: openclaw + lmstudio on repeat</text>
     <rect width="0" height="0" opacity="0" pointer-events="none">
       <animate id="hold4" attributeName="x" from="0" to="0" dur="6.200s" begin="type4_2.end" fill="freeze"/>
     </rect>
-    <animate id="wipe4" attributeName="opacity" from="1" to="0" dur="0.200s" begin="hold4.end" fill="freeze"/>
   </g>
   <rect width="0" height="0" opacity="0" pointer-events="none">
-    <animate id="cycl" attributeName="x" from="0" to="0" dur="0.020s" begin="wipe4.end" fill="freeze"/>
+    <animate id="cycl" attributeName="x" from="0" to="0" dur="0.020s" begin="back4_0.end" fill="freeze"/>
   </rect>
   <set href="#r0_0" xlink:href="#r0_0" attributeName="width" to="0" begin="cycl.end" fill="freeze"/>
   <set href="#r0_1" xlink:href="#r0_1" attributeName="width" to="0" begin="cycl.end" fill="freeze"/>
