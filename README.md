@@ -99,47 +99,52 @@
 
 <div align="center">
   <img src="./assets/titles/glitch-stack.svg" alt="Stack and tools" width="532" height="73" /><br /><br />
-  <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%" style="max-width:1400px;">
+  <div style="max-width:980px;width:100%;margin:0 auto;padding:0 8px;box-sizing:border-box;">
+  <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0;border:1px solid rgba(88,166,255,0.38);border-radius:10px;overflow:hidden;background:rgba(13,17,23,0.35);">
+    <colgroup><col style="width:50%;" /><col style="width:50%;" /></colgroup>
     <tbody>
       <tr valign="top">
-        <td align="center" width="58%" style="padding:8px 4px 28px;">
-          <p style="color:#79b8ff;font-weight:800;font-size:1.28em;letter-spacing:0.14em;margin:8px 0 18px;line-height:1.55;text-shadow:0 0 6px #58A6FF,0 0 12px rgba(88,166,255,0.65),0 0 22px rgba(31,111,235,0.35),0 0 28px rgba(31,111,235,0.14);">Core stack</p>
-          <div style="white-space:nowrap;display:inline-block;text-align:center;">
-          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/react/react-original.svg" alt="React" width="42" height="42" style="margin:5px 2px;vertical-align:middle;" />
-          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/javascript/javascript-original.svg" alt="JavaScript" width="42" height="42" style="margin:5px 2px;vertical-align:middle;" />
-          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/typescript/typescript-original.svg" alt="TypeScript" width="42" height="42" style="margin:5px 2px;vertical-align:middle;" />
-          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/nodejs/nodejs-original.svg" alt="Node.js" width="42" height="42" style="margin:5px 2px;vertical-align:middle;" />
-          <img src="https://api.iconify.design/simple-icons:express.svg?color=%23F0F6FC" alt="Express" width="42" height="42" style="margin:5px 2px;vertical-align:middle;" />
-          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="42" height="42" style="margin:5px 2px;vertical-align:middle;" />
-          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="42" height="42" style="margin:5px 2px;vertical-align:middle;" />
+        <td align="center" style="padding:14px 6px 22px;border-right:1px solid rgba(88,166,255,0.22);vertical-align:top;">
+          <p style="color:#79b8ff;font-weight:800;font-size:1.15em;letter-spacing:0.12em;margin:0 0 14px;line-height:1.45;text-shadow:0 0 6px #58A6FF,0 0 12px rgba(88,166,255,0.65),0 0 22px rgba(31,111,235,0.35),0 0 28px rgba(31,111,235,0.14);">Core stack</p>
+          <div style="white-space:nowrap;display:inline-block;text-align:center;line-height:0;">
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/react/react-original.svg" alt="React" width="40" height="40" style="margin:5px 2px;vertical-align:middle;" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/javascript/javascript-original.svg" alt="JavaScript" width="40" height="40" style="margin:5px 2px;vertical-align:middle;" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/typescript/typescript-original.svg" alt="TypeScript" width="40" height="40" style="margin:5px 2px;vertical-align:middle;" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/nodejs/nodejs-original.svg" alt="Node.js" width="40" height="40" style="margin:5px 2px;vertical-align:middle;" />
+          <img src="https://api.iconify.design/simple-icons:express.svg?color=%23F0F6FC" alt="Express" width="40" height="40" style="margin:5px 2px;vertical-align:middle;" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="40" height="40" style="margin:5px 2px;vertical-align:middle;" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="40" height="40" style="margin:5px 2px;vertical-align:middle;" />
           </div>
         </td>
-        <td align="center" width="42%" style="padding:8px 4px 28px;">
-          <p style="color:#79b8ff;font-weight:800;font-size:1.28em;letter-spacing:0.14em;margin:8px 0 18px;line-height:1.55;text-shadow:0 0 6px #58A6FF,0 0 12px rgba(88,166,255,0.65),0 0 22px rgba(31,111,235,0.35),0 0 28px rgba(31,111,235,0.14);">Also building with</p>
-          <div style="white-space:nowrap;display:inline-block;text-align:center;">
-          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/kotlin/kotlin-original.svg" alt="Kotlin" width="44" height="44" style="margin:6px 3px;vertical-align:middle;" />
-          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/python/python-original.svg" alt="Python" width="44" height="44" style="margin:6px 3px;vertical-align:middle;" />
-          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/java/java-original.svg" alt="Java" width="44" height="44" style="margin:6px 3px;vertical-align:middle;" />
-          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/html5/html5-original.svg" alt="HTML5" width="44" height="44" style="margin:6px 3px;vertical-align:middle;" />
-          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/css3/css3-original.svg" alt="CSS3" width="44" height="44" style="margin:6px 3px;vertical-align:middle;" />
-          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/powershell/powershell-original.svg" alt="PowerShell" width="44" height="44" style="margin:6px 3px;vertical-align:middle;" />
+        <td align="center" style="padding:14px 6px 22px;vertical-align:top;">
+          <p style="color:#79b8ff;font-weight:800;font-size:1.15em;letter-spacing:0.12em;margin:0 0 14px;line-height:1.45;text-shadow:0 0 6px #58A6FF,0 0 12px rgba(88,166,255,0.65),0 0 22px rgba(31,111,235,0.35),0 0 28px rgba(31,111,235,0.14);">Also building with</p>
+          <div style="white-space:nowrap;display:inline-block;text-align:center;line-height:0;">
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/kotlin/kotlin-original.svg" alt="Kotlin" width="40" height="40" style="margin:5px 2px;vertical-align:middle;" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/python/python-original.svg" alt="Python" width="40" height="40" style="margin:5px 2px;vertical-align:middle;" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/java/java-original.svg" alt="Java" width="40" height="40" style="margin:5px 2px;vertical-align:middle;" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/html5/html5-original.svg" alt="HTML5" width="40" height="40" style="margin:5px 2px;vertical-align:middle;" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/css3/css3-original.svg" alt="CSS3" width="40" height="40" style="margin:5px 2px;vertical-align:middle;" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/powershell/powershell-original.svg" alt="PowerShell" width="40" height="40" style="margin:5px 2px;vertical-align:middle;" />
           </div>
         </td>
       </tr>
       <tr>
-        <td align="center" colspan="2" style="padding:12px 8px 8px;white-space:nowrap;">
-          <p style="color:#79b8ff;font-weight:800;font-size:1.28em;letter-spacing:0.14em;margin:12px 0 18px;line-height:1.55;text-shadow:0 0 6px #58A6FF,0 0 12px rgba(88,166,255,0.65),0 0 22px rgba(31,111,235,0.35),0 0 28px rgba(31,111,235,0.14);">Environment and tooling</p>
-          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/vscode/vscode-original.svg" alt="VS Code" width="44" height="44" style="margin:6px 3px;vertical-align:middle;" />
-          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/intellij/intellij-original.svg" alt="IntelliJ IDEA" width="44" height="44" style="margin:6px 3px;vertical-align:middle;" />
-          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/ubuntu/ubuntu-original.svg" alt="Ubuntu" width="44" height="44" style="margin:6px 3px;vertical-align:middle;" />
-          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/linux/linux-original.svg" alt="Linux" width="44" height="44" style="margin:6px 3px;vertical-align:middle;" />
-          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/archlinux/archlinux-original.svg" alt="Arch Linux" width="44" height="44" style="margin:6px 3px;vertical-align:middle;" />
-          <img src="https://api.iconify.design/simple-icons:cursor.svg?color=%2393C5FD" alt="Cursor IDE" width="44" height="44" style="margin:6px 3px;vertical-align:middle;" />
-          <img src="https://api.iconify.design/simple-icons:virtualbox.svg?color=%2360A5FA" alt="Virtual machines" width="44" height="44" style="margin:6px 3px;vertical-align:middle;" />
+        <td align="center" colspan="2" style="padding:14px 10px 18px;border-top:1px solid rgba(88,166,255,0.22);vertical-align:top;">
+          <p style="color:#79b8ff;font-weight:800;font-size:1.15em;letter-spacing:0.12em;margin:0 0 14px;line-height:1.45;text-shadow:0 0 6px #58A6FF,0 0 12px rgba(88,166,255,0.65),0 0 22px rgba(31,111,235,0.35),0 0 28px rgba(31,111,235,0.14);">Environment and tooling</p>
+          <div style="white-space:nowrap;display:inline-block;text-align:center;line-height:0;">
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/vscode/vscode-original.svg" alt="VS Code" width="40" height="40" style="margin:5px 2px;vertical-align:middle;" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/intellij/intellij-original.svg" alt="IntelliJ IDEA" width="40" height="40" style="margin:5px 2px;vertical-align:middle;" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/ubuntu/ubuntu-original.svg" alt="Ubuntu" width="40" height="40" style="margin:5px 2px;vertical-align:middle;" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/linux/linux-original.svg" alt="Linux" width="40" height="40" style="margin:5px 2px;vertical-align:middle;" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/archlinux/archlinux-original.svg" alt="Arch Linux" width="40" height="40" style="margin:5px 2px;vertical-align:middle;" />
+          <img src="https://api.iconify.design/simple-icons:cursor.svg?color=%2393C5FD" alt="Cursor IDE" width="40" height="40" style="margin:5px 2px;vertical-align:middle;" />
+          <img src="https://api.iconify.design/simple-icons:virtualbox.svg?color=%2360A5FA" alt="Virtual machines" width="40" height="40" style="margin:5px 2px;vertical-align:middle;" />
+          </div>
         </td>
       </tr>
     </tbody>
   </table>
+  </div>
 
   <br />
 
