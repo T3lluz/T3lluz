@@ -213,7 +213,7 @@ def _css_glitch(g: dict[str, float | str]) -> str:
     blur_css = "filter:none;" if blur <= 0.001 else f"filter:blur({blur}px);"
     return (
         f"opacity:{op};"
-        f"transform:translate({dx}px,0) skewX({skew}deg) scaleX({sx});"
+        f"transform:translate3d({dx}px,0,0) skewX({skew}deg) scaleX({sx});"
         f"{blur_css}"
         f"{sh_css}"
     )
@@ -386,20 +386,20 @@ def wrap_svg(
         transform-origin: {cx}px {view_h // 2}px;
       }}
       @keyframes jiggle-{vid}{{
-        0%, 25%, 100% {{ transform: translate(0,0); }}
-        25.02% {{ transform: translate(-2px, 0); }}
-        25.05% {{ transform: translate(3px, 0); }}
-        25.08% {{ transform: translate(0, 0); }}
-        42%, 42.02% {{ transform: translate(-1px, 0); }}
-        42.04% {{ transform: translate(0, 0); }}
-        54%, 54.02% {{ transform: translate(2px, 0); }}
-        54.04% {{ transform: translate(0, 0); }}
-        66%, 66.02% {{ transform: translate(-2px, 0); }}
-        66.04% {{ transform: translate(0, 0); }}
-        77%, 77.02% {{ transform: skewX(1deg); }}
-        77.04% {{ transform: skewX(0); }}
-        88%, 88.02% {{ transform: translate(1px, 0); }}
-        88.04% {{ transform: translate(0, 0); }}
+        0%, 25%, 100% {{ transform: translate3d(0,0,0); }}
+        25.02% {{ transform: translate3d(-2px,0,0); }}
+        25.05% {{ transform: translate3d(3px,0,0); }}
+        25.08% {{ transform: translate3d(0,0,0); }}
+        42%, 42.02% {{ transform: translate3d(-1px,0,0); }}
+        42.04% {{ transform: translate3d(0,0,0); }}
+        54%, 54.02% {{ transform: translate3d(2px,0,0); }}
+        54.04% {{ transform: translate3d(0,0,0); }}
+        66%, 66.02% {{ transform: translate3d(-2px,0,0); }}
+        66.04% {{ transform: translate3d(0,0,0); }}
+        77%, 77.02% {{ transform: translate3d(0,0,0) skewX(1deg); }}
+        77.04% {{ transform: translate3d(0,0,0) skewX(0); }}
+        88%, 88.02% {{ transform: translate3d(1px,0,0); }}
+        88.04% {{ transform: translate3d(0,0,0); }}
       }}
       @keyframes charDim-{vid}{{
 {dim_kf}
