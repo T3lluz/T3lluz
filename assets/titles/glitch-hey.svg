@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 54" width="460" height="54" role="img" aria-label="Hey, I'm T3lluz">
+  <title>Hey, I'm T3lluz</title>
+  <defs>
+    <style type="text/css"><![CDATA[
+      .main{font:800 22px ui-sans-serif,system-ui,"Segoe UI",sans-serif;fill:#d8efff;letter-spacing:.1em;text-anchor:middle;text-shadow:0 0 4px #58A6FF,0 0 12px #38bdf8,0 0 22px rgba(31,111,235,.75),0 0 34px rgba(88,166,255,.35);animation:flick 13.2s linear infinite;animation-delay:.15s}
+      .g1{font:800 22px ui-sans-serif,system-ui,sans-serif;fill:#79b8ff;letter-spacing:.1em;text-anchor:middle;opacity:0;animation:gs1 13.2s linear infinite;animation-delay:.15s}
+      .g2{font:800 22px ui-sans-serif,system-ui,sans-serif;fill:#1F6FEB;letter-spacing:.1em;text-anchor:middle;opacity:0;animation:gs2 13.2s linear infinite;animation-delay:.15s}
+      .mix{font:800 20px ui-monospace,monospace;fill:#58A6FF;letter-spacing:.08em;text-anchor:middle;opacity:0;animation:sc 13.2s linear infinite;animation-delay:.15s}
+      #slot{transform-origin:230px 38px;animation:jitter 13.2s linear infinite;animation-delay:.15s}
+      @keyframes jitter{0%,82.5%,100%{transform:translate(0,0)}83%{transform:translate(-4px,1px)}84%{transform:translate(5px,-2px)}85%{transform:translate(-6px,0)}86%{transform:translate(3px,1px)}87%{transform:translate(0,0)}}
+      @keyframes gs1{0%,83.2%,100%{opacity:0}83.5%{opacity:.62}84.1%{opacity:.28}84.7%{opacity:0}}
+      @keyframes gs2{0%,83.4%,100%{opacity:0}83.8%{opacity:.52}84.4%{opacity:.32}85%{opacity:0}}
+      @keyframes flick{0%,85.5%,100%{opacity:1}85.7%{opacity:.1}85.85%{opacity:1}86.1%{opacity:.42}86.25%{opacity:1}91.4%,92.1%{opacity:1}91.55%{opacity:.06}91.65%{opacity:1}}
+      @keyframes sc{0%,82.9%,100%{opacity:0}83.05%{opacity:.9}83.25%{opacity:.35}83.45%{opacity:.85}83.65%{opacity:0}}
+    ]]></style>
+  </defs>
+  <g id="slot">
+    <text class="g1" x="230" y="38">Hey, I'm T3lluz</text>
+    <text class="g2" x="230" y="38">Hey, I'm T3lluz</text>
+    <text class="mix" x="230" y="38">H@y, !' T3||uz</text>
+    <text class="main" x="230" y="38">Hey, I'm T3lluz</text>
+  </g>
+</svg>

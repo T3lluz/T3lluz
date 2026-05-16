@@ -2,7 +2,7 @@
 
 <img width="100%" src="./assets/banner/ascii-neon-scroll.svg" alt="Animated ASCII neon banner" />
 
-<h2 align="center" style="color:#e8fbff;font-weight:800;font-size:1.95em;letter-spacing:0.1em;margin:12px 0 8px;text-shadow:0 0 6px #22d3ee,0 0 20px rgba(34,211,238,0.55),0 0 36px rgba(56,189,248,0.35);">Hey, I'm T3lluz</h2>
+<img src="./assets/titles/glitch-hey.svg" alt="Hey, I'm T3lluz" width="460" height="54" />
 
 <p>
   Full-stack student building MERN/PERN apps, Stream Deck tools, local LLM workflows in LM Studio, and UI animation experiments.
@@ -20,9 +20,8 @@
 
 ---
 
-<h2 align="center" style="color:#e8fbff;font-weight:800;font-size:1.85em;letter-spacing:0.1em;margin:20px 0 14px;text-shadow:0 0 6px #22d3ee,0 0 20px rgba(34,211,238,0.55),0 0 36px rgba(56,189,248,0.35);">About</h2>
-
 <div align="center">
+  <img src="./assets/titles/glitch-about.svg" alt="About" width="200" height="52" /><br /><br />
   <img src="https://img.shields.io/badge/Focus-Full--stack%20Web-58A6FF?style=flat-square" alt="Focus badge" />
   <img src="https://img.shields.io/badge/Repo%20themes-Stream%20Deck%20%7C%20UI%20Animations-1F6FEB?style=flat-square" alt="Repo themes badge" />
   <img src="https://img.shields.io/badge/AI%20workflow-LM%20Studio%20%7C%20OpenCLAW%20%7C%20Cursor-58A6FF?style=flat-square" alt="AI workflow badge" /><br /><br />
@@ -83,9 +82,8 @@
 
 ---
 
-<h2 align="center" style="color:#e8fbff;font-weight:800;font-size:1.85em;letter-spacing:0.1em;margin:20px 0 14px;text-shadow:0 0 6px #22d3ee,0 0 20px rgba(34,211,238,0.55),0 0 36px rgba(56,189,248,0.35);">GitHub Pulse</h2>
-
 <div align="center">
+  <img src="./assets/titles/glitch-pulse.svg" alt="GitHub Pulse" width="320" height="52" /><br /><br />
   <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=T3lluz&theme=github-dark&hide_border=true&days=180&custom_title=T3lluz%20Contribution%20Timeline%20(Last%206%20Months)" alt="GitHub activity graph" />
 </div>
 
@@ -99,14 +97,13 @@
 
 ---
 
-<h2 align="center" style="color:#e8fbff;font-weight:800;font-size:1.85em;letter-spacing:0.1em;margin:20px 0 18px;text-shadow:0 0 6px #22d3ee,0 0 20px rgba(34,211,238,0.55),0 0 36px rgba(56,189,248,0.35);">Stack and tools</h2>
-
 <div align="center">
+  <img src="./assets/titles/glitch-stack.svg" alt="Stack and tools" width="380" height="52" /><br /><br />
   <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%" style="max-width:1100px;">
     <tbody>
       <tr valign="top">
         <td align="center" width="50%" style="padding:8px 12px 28px;">
-          <p style="color:#9ae5ff;font-weight:800;font-size:1.28em;letter-spacing:0.12em;margin:8px 0 18px;line-height:1.5;text-shadow:0 0 10px rgba(125,211,252,0.75),0 0 22px rgba(56,189,248,0.35);">Core stack</p>
+          <p style="color:#79b8ff;font-weight:800;font-size:1.28em;letter-spacing:0.14em;margin:8px 0 18px;line-height:1.55;text-shadow:0 0 6px #58A6FF,0 0 14px rgba(88,166,255,0.95),0 0 26px rgba(31,111,235,0.55),0 0 38px rgba(31,111,235,0.22);">Core stack</p>
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/react/react-original.svg" alt="React" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/javascript/javascript-original.svg" alt="JavaScript" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/typescript/typescript-original.svg" alt="TypeScript" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
@@ -116,7 +113,7 @@
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
         </td>
         <td align="center" width="50%" style="padding:8px 12px 28px;">
-          <p style="color:#9ae5ff;font-weight:800;font-size:1.28em;letter-spacing:0.12em;margin:8px 0 18px;line-height:1.5;text-shadow:0 0 10px rgba(125,211,252,0.75),0 0 22px rgba(56,189,248,0.35);">Also building with</p>
+          <p style="color:#79b8ff;font-weight:800;font-size:1.28em;letter-spacing:0.14em;margin:8px 0 18px;line-height:1.55;text-shadow:0 0 6px #58A6FF,0 0 14px rgba(88,166,255,0.95),0 0 26px rgba(31,111,235,0.55),0 0 38px rgba(31,111,235,0.22);">Also building with</p>
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/kotlin/kotlin-original.svg" alt="Kotlin" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/python/python-original.svg" alt="Python" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/java/java-original.svg" alt="Java" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
@@ -127,7 +124,7 @@
       </tr>
       <tr>
         <td align="center" colspan="2" style="padding:12px 12px 8px;">
-          <p style="color:#9ae5ff;font-weight:800;font-size:1.28em;letter-spacing:0.12em;margin:12px 0 18px;line-height:1.5;text-shadow:0 0 10px rgba(125,211,252,0.75),0 0 22px rgba(56,189,248,0.35);">Environment and tooling</p>
+          <p style="color:#79b8ff;font-weight:800;font-size:1.28em;letter-spacing:0.14em;margin:12px 0 18px;line-height:1.55;text-shadow:0 0 6px #58A6FF,0 0 14px rgba(88,166,255,0.95),0 0 26px rgba(31,111,235,0.55),0 0 38px rgba(31,111,235,0.22);">Environment and tooling</p>
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/vscode/vscode-original.svg" alt="VS Code" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/intellij/intellij-original.svg" alt="IntelliJ IDEA" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/ubuntu/ubuntu-original.svg" alt="Ubuntu" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
@@ -142,28 +139,27 @@
 
   <br />
 
-  <p style="color:#9ae5ff;font-weight:800;font-size:1.28em;letter-spacing:0.12em;margin:20px 0 16px;line-height:1.5;text-shadow:0 0 10px rgba(125,211,252,0.75),0 0 22px rgba(56,189,248,0.35);">Local AI workflow</p>
+  <p style="color:#79b8ff;font-weight:800;font-size:1.28em;letter-spacing:0.14em;margin:20px 0 16px;line-height:1.55;text-shadow:0 0 6px #58A6FF,0 0 14px rgba(88,166,255,0.95),0 0 26px rgba(31,111,235,0.55),0 0 38px rgba(31,111,235,0.22);">Local AI workflow</p>
   <p style="margin:0 0 8px;">
-    <code style="color:#c8ecff;background:rgba(15,23,42,0.65);border:1px solid rgba(56,189,248,0.35);padding:4px 10px;border-radius:6px;">LM Studio</code>
-    <span style="color:#38bdf8;"> · </span>
-    <code style="color:#c8ecff;background:rgba(15,23,42,0.65);border:1px solid rgba(56,189,248,0.35);padding:4px 10px;border-radius:6px;">OpenCLAW</code>
-    <span style="color:#38bdf8;"> · </span>
-    <code style="color:#c8ecff;background:rgba(15,23,42,0.65);border:1px solid rgba(56,189,248,0.35);padding:4px 10px;border-radius:6px;">Cursor IDE</code>
-    <span style="color:#38bdf8;"> · </span>
-    <code style="color:#c8ecff;background:rgba(15,23,42,0.65);border:1px solid rgba(56,189,248,0.35);padding:4px 10px;border-radius:6px;">VM-based test setups</code>
+    <code style="color:#b6d9ff;background:rgba(15,23,42,0.72);border:1px solid rgba(88,166,255,0.55);box-shadow:0 0 10px rgba(88,166,255,0.25);padding:4px 10px;border-radius:6px;">LM Studio</code>
+    <span style="color:#58A6FF;"> · </span>
+    <code style="color:#b6d9ff;background:rgba(15,23,42,0.72);border:1px solid rgba(88,166,255,0.55);box-shadow:0 0 10px rgba(88,166,255,0.25);padding:4px 10px;border-radius:6px;">OpenCLAW</code>
+    <span style="color:#58A6FF;"> · </span>
+    <code style="color:#b6d9ff;background:rgba(15,23,42,0.72);border:1px solid rgba(88,166,255,0.55);box-shadow:0 0 10px rgba(88,166,255,0.25);padding:4px 10px;border-radius:6px;">Cursor IDE</code>
+    <span style="color:#58A6FF;"> · </span>
+    <code style="color:#b6d9ff;background:rgba(15,23,42,0.72);border:1px solid rgba(88,166,255,0.55);box-shadow:0 0 10px rgba(88,166,255,0.25);padding:4px 10px;border-radius:6px;">VM-based test setups</code>
   </p>
 </div>
 
 ---
 
-<h2 align="center" style="color:#e8fbff;font-weight:800;font-size:1.85em;letter-spacing:0.1em;margin:20px 0 14px;text-shadow:0 0 6px #22d3ee,0 0 20px rgba(34,211,238,0.55),0 0 36px rgba(56,189,248,0.35);">Contact</h2>
-
 <div align="center">
+  <img src="./assets/titles/glitch-contact.svg" alt="Contact" width="220" height="52" /><br /><br />
   <a href="https://github.com/T3lluz"><img src="https://img.shields.io/badge/GitHub-T3lluz-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub profile" /></a>
   <a href="mailto:fstalsberg@gmail.com"><img src="https://img.shields.io/badge/Email-fstalsberg%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Fredrik" /></a>
   <img src="https://img.shields.io/badge/Discord-T3lluz1337-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord T3lluz1337" />
 </div>
 
 <div align="center">
-  <sub>Open to collaboration, student projects, and cool build ideas.</sub>
+  <sub style="color:#79b8ff;font-weight:600;letter-spacing:0.06em;text-shadow:0 0 8px rgba(88,166,255,0.55),0 0 18px rgba(31,111,235,0.3);">Open to collaboration, student projects, and cool build ideas.</sub>
 </div>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 52" width="380" height="52" role="img" aria-label="Stack and tools">
+  <title>Stack and tools</title>
+  <defs>
+    <style type="text/css"><![CDATA[
+      .main{font:800 24px ui-sans-serif,system-ui,"Segoe UI",sans-serif;fill:#d8efff;letter-spacing:.1em;text-anchor:middle;text-shadow:0 0 4px #58A6FF,0 0 12px #38bdf8,0 0 22px rgba(31,111,235,.75),0 0 34px rgba(88,166,255,.35);animation:flick 11.1s linear infinite;animation-delay:2.05s}
+      .g1{font:800 24px ui-sans-serif,system-ui,sans-serif;fill:#79b8ff;letter-spacing:.1em;text-anchor:middle;opacity:0;animation:gs1 11.1s linear infinite;animation-delay:2.05s}
+      .g2{font:800 24px ui-sans-serif,system-ui,sans-serif;fill:#1F6FEB;letter-spacing:.1em;text-anchor:middle;opacity:0;animation:gs2 11.1s linear infinite;animation-delay:2.05s}
+      .mix{font:800 20px ui-monospace,monospace;fill:#58A6FF;letter-spacing:.08em;text-anchor:middle;opacity:0;animation:sc 11.1s linear infinite;animation-delay:2.05s}
+      #slot{transform-origin:190px 36px;animation:jitter 11.1s linear infinite;animation-delay:2.05s}
+      @keyframes jitter{0%,80.5%,100%{transform:translate(0,0)}81.5%{transform:translate(5px,-2px)}82.5%{transform:translate(-5px,1px)}83.5%{transform:translate(4px,0)}84.5%{transform:translate(0,0)}}
+      @keyframes gs1{0%,83%,100%{opacity:0}83.4%{opacity:.68}84%{opacity:.22}84.6%{opacity:0}}
+      @keyframes gs2{0%,83.2%,100%{opacity:0}83.6%{opacity:.52}84.2%{opacity:.36}84.8%{opacity:0}}
+      @keyframes flick{0%,85.8%,100%{opacity:1}86%{opacity:.1}86.12%{opacity:1}86.45%{opacity:.48}86.58%{opacity:1}91.1%,91.7%{opacity:1}91.25%{opacity:.07}91.35%{opacity:1}}
+      @keyframes sc{0%,82.6%,100%{opacity:0}82.75%{opacity:.93}82.95%{opacity:.38}83.15%{opacity:.86}83.35%{opacity:0}}
+    ]]></style>
+  </defs>
+  <g id="slot">
+    <text class="g1" x="190" y="36">Stack and tools</text>
+    <text class="g2" x="190" y="36">Stack and tools</text>
+    <text class="mix" x="190" y="36">St4ck 4nd t00ls</text>
+    <text class="main" x="190" y="36">Stack and tools</text>
+  </g>
+</svg>

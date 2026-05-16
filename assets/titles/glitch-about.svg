@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 52" width="200" height="52" role="img" aria-label="About">
+  <title>About</title>
+  <defs>
+    <style type="text/css"><![CDATA[
+      .main{font:800 26px ui-sans-serif,system-ui,"Segoe UI",sans-serif;fill:#d8efff;letter-spacing:.12em;text-anchor:middle;text-shadow:0 0 4px #58A6FF,0 0 12px #38bdf8,0 0 22px rgba(31,111,235,.8),0 0 36px rgba(88,166,255,.38);animation:flick 10.4s linear infinite;animation-delay:.85s}
+      .g1{font:800 26px ui-sans-serif,system-ui,sans-serif;fill:#79b8ff;letter-spacing:.12em;text-anchor:middle;opacity:0;animation:gs1 10.4s linear infinite;animation-delay:.85s}
+      .g2{font:800 26px ui-sans-serif,system-ui,sans-serif;fill:#1F6FEB;letter-spacing:.12em;text-anchor:middle;opacity:0;animation:gs2 10.4s linear infinite;animation-delay:.85s}
+      .mix{font:800 24px ui-monospace,monospace;fill:#58A6FF;letter-spacing:.14em;text-anchor:middle;opacity:0;animation:sc 10.4s linear infinite;animation-delay:.85s}
+      #slot{transform-origin:100px 36px;animation:jitter 10.4s linear infinite;animation-delay:.85s}
+      @keyframes jitter{0%,84%,100%{transform:translate(0,0)}85%{transform:translate(-3px,1px)}86%{transform:translate(4px,-2px)}87%{transform:translate(-5px,0)}88%{transform:translate(3px,1px)}89%{transform:translate(0,0)}}
+      @keyframes gs1{0%,84.8%,100%{opacity:0}85%{opacity:.65}85.6%{opacity:.3}86.2%{opacity:0}}
+      @keyframes gs2{0%,85%,100%{opacity:0}85.4%{opacity:.55}86%{opacity:.35}86.5%{opacity:0}}
+      @keyframes flick{0%,86.8%,100%{opacity:1}87%{opacity:.12}87.15%{opacity:1}87.4%{opacity:.45}87.55%{opacity:1}93.2%,93.8%{opacity:1}93.45%{opacity:.08}93.55%{opacity:1}}
+      @keyframes sc{0%,84.5%,100%{opacity:0}84.65%{opacity:.92}84.85%{opacity:.4}85.05%{opacity:.88}85.25%{opacity:0}}
+    ]]></style>
+  </defs>
+  <g id="slot">
+    <text class="g1" x="100" y="36">About</text>
+    <text class="g2" x="100" y="36">About</text>
+    <text class="mix" x="100" y="36">#b0u+</text>
+    <text class="main" x="100" y="36">About</text>
+  </g>
+</svg>

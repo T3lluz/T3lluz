@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 52" width="320" height="52" role="img" aria-label="GitHub Pulse">
+  <title>GitHub Pulse</title>
+  <defs>
+    <style type="text/css"><![CDATA[
+      .main{font:800 24px ui-sans-serif,system-ui,"Segoe UI",sans-serif;fill:#d8efff;letter-spacing:.1em;text-anchor:middle;text-shadow:0 0 4px #58A6FF,0 0 12px #38bdf8,0 0 22px rgba(31,111,235,.75),0 0 34px rgba(88,166,255,.35);animation:flick 15.8s linear infinite;animation-delay:1.2s}
+      .g1{font:800 24px ui-sans-serif,system-ui,sans-serif;fill:#79b8ff;letter-spacing:.1em;text-anchor:middle;opacity:0;animation:gs1 15.8s linear infinite;animation-delay:1.2s}
+      .g2{font:800 24px ui-sans-serif,system-ui,sans-serif;fill:#1F6FEB;letter-spacing:.1em;text-anchor:middle;opacity:0;animation:gs2 15.8s linear infinite;animation-delay:1.2s}
+      .mix{font:800 21px ui-monospace,monospace;fill:#58A6FF;letter-spacing:.09em;text-anchor:middle;opacity:0;animation:sc 15.8s linear infinite;animation-delay:1.2s}
+      #slot{transform-origin:160px 36px;animation:jitter 15.8s linear infinite;animation-delay:1.2s}
+      @keyframes jitter{0%,81%,100%{transform:translate(0,0)}82%{transform:translate(-4px,1px)}83%{transform:translate(5px,-1px)}84%{transform:translate(-4px,0)}85%{transform:translate(0,0)}}
+      @keyframes gs1{0%,83.5%,100%{opacity:0}84%{opacity:.6}84.6%{opacity:.25}85.2%{opacity:0}}
+      @keyframes gs2{0%,83.7%,100%{opacity:0}84.2%{opacity:.5}84.8%{opacity:.38}85.4%{opacity:0}}
+      @keyframes flick{0%,86.2%,100%{opacity:1}86.4%{opacity:.15}86.55%{opacity:1}86.9%{opacity:.4}87.05%{opacity:1}92.5%,93.2%{opacity:1}92.7%{opacity:.05}92.8%{opacity:1}}
+      @keyframes sc{0%,83.1%,100%{opacity:0}83.25%{opacity:.9}83.5%{opacity:.35}83.75%{opacity:.82}84%{opacity:0}}
+    ]]></style>
+  </defs>
+  <g id="slot">
+    <text class="g1" x="160" y="36">GitHub Pulse</text>
+    <text class="g2" x="160" y="36">GitHub Pulse</text>
+    <text class="mix" x="160" y="36">G#tHub P*ls?</text>
+    <text class="main" x="160" y="36">GitHub Pulse</text>
+  </g>
+</svg>
