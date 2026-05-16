@@ -99,10 +99,10 @@
 
 <div align="center">
   <img src="./assets/titles/glitch-stack.svg" alt="Stack and tools" width="532" height="73" /><br /><br />
-  <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%" style="max-width:1100px;">
+  <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%" style="max-width:1180px;">
     <tbody>
       <tr valign="top">
-        <td align="center" width="50%" style="padding:8px 12px 28px;">
+        <td align="center" width="57%" style="padding:8px 10px 28px;min-width:400px;">
           <p style="color:#79b8ff;font-weight:800;font-size:1.28em;letter-spacing:0.14em;margin:8px 0 18px;line-height:1.55;text-shadow:0 0 6px #58A6FF,0 0 12px rgba(88,166,255,0.65),0 0 22px rgba(31,111,235,0.35),0 0 28px rgba(31,111,235,0.14);">Core stack</p>
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/react/react-original.svg" alt="React" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/javascript/javascript-original.svg" alt="JavaScript" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
@@ -112,7 +112,7 @@
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
         </td>
-        <td align="center" width="50%" style="padding:8px 12px 28px;">
+        <td align="center" width="43%" style="padding:8px 10px 28px;">
           <p style="color:#79b8ff;font-weight:800;font-size:1.28em;letter-spacing:0.14em;margin:8px 0 18px;line-height:1.55;text-shadow:0 0 6px #58A6FF,0 0 12px rgba(88,166,255,0.65),0 0 22px rgba(31,111,235,0.35),0 0 28px rgba(31,111,235,0.14);">Also building with</p>
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/kotlin/kotlin-original.svg" alt="Kotlin" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/python/python-original.svg" alt="Python" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
