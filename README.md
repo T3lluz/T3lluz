@@ -103,7 +103,7 @@
     <tbody>
       <tr valign="top">
         <td align="center" width="50%" style="padding:8px 12px 28px;">
-          <p style="color:#79b8ff;font-weight:800;font-size:1.28em;letter-spacing:0.14em;margin:8px 0 18px;line-height:1.55;text-shadow:0 0 6px #58A6FF,0 0 14px rgba(88,166,255,0.95),0 0 26px rgba(31,111,235,0.55),0 0 38px rgba(31,111,235,0.22);">Core stack</p>
+          <p style="color:#79b8ff;font-weight:800;font-size:1.28em;letter-spacing:0.14em;margin:8px 0 18px;line-height:1.55;text-shadow:0 0 6px #58A6FF,0 0 12px rgba(88,166,255,0.65),0 0 22px rgba(31,111,235,0.35),0 0 28px rgba(31,111,235,0.14);">Core stack</p>
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/react/react-original.svg" alt="React" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/javascript/javascript-original.svg" alt="JavaScript" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/typescript/typescript-original.svg" alt="TypeScript" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
@@ -113,7 +113,7 @@
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
         </td>
         <td align="center" width="50%" style="padding:8px 12px 28px;">
-          <p style="color:#79b8ff;font-weight:800;font-size:1.28em;letter-spacing:0.14em;margin:8px 0 18px;line-height:1.55;text-shadow:0 0 6px #58A6FF,0 0 14px rgba(88,166,255,0.95),0 0 26px rgba(31,111,235,0.55),0 0 38px rgba(31,111,235,0.22);">Also building with</p>
+          <p style="color:#79b8ff;font-weight:800;font-size:1.28em;letter-spacing:0.14em;margin:8px 0 18px;line-height:1.55;text-shadow:0 0 6px #58A6FF,0 0 12px rgba(88,166,255,0.65),0 0 22px rgba(31,111,235,0.35),0 0 28px rgba(31,111,235,0.14);">Also building with</p>
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/kotlin/kotlin-original.svg" alt="Kotlin" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/python/python-original.svg" alt="Python" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/java/java-original.svg" alt="Java" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
@@ -124,7 +124,7 @@
       </tr>
       <tr>
         <td align="center" colspan="2" style="padding:12px 12px 8px;">
-          <p style="color:#79b8ff;font-weight:800;font-size:1.28em;letter-spacing:0.14em;margin:12px 0 18px;line-height:1.55;text-shadow:0 0 6px #58A6FF,0 0 14px rgba(88,166,255,0.95),0 0 26px rgba(31,111,235,0.55),0 0 38px rgba(31,111,235,0.22);">Environment and tooling</p>
+          <p style="color:#79b8ff;font-weight:800;font-size:1.28em;letter-spacing:0.14em;margin:12px 0 18px;line-height:1.55;text-shadow:0 0 6px #58A6FF,0 0 12px rgba(88,166,255,0.65),0 0 22px rgba(31,111,235,0.35),0 0 28px rgba(31,111,235,0.14);">Environment and tooling</p>
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/vscode/vscode-original.svg" alt="VS Code" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/intellij/intellij-original.svg" alt="IntelliJ IDEA" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/ubuntu/ubuntu-original.svg" alt="Ubuntu" width="44" height="44" style="margin: 6px; vertical-align: middle;" />
@@ -139,15 +139,15 @@
 
   <br />
 
-  <p style="color:#79b8ff;font-weight:800;font-size:1.28em;letter-spacing:0.14em;margin:20px 0 16px;line-height:1.55;text-shadow:0 0 6px #58A6FF,0 0 14px rgba(88,166,255,0.95),0 0 26px rgba(31,111,235,0.55),0 0 38px rgba(31,111,235,0.22);">Local AI workflow</p>
+  <p style="color:#79b8ff;font-weight:800;font-size:1.28em;letter-spacing:0.14em;margin:20px 0 16px;line-height:1.55;text-shadow:0 0 6px #58A6FF,0 0 12px rgba(88,166,255,0.65),0 0 22px rgba(31,111,235,0.35),0 0 28px rgba(31,111,235,0.14);">Local AI workflow</p>
   <p style="margin:0 0 8px;">
-    <code style="color:#b6d9ff;background:rgba(15,23,42,0.72);border:1px solid rgba(88,166,255,0.55);box-shadow:0 0 10px rgba(88,166,255,0.25);padding:4px 10px;border-radius:6px;">LM Studio</code>
+    <code style="color:#b6d9ff;background:rgba(15,23,42,0.72);border:1px solid rgba(88,166,255,0.55);box-shadow:0 0 6px rgba(88,166,255,0.15);padding:4px 10px;border-radius:6px;">LM Studio</code>
     <span style="color:#58A6FF;"> · </span>
-    <code style="color:#b6d9ff;background:rgba(15,23,42,0.72);border:1px solid rgba(88,166,255,0.55);box-shadow:0 0 10px rgba(88,166,255,0.25);padding:4px 10px;border-radius:6px;">OpenCLAW</code>
+    <code style="color:#b6d9ff;background:rgba(15,23,42,0.72);border:1px solid rgba(88,166,255,0.55);box-shadow:0 0 6px rgba(88,166,255,0.15);padding:4px 10px;border-radius:6px;">OpenCLAW</code>
     <span style="color:#58A6FF;"> · </span>
-    <code style="color:#b6d9ff;background:rgba(15,23,42,0.72);border:1px solid rgba(88,166,255,0.55);box-shadow:0 0 10px rgba(88,166,255,0.25);padding:4px 10px;border-radius:6px;">Cursor IDE</code>
+    <code style="color:#b6d9ff;background:rgba(15,23,42,0.72);border:1px solid rgba(88,166,255,0.55);box-shadow:0 0 6px rgba(88,166,255,0.15);padding:4px 10px;border-radius:6px;">Cursor IDE</code>
     <span style="color:#58A6FF;"> · </span>
-    <code style="color:#b6d9ff;background:rgba(15,23,42,0.72);border:1px solid rgba(88,166,255,0.55);box-shadow:0 0 10px rgba(88,166,255,0.25);padding:4px 10px;border-radius:6px;">VM-based test setups</code>
+    <code style="color:#b6d9ff;background:rgba(15,23,42,0.72);border:1px solid rgba(88,166,255,0.55);box-shadow:0 0 6px rgba(88,166,255,0.15);padding:4px 10px;border-radius:6px;">VM-based test setups</code>
   </p>
 </div>
 
@@ -161,5 +161,5 @@
 </div>
 
 <div align="center">
-  <sub style="color:#79b8ff;font-weight:600;letter-spacing:0.06em;text-shadow:0 0 8px rgba(88,166,255,0.55),0 0 18px rgba(31,111,235,0.3);">Open to collaboration, student projects, and cool build ideas.</sub>
+  <sub style="color:#79b8ff;font-weight:600;letter-spacing:0.06em;text-shadow:0 0 6px rgba(88,166,255,0.4),0 0 14px rgba(31,111,235,0.2);">Open to collaboration, student projects, and cool build ideas.</sub>
 </div>

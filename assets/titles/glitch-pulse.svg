@@ -1,24 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 52" width="320" height="52" role="img" aria-label="GitHub Pulse">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 52" width="320" height="52" overflow="hidden" role="img" aria-label="GitHub Pulse">
   <title>GitHub Pulse</title>
   <defs>
+    <clipPath id="clip-pulse"><rect x="0" y="0" width="320" height="52"/></clipPath>
     <style type="text/css"><![CDATA[
-      .main{font:800 24px ui-sans-serif,system-ui,"Segoe UI",sans-serif;fill:#d8efff;letter-spacing:.1em;text-anchor:middle;text-shadow:0 0 4px #58A6FF,0 0 12px #38bdf8,0 0 22px rgba(31,111,235,.75),0 0 34px rgba(88,166,255,.35);animation:flick 15.8s linear infinite;animation-delay:1.2s}
-      .g1{font:800 24px ui-sans-serif,system-ui,sans-serif;fill:#79b8ff;letter-spacing:.1em;text-anchor:middle;opacity:0;animation:gs1 15.8s linear infinite;animation-delay:1.2s}
-      .g2{font:800 24px ui-sans-serif,system-ui,sans-serif;fill:#1F6FEB;letter-spacing:.1em;text-anchor:middle;opacity:0;animation:gs2 15.8s linear infinite;animation-delay:1.2s}
-      .mix{font:800 21px ui-monospace,monospace;fill:#58A6FF;letter-spacing:.09em;text-anchor:middle;opacity:0;animation:sc 15.8s linear infinite;animation-delay:1.2s}
-      #slot{transform-origin:160px 36px;animation:jitter 15.8s linear infinite;animation-delay:1.2s}
-      @keyframes jitter{0%,81%,100%{transform:translate(0,0)}82%{transform:translate(-4px,1px)}83%{transform:translate(5px,-1px)}84%{transform:translate(-4px,0)}85%{transform:translate(0,0)}}
-      @keyframes gs1{0%,83.5%,100%{opacity:0}84%{opacity:.6}84.6%{opacity:.25}85.2%{opacity:0}}
-      @keyframes gs2{0%,83.7%,100%{opacity:0}84.2%{opacity:.5}84.8%{opacity:.38}85.4%{opacity:0}}
-      @keyframes flick{0%,86.2%,100%{opacity:1}86.4%{opacity:.15}86.55%{opacity:1}86.9%{opacity:.4}87.05%{opacity:1}92.5%,93.2%{opacity:1}92.7%{opacity:.05}92.8%{opacity:1}}
-      @keyframes sc{0%,83.1%,100%{opacity:0}83.25%{opacity:.9}83.5%{opacity:.35}83.75%{opacity:.82}84%{opacity:0}}
+      .row{font:800 24px ui-monospace,system-ui,monospace;fill:#c8e4ff;letter-spacing:.09em;text-anchor:middle;text-shadow:0 1px 2px rgba(88,166,255,.22),0 0 4px rgba(56,189,248,.12);}
+      .final{font:800 24px ui-sans-serif,system-ui,sans-serif;fill:#c8e4ff;letter-spacing:.1em;text-anchor:middle;text-shadow:0 1px 2px rgba(88,166,255,.22),0 0 4px rgba(56,189,248,.12);}
+      #slotwrap-pulse{
+        animation: holdglitch-pulse 22s ease-in-out infinite;
+        transform-origin: 160px 26px;
+      }
+      @keyframes holdglitch-pulse{
+        0%, 26%, 100% { transform: translate(0,0); opacity: 1; }
+        26.02% { transform: translate(-2px, 0); opacity: 0.9; }
+        26.05% { transform: translate(3px, 0); opacity: 1; }
+        26.08% { transform: translate(0, 0); }
+        52%, 52.02% { opacity: 0.35; }
+        52.05% { opacity: 1; }
+        71%, 71.02% { transform: skewX(-2deg); }
+        71.05% { transform: skewX(0); }
+        88%, 88.02% { transform: translate(1px, 0); }
+        88.04% { transform: translate(0, 0); }
+      }
     ]]></style>
   </defs>
-  <g id="slot">
-    <text class="g1" x="160" y="36">GitHub Pulse</text>
-    <text class="g2" x="160" y="36">GitHub Pulse</text>
-    <text class="mix" x="160" y="36">G#tHub P*ls?</text>
-    <text class="main" x="160" y="36">GitHub Pulse</text>
+  <g clip-path="url(#clip-pulse)">
+    <g id="slotwrap-pulse">
+      <g>
+        <animateTransform attributeName="transform" type="translate" additive="replace" calcMode="discrete"
+          values="0,0;0,-46;0,-92;0,-138;0,-184;0,-230;0,-276;0,-322;0,-368;0,-414;0,-460;0,-506;0,-552;0,-598;0,-644;0,-690;0,-736;0,-782;0,-828;0,-874;0,-920;0,-966;0,-1012;0,-1058;0,-1104;0,-1150;0,-1196;0,-1242;0,-1288;0,-1334;0,-1380;0,-1426;0,-1472;0,-1472"
+          keyTimes="0.0;0.0078125;0.015625;0.0234375;0.03125;0.0390625;0.046875;0.0546875;0.0625;0.0703125;0.078125;0.0859375;0.09375;0.1015625;0.109375;0.1171875;0.125;0.1328125;0.140625;0.1484375;0.15625;0.1640625;0.171875;0.1796875;0.1875;0.1953125;0.203125;0.2109375;0.21875;0.2265625;0.234375;0.2421875;0.25;1.0"
+          dur="22s" repeatCount="indefinite"/>
+      <text class="row" x="160" y="36">############</text>
+      <text class="row" x="160" y="82">G1tH*b Puls?</text>
+      <text class="row" x="160" y="128">G#tHub P*ls?</text>
+      <text class="row" x="160" y="174">G1tHub Puls3</text>
+      <text class="row" x="160" y="220">GitH*b Puls?</text>
+      <text class="row" x="160" y="266">GitHub P*lse</text>
+      <text class="row" x="160" y="312">G#tHub Pulse</text>
+      <text class="row" x="160" y="358">GitH*b Pulse</text>
+      <text class="row" x="160" y="404">G1tHub Puls?</text>
+      <text class="row" x="160" y="450">GitHub Puls3</text>
+      <text class="row" x="160" y="496">GitHub P*lse</text>
+      <text class="row" x="160" y="542">G#tHub Pulse</text>
+      <text class="row" x="160" y="588">GitH*b Pulse</text>
+      <text class="row" x="160" y="634">GitHub Puls?</text>
+      <text class="row" x="160" y="680">G1tHub Pulse</text>
+      <text class="row" x="160" y="726">GitHub P*lse</text>
+      <text class="row" x="160" y="772">G#tHub Pulse</text>
+      <text class="row" x="160" y="818">GitH*b Pulse</text>
+      <text class="row" x="160" y="864">GitHub Puls3</text>
+      <text class="row" x="160" y="910">GitHub Pulse</text>
+      <text class="row" x="160" y="956">G1tHub Puls?</text>
+      <text class="row" x="160" y="1002">GitH*b Pulse</text>
+      <text class="row" x="160" y="1048">GitHub P*lse</text>
+      <text class="row" x="160" y="1094">G#tHub Pulse</text>
+      <text class="row" x="160" y="1140">G1tHub Pulse</text>
+      <text class="row" x="160" y="1186">GitHub Puls3</text>
+      <text class="row" x="160" y="1232">GitH*b Pulse</text>
+      <text class="row" x="160" y="1278">GitHub Puls?</text>
+      <text class="row" x="160" y="1324">G#tHub Pulse</text>
+      <text class="row" x="160" y="1370">GitHub P*lse</text>
+      <text class="row" x="160" y="1416">G1tHub Pulse</text>
+      <text class="row" x="160" y="1462">GitHub Puls3</text>
+      <text class="final" x="160" y="1508">GitHub Pulse</text>
+      </g>
+    </g>
   </g>
 </svg>

@@ -1,24 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" width="220" height="52" role="img" aria-label="Contact">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 52" width="220" height="52" overflow="hidden" role="img" aria-label="Contact">
   <title>Contact</title>
   <defs>
+    <clipPath id="clip-contact"><rect x="0" y="0" width="220" height="52"/></clipPath>
     <style type="text/css"><![CDATA[
-      .main{font:800 26px ui-sans-serif,system-ui,"Segoe UI",sans-serif;fill:#d8efff;letter-spacing:.12em;text-anchor:middle;text-shadow:0 0 4px #58A6FF,0 0 12px #38bdf8,0 0 22px rgba(31,111,235,.8),0 0 36px rgba(88,166,255,.38);animation:flick 12.6s linear infinite;animation-delay:.35s}
-      .g1{font:800 26px ui-sans-serif,system-ui,sans-serif;fill:#79b8ff;letter-spacing:.12em;text-anchor:middle;opacity:0;animation:gs1 12.6s linear infinite;animation-delay:.35s}
-      .g2{font:800 26px ui-sans-serif,system-ui,sans-serif;fill:#1F6FEB;letter-spacing:.12em;text-anchor:middle;opacity:0;animation:gs2 12.6s linear infinite;animation-delay:.35s}
-      .mix{font:800 24px ui-monospace,monospace;fill:#58A6FF;letter-spacing:.12em;text-anchor:middle;opacity:0;animation:sc 12.6s linear infinite;animation-delay:.35s}
-      #slot{transform-origin:110px 36px;animation:jitter 12.6s linear infinite;animation-delay:.35s}
-      @keyframes jitter{0%,83.8%,100%{transform:translate(0,0)}84.5%{transform:translate(-4px,-1px)}85.5%{transform:translate(5px,2px)}86.5%{transform:translate(-3px,0)}87.5%{transform:translate(0,0)}}
-      @keyframes gs1{0%,84.5%,100%{opacity:0}85%{opacity:.64}85.5%{opacity:.28}86.1%{opacity:0}}
-      @keyframes gs2{0%,84.7%,100%{opacity:0}85.2%{opacity:.54}85.7%{opacity:.33}86.3%{opacity:0}}
-      @keyframes flick{0%,86.5%,100%{opacity:1}86.7%{opacity:.11}86.85%{opacity:1}87.2%{opacity:.43}87.35%{opacity:1}92.8%,93.5%{opacity:1}92.95%{opacity:.09}93.05%{opacity:1}}
-      @keyframes sc{0%,84.2%,100%{opacity:0}84.35%{opacity:.91}84.55%{opacity:.36}84.75%{opacity:.87}84.95%{opacity:0}}
+      .row{font:800 26px ui-monospace,system-ui,monospace;fill:#c8e4ff;letter-spacing:.14em;text-anchor:middle;text-shadow:0 1px 2px rgba(88,166,255,.22),0 0 4px rgba(56,189,248,.12);}
+      .final{font:800 26px ui-sans-serif,system-ui,sans-serif;fill:#c8e4ff;letter-spacing:.12em;text-anchor:middle;text-shadow:0 1px 2px rgba(88,166,255,.22),0 0 4px rgba(56,189,248,.12);}
+      #slotwrap-contact{
+        animation: holdglitch-contact 19s ease-in-out infinite;
+        transform-origin: 110px 26px;
+      }
+      @keyframes holdglitch-contact{
+        0%, 26%, 100% { transform: translate(0,0); opacity: 1; }
+        26.02% { transform: translate(-2px, 0); opacity: 0.9; }
+        26.05% { transform: translate(3px, 0); opacity: 1; }
+        26.08% { transform: translate(0, 0); }
+        52%, 52.02% { opacity: 0.35; }
+        52.05% { opacity: 1; }
+        71%, 71.02% { transform: skewX(-2deg); }
+        71.05% { transform: skewX(0); }
+        88%, 88.02% { transform: translate(1px, 0); }
+        88.04% { transform: translate(0, 0); }
+      }
     ]]></style>
   </defs>
-  <g id="slot">
-    <text class="g1" x="110" y="36">Contact</text>
-    <text class="g2" x="110" y="36">Contact</text>
-    <text class="mix" x="110" y="36">C0nt4ct</text>
-    <text class="main" x="110" y="36">Contact</text>
+  <g clip-path="url(#clip-contact)">
+    <g id="slotwrap-contact">
+      <g>
+        <animateTransform attributeName="transform" type="translate" additive="replace" calcMode="discrete"
+          values="0,0;0,-46;0,-92;0,-138;0,-184;0,-230;0,-276;0,-322;0,-368;0,-414;0,-460;0,-506;0,-552;0,-598;0,-644;0,-690;0,-736;0,-782;0,-828;0,-874;0,-920;0,-966;0,-1012;0,-1058;0,-1104;0,-1150;0,-1196;0,-1242;0,-1288;0,-1334;0,-1380;0,-1426;0,-1472;0,-1472"
+          keyTimes="0.0;0.0078125;0.015625;0.0234375;0.03125;0.0390625;0.046875;0.0546875;0.0625;0.0703125;0.078125;0.0859375;0.09375;0.1015625;0.109375;0.1171875;0.125;0.1328125;0.140625;0.1484375;0.15625;0.1640625;0.171875;0.1796875;0.1875;0.1953125;0.203125;0.2109375;0.21875;0.2265625;0.234375;0.2421875;0.25;1.0"
+          dur="19s" repeatCount="indefinite"/>
+      <text class="row" x="110" y="36">%%%%%%%</text>
+      <text class="row" x="110" y="82">?@#$%+*</text>
+      <text class="row" x="110" y="128">C0nt4c?</text>
+      <text class="row" x="110" y="174">c0NT4CT</text>
+      <text class="row" x="110" y="220">C0nt4ct</text>
+      <text class="row" x="110" y="266">C0ntact</text>
+      <text class="row" x="110" y="312">Cont4ct</text>
+      <text class="row" x="110" y="358">Cont4c7</text>
+      <text class="row" x="110" y="404">Conta7t</text>
+      <text class="row" x="110" y="450">Contac7</text>
+      <text class="row" x="110" y="496">C0ntact</text>
+      <text class="row" x="110" y="542">Cont4ct</text>
+      <text class="row" x="110" y="588">Contac7</text>
+      <text class="row" x="110" y="634">C0nt4ct</text>
+      <text class="row" x="110" y="680">C0nt4c?</text>
+      <text class="row" x="110" y="726">Contact</text>
+      <text class="row" x="110" y="772">C0ntact</text>
+      <text class="row" x="110" y="818">Cont4ct</text>
+      <text class="row" x="110" y="864">Contac7</text>
+      <text class="row" x="110" y="910">C0nt4ct</text>
+      <text class="row" x="110" y="956">Contact</text>
+      <text class="row" x="110" y="1002">Cont4ct</text>
+      <text class="row" x="110" y="1048">C0ntact</text>
+      <text class="row" x="110" y="1094">Cont4ct</text>
+      <text class="row" x="110" y="1140">Contac7</text>
+      <text class="row" x="110" y="1186">C0nt4ct</text>
+      <text class="row" x="110" y="1232">Contact</text>
+      <text class="row" x="110" y="1278">Cont4ct</text>
+      <text class="row" x="110" y="1324">C0ntact</text>
+      <text class="row" x="110" y="1370">Cont4ct</text>
+      <text class="row" x="110" y="1416">Contac7</text>
+      <text class="row" x="110" y="1462">C0nt4ct</text>
+      <text class="final" x="110" y="1508">Contact</text>
+      </g>
+    </g>
   </g>
 </svg>
