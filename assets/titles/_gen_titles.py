@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerate glitch-*.svg title reels: 32 fast shuffle frames in first 25%% of dur, hold final 75%%; optional hold micro-glitch CSS."""
+"""Regenerate glitch-*.svg title reels: 32 fast shuffle frames in first 25%% of dur, hold final 75%%; sparse per-char dim via tspans + CSS."""
 
 def keytimes_shuffle_hold(shuffle_steps: int = 32, shuffle_frac: float = 0.25) -> str:
     # shuffle_steps keyTimes in [0, shuffle_frac), then shuffle_frac, then 1.0 (duplicate final state)
@@ -16,6 +16,63 @@ def translate_values(line: int) -> str:
     return ";".join(vals)
 
 
+def dur_seconds(dur: str) -> float:
+    return float(dur.removesuffix("s"))
+
+
+def esc_xml_tspan(ch: str) -> str:
+    if ch == "&":
+        return "&amp;"
+    if ch == "<":
+        return "&lt;"
+    if ch == ">":
+        return "&gt;"
+    return ch
+
+
+def char_stagger_s(row_idx: int, char_idx: int, line: str, dur: str) -> float:
+    """Per-char offset in [0, dur) so dips desync across rows and positions."""
+    ds = dur_seconds(dur)
+    h = row_idx * 59 + char_idx * 31 + sum(ord(c) for c in line) * 3
+    return (h % 997) / 997.0 * max(ds * 0.97, 0.01)
+
+
+def tspan_anim_delay(row_idx: int, char_idx: int, line: str, dur: str, anim_delay: str) -> float:
+    """Align char cycle with SMIL reel + per-char stagger."""
+    ds = dur_seconds(dur)
+    base = dur_seconds(anim_delay)
+    return (base + char_stagger_s(row_idx, char_idx, line, dur)) % ds
+
+
+def tspans_for_line(s: str, row_idx: int, dur: str, anim_delay: str) -> str:
+    parts: list[str] = []
+    for j, ch in enumerate(s):
+        inner = esc_xml_tspan(ch)
+        delay = tspan_anim_delay(row_idx, j, s, dur, anim_delay)
+        parts.append(f'<tspan class="ch" style="animation-delay:{delay:.3f}s">{inner}</tspan>')
+    return "".join(parts)
+
+
+def build_char_dim_keyframes() -> str:
+    """Few narrow opacity dips (shuffle busier than hold); paired with per-tspan animation-delay."""
+    events: list[tuple[float, float]] = []
+    for p in (0.7, 2.1, 3.8, 5.9, 8.4, 11.2, 14.0, 17.5, 20.8, 23.5):
+        events.append((p, 0.34))
+        events.append((min(p + 0.16, 24.95), 1.0))
+    for p in (34, 48, 58, 69, 79, 90):
+        events.append((p, 0.4))
+        events.append((min(p + 0.14, 99.92), 1.0))
+    events.append((0.0, 1.0))
+    events.append((100.0, 1.0))
+    by_t: dict[float, float] = {}
+    for t, op in events:
+        t = round(t, 2)
+        by_t[t] = op
+    return "\n".join(
+        f"        {t}% {{ opacity: {by_t[t]}; }}" for t in sorted(by_t)
+    )
+
+
 def wrap_svg(
     vid: str,
     view_w: int,
@@ -30,6 +87,7 @@ def wrap_svg(
     junk_lines: list[str],
     final_line: str,
     dur: str,
+    anim_delay: str,
 ) -> str:
     assert len(junk_lines) == 32, len(junk_lines)
     kt = keytimes_shuffle_hold()
@@ -37,32 +95,48 @@ def wrap_svg(
     ys = [y0 + i * line_h for i in range(33)]
     rows = []
     for i, s in enumerate(junk_lines):
-        rows.append(f'      <text class="row" x="{cx}" y="{ys[i]}">{s}</text>')
-    rows.append(f'      <text class="final" x="{cx}" y="{ys[32]}">{final_line}</text>')
+        inner = tspans_for_line(s, i, dur, anim_delay)
+        rows.append(
+            f'      <text class="row" x="{cx}" y="{ys[i]}" xml:space="preserve">{inner}</text>'
+        )
+    fin = tspans_for_line(final_line, 32, dur, anim_delay)
+    rows.append(f'      <text class="final" x="{cx}" y="{ys[32]}" xml:space="preserve">{fin}</text>')
     body = "\n".join(rows)
+    dim_kf = build_char_dim_keyframes()
     return f'''<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {view_w} {view_h}" width="{view_w}" height="{view_h}" overflow="hidden" role="img" aria-label="{aria}">
   <title>{title}</title>
   <defs>
     <clipPath id="clip-{vid}"><rect x="0" y="0" width="{view_w}" height="{view_h}"/></clipPath>
     <style type="text/css"><![CDATA[
-      .row{{{font_row}}}
-      .final{{{font_final}}}
+      .row{{{font_row}text-shadow:0 0 6px rgba(56,189,248,.14),0 0 1px rgba(120,190,255,.28);}}
+      .final{{{font_final}text-shadow:0 0 6px rgba(56,189,248,.14),0 0 1px rgba(120,190,255,.28);}}
+      .row tspan.ch, .final tspan.ch {{
+        animation: charDim-{vid} {dur} linear infinite;
+      }}
       #slotwrap-{vid}{{
-        animation: holdglitch-{vid} {dur} ease-in-out infinite;
+        animation: jiggle-{vid} {dur} ease-in-out infinite;
+        animation-delay: {anim_delay};
         transform-origin: {cx}px {view_h // 2}px;
       }}
-      @keyframes holdglitch-{vid}{{
-        0%, 26%, 100% {{ transform: translate(0,0); opacity: 1; }}
-        26.02% {{ transform: translate(-2px, 0); opacity: 0.9; }}
-        26.05% {{ transform: translate(3px, 0); opacity: 1; }}
+      @keyframes jiggle-{vid}{{
+        0%, 26%, 100% {{ transform: translate(0,0); }}
+        26.02% {{ transform: translate(-2px, 0); }}
+        26.05% {{ transform: translate(3px, 0); }}
         26.08% {{ transform: translate(0, 0); }}
-        52%, 52.02% {{ opacity: 0.35; }}
-        52.05% {{ opacity: 1; }}
-        71%, 71.02% {{ transform: skewX(-2deg); }}
-        71.05% {{ transform: skewX(0); }}
+        42%, 42.02% {{ transform: translate(-1px, 0); }}
+        42.04% {{ transform: translate(0, 0); }}
+        54%, 54.02% {{ transform: translate(2px, 0); }}
+        54.04% {{ transform: translate(0, 0); }}
+        66%, 66.02% {{ transform: translate(-2px, 0); }}
+        66.04% {{ transform: translate(0, 0); }}
+        77%, 77.02% {{ transform: skewX(1deg); }}
+        77.04% {{ transform: skewX(0); }}
         88%, 88.02% {{ transform: translate(1px, 0); }}
         88.04% {{ transform: translate(0, 0); }}
+      }}
+      @keyframes charDim-{vid}{{
+{dim_kf}
       }}
     ]]></style>
   </defs>
@@ -72,7 +146,7 @@ def wrap_svg(
         <animateTransform attributeName="transform" type="translate" additive="replace" calcMode="discrete"
           values="{tv}"
           keyTimes="{kt}"
-          dur="{dur}" repeatCount="indefinite"/>
+          dur="{dur}" begin="{anim_delay}" repeatCount="indefinite"/>
 {body}
       </g>
     </g>
@@ -81,7 +155,7 @@ def wrap_svg(
 '''
 
 
-SHADOW = "text-shadow:0 1px 2px rgba(88,166,255,.22),0 0 4px rgba(56,189,248,.12);"
+
 
 # --- About (5 chars) ---
 about_junk = [
@@ -141,14 +215,14 @@ assert len(pulse_junk) == 32
 assert len(stack_junk) == 32
 assert len(hey_junk) == 32
 
-FONT_ROW_ABOUT = f"font:800 26px ui-monospace,system-ui,monospace;fill:#c8e4ff;letter-spacing:.14em;text-anchor:middle;{SHADOW}"
-FONT_FIN_ABOUT = f"font:800 26px ui-sans-serif,system-ui,sans-serif;fill:#c8e4ff;letter-spacing:.12em;text-anchor:middle;{SHADOW}"
+FONT_ROW_ABOUT = "font:800 26px ui-monospace,system-ui,monospace;fill:#c8e4ff;letter-spacing:.14em;text-anchor:middle;"
+FONT_FIN_ABOUT = "font:800 26px ui-sans-serif,system-ui,sans-serif;fill:#c8e4ff;letter-spacing:.12em;text-anchor:middle;"
 
-FONT_ROW_24 = f"font:800 24px ui-monospace,system-ui,monospace;fill:#c8e4ff;letter-spacing:.09em;text-anchor:middle;{SHADOW}"
-FONT_FIN_24 = f"font:800 24px ui-sans-serif,system-ui,sans-serif;fill:#c8e4ff;letter-spacing:.1em;text-anchor:middle;{SHADOW}"
+FONT_ROW_24 = "font:800 24px ui-monospace,system-ui,monospace;fill:#c8e4ff;letter-spacing:.09em;text-anchor:middle;"
+FONT_FIN_24 = "font:800 24px ui-sans-serif,system-ui,sans-serif;fill:#c8e4ff;letter-spacing:.1em;text-anchor:middle;"
 
-FONT_ROW_HEY = f"font:800 22px ui-monospace,system-ui,monospace;fill:#c8e4ff;letter-spacing:.08em;text-anchor:middle;{SHADOW}"
-FONT_FIN_HEY = f"font:800 22px ui-sans-serif,system-ui,sans-serif;fill:#c8e4ff;letter-spacing:.1em;text-anchor:middle;{SHADOW}"
+FONT_ROW_HEY = "font:800 22px ui-monospace,system-ui,monospace;fill:#c8e4ff;letter-spacing:.08em;text-anchor:middle;"
+FONT_FIN_HEY = "font:800 22px ui-sans-serif,system-ui,sans-serif;fill:#c8e4ff;letter-spacing:.1em;text-anchor:middle;"
 
 out_dir = __file__.rsplit("/", 1)[0]
 
@@ -173,7 +247,8 @@ write(
         FONT_FIN_ABOUT,
         about_junk,
         "About",
-        "20s",
+        "20.41s",
+        "0.27s",
     ),
 )
 
@@ -192,7 +267,8 @@ write(
         FONT_FIN_ABOUT,
         contact_junk,
         "Contact",
-        "19s",
+        "19.13s",
+        "1.82s",
     ),
 )
 
@@ -211,7 +287,8 @@ write(
         FONT_FIN_24,
         pulse_junk,
         "GitHub Pulse",
-        "22s",
+        "22.67s",
+        "0.93s",
     ),
 )
 
@@ -230,7 +307,8 @@ write(
         FONT_FIN_24,
         stack_junk,
         "Stack and tools",
-        "21s",
+        "21.29s",
+        "2.14s",
     ),
 )
 
@@ -249,7 +327,8 @@ write(
         FONT_FIN_HEY,
         hey_junk,
         "Hey, I'm T3lluz",
-        "18s",
+        "18.76s",
+        "1.05s",
     ),
 )
 

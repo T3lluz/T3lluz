@@ -4,23 +4,67 @@
   <defs>
     <clipPath id="clip-contact"><rect x="0" y="0" width="220" height="52"/></clipPath>
     <style type="text/css"><![CDATA[
-      .row{font:800 26px ui-monospace,system-ui,monospace;fill:#c8e4ff;letter-spacing:.14em;text-anchor:middle;text-shadow:0 1px 2px rgba(88,166,255,.22),0 0 4px rgba(56,189,248,.12);}
-      .final{font:800 26px ui-sans-serif,system-ui,sans-serif;fill:#c8e4ff;letter-spacing:.12em;text-anchor:middle;text-shadow:0 1px 2px rgba(88,166,255,.22),0 0 4px rgba(56,189,248,.12);}
+      .row{font:800 26px ui-monospace,system-ui,monospace;fill:#c8e4ff;letter-spacing:.14em;text-anchor:middle;text-shadow:0 0 6px rgba(56,189,248,.14),0 0 1px rgba(120,190,255,.28);}
+      .final{font:800 26px ui-sans-serif,system-ui,sans-serif;fill:#c8e4ff;letter-spacing:.12em;text-anchor:middle;text-shadow:0 0 6px rgba(56,189,248,.14),0 0 1px rgba(120,190,255,.28);}
+      .row tspan.ch, .final tspan.ch {
+        animation: charDim-contact 19.13s linear infinite;
+      }
       #slotwrap-contact{
-        animation: holdglitch-contact 19s ease-in-out infinite;
+        animation: jiggle-contact 19.13s ease-in-out infinite;
+        animation-delay: 1.82s;
         transform-origin: 110px 26px;
       }
-      @keyframes holdglitch-contact{
-        0%, 26%, 100% { transform: translate(0,0); opacity: 1; }
-        26.02% { transform: translate(-2px, 0); opacity: 0.9; }
-        26.05% { transform: translate(3px, 0); opacity: 1; }
+      @keyframes jiggle-contact{
+        0%, 26%, 100% { transform: translate(0,0); }
+        26.02% { transform: translate(-2px, 0); }
+        26.05% { transform: translate(3px, 0); }
         26.08% { transform: translate(0, 0); }
-        52%, 52.02% { opacity: 0.35; }
-        52.05% { opacity: 1; }
-        71%, 71.02% { transform: skewX(-2deg); }
-        71.05% { transform: skewX(0); }
+        42%, 42.02% { transform: translate(-1px, 0); }
+        42.04% { transform: translate(0, 0); }
+        54%, 54.02% { transform: translate(2px, 0); }
+        54.04% { transform: translate(0, 0); }
+        66%, 66.02% { transform: translate(-2px, 0); }
+        66.04% { transform: translate(0, 0); }
+        77%, 77.02% { transform: skewX(1deg); }
+        77.04% { transform: skewX(0); }
         88%, 88.02% { transform: translate(1px, 0); }
         88.04% { transform: translate(0, 0); }
+      }
+      @keyframes charDim-contact{
+        0.0% { opacity: 1.0; }
+        0.7% { opacity: 0.34; }
+        0.86% { opacity: 1.0; }
+        2.1% { opacity: 0.34; }
+        2.26% { opacity: 1.0; }
+        3.8% { opacity: 0.34; }
+        3.96% { opacity: 1.0; }
+        5.9% { opacity: 0.34; }
+        6.06% { opacity: 1.0; }
+        8.4% { opacity: 0.34; }
+        8.56% { opacity: 1.0; }
+        11.2% { opacity: 0.34; }
+        11.36% { opacity: 1.0; }
+        14.0% { opacity: 0.34; }
+        14.16% { opacity: 1.0; }
+        17.5% { opacity: 0.34; }
+        17.66% { opacity: 1.0; }
+        20.8% { opacity: 0.34; }
+        20.96% { opacity: 1.0; }
+        23.5% { opacity: 0.34; }
+        23.66% { opacity: 1.0; }
+        34% { opacity: 0.4; }
+        34.14% { opacity: 1.0; }
+        48% { opacity: 0.4; }
+        48.14% { opacity: 1.0; }
+        58% { opacity: 0.4; }
+        58.14% { opacity: 1.0; }
+        69% { opacity: 0.4; }
+        69.14% { opacity: 1.0; }
+        79% { opacity: 0.4; }
+        79.14% { opacity: 1.0; }
+        90% { opacity: 0.4; }
+        90.14% { opacity: 1.0; }
+        100.0% { opacity: 1.0; }
       }
     ]]></style>
   </defs>
@@ -30,40 +74,40 @@
         <animateTransform attributeName="transform" type="translate" additive="replace" calcMode="discrete"
           values="0,0;0,-46;0,-92;0,-138;0,-184;0,-230;0,-276;0,-322;0,-368;0,-414;0,-460;0,-506;0,-552;0,-598;0,-644;0,-690;0,-736;0,-782;0,-828;0,-874;0,-920;0,-966;0,-1012;0,-1058;0,-1104;0,-1150;0,-1196;0,-1242;0,-1288;0,-1334;0,-1380;0,-1426;0,-1472;0,-1472"
           keyTimes="0.0;0.0078125;0.015625;0.0234375;0.03125;0.0390625;0.046875;0.0546875;0.0625;0.0703125;0.078125;0.0859375;0.09375;0.1015625;0.109375;0.1171875;0.125;0.1328125;0.140625;0.1484375;0.15625;0.1640625;0.171875;0.1796875;0.1875;0.1953125;0.203125;0.2109375;0.21875;0.2265625;0.234375;0.2421875;0.25;1.0"
-          dur="19s" repeatCount="indefinite"/>
-      <text class="row" x="110" y="36">%%%%%%%</text>
-      <text class="row" x="110" y="82">?@#$%+*</text>
-      <text class="row" x="110" y="128">C0nt4c?</text>
-      <text class="row" x="110" y="174">c0NT4CT</text>
-      <text class="row" x="110" y="220">C0nt4ct</text>
-      <text class="row" x="110" y="266">C0ntact</text>
-      <text class="row" x="110" y="312">Cont4ct</text>
-      <text class="row" x="110" y="358">Cont4c7</text>
-      <text class="row" x="110" y="404">Conta7t</text>
-      <text class="row" x="110" y="450">Contac7</text>
-      <text class="row" x="110" y="496">C0ntact</text>
-      <text class="row" x="110" y="542">Cont4ct</text>
-      <text class="row" x="110" y="588">Contac7</text>
-      <text class="row" x="110" y="634">C0nt4ct</text>
-      <text class="row" x="110" y="680">C0nt4c?</text>
-      <text class="row" x="110" y="726">Contact</text>
-      <text class="row" x="110" y="772">C0ntact</text>
-      <text class="row" x="110" y="818">Cont4ct</text>
-      <text class="row" x="110" y="864">Contac7</text>
-      <text class="row" x="110" y="910">C0nt4ct</text>
-      <text class="row" x="110" y="956">Contact</text>
-      <text class="row" x="110" y="1002">Cont4ct</text>
-      <text class="row" x="110" y="1048">C0ntact</text>
-      <text class="row" x="110" y="1094">Cont4ct</text>
-      <text class="row" x="110" y="1140">Contac7</text>
-      <text class="row" x="110" y="1186">C0nt4ct</text>
-      <text class="row" x="110" y="1232">Contact</text>
-      <text class="row" x="110" y="1278">Cont4ct</text>
-      <text class="row" x="110" y="1324">C0ntact</text>
-      <text class="row" x="110" y="1370">Cont4ct</text>
-      <text class="row" x="110" y="1416">Contac7</text>
-      <text class="row" x="110" y="1462">C0nt4ct</text>
-      <text class="final" x="110" y="1508">Contact</text>
+          dur="19.13s" begin="1.82s" repeatCount="indefinite"/>
+      <text class="row" x="110" y="36" xml:space="preserve"><tspan class="ch" style="animation-delay:16.281s">%</tspan><tspan class="ch" style="animation-delay:16.858s">%</tspan><tspan class="ch" style="animation-delay:17.435s">%</tspan><tspan class="ch" style="animation-delay:18.012s">%</tspan><tspan class="ch" style="animation-delay:18.589s">%</tspan><tspan class="ch" style="animation-delay:0.036s">%</tspan><tspan class="ch" style="animation-delay:0.613s">%</tspan></text>
+      <text class="row" x="110" y="82" xml:space="preserve"><tspan class="ch" style="animation-delay:2.229s">?</tspan><tspan class="ch" style="animation-delay:2.806s">@</tspan><tspan class="ch" style="animation-delay:3.383s">#</tspan><tspan class="ch" style="animation-delay:3.960s">$</tspan><tspan class="ch" style="animation-delay:4.537s">%</tspan><tspan class="ch" style="animation-delay:5.114s">+</tspan><tspan class="ch" style="animation-delay:5.691s">*</tspan></text>
+      <text class="row" x="110" y="128" xml:space="preserve"><tspan class="ch" style="animation-delay:16.449s">C</tspan><tspan class="ch" style="animation-delay:17.026s">0</tspan><tspan class="ch" style="animation-delay:17.603s">n</tspan><tspan class="ch" style="animation-delay:18.180s">t</tspan><tspan class="ch" style="animation-delay:18.757s">4</tspan><tspan class="ch" style="animation-delay:0.204s">c</tspan><tspan class="ch" style="animation-delay:0.781s">?</tspan></text>
+      <text class="row" x="110" y="174" xml:space="preserve"><tspan class="ch" style="animation-delay:15.146s">c</tspan><tspan class="ch" style="animation-delay:15.723s">0</tspan><tspan class="ch" style="animation-delay:16.300s">N</tspan><tspan class="ch" style="animation-delay:16.877s">T</tspan><tspan class="ch" style="animation-delay:17.454s">4</tspan><tspan class="ch" style="animation-delay:18.031s">C</tspan><tspan class="ch" style="animation-delay:18.608s">T</tspan></text>
+      <text class="row" x="110" y="220" xml:space="preserve"><tspan class="ch" style="animation-delay:3.048s">C</tspan><tspan class="ch" style="animation-delay:3.625s">0</tspan><tspan class="ch" style="animation-delay:4.202s">n</tspan><tspan class="ch" style="animation-delay:4.779s">t</tspan><tspan class="ch" style="animation-delay:5.356s">4</tspan><tspan class="ch" style="animation-delay:5.933s">c</tspan><tspan class="ch" style="animation-delay:6.510s">t</tspan></text>
+      <text class="row" x="110" y="266" xml:space="preserve"><tspan class="ch" style="animation-delay:6.659s">C</tspan><tspan class="ch" style="animation-delay:7.236s">0</tspan><tspan class="ch" style="animation-delay:7.813s">n</tspan><tspan class="ch" style="animation-delay:8.390s">t</tspan><tspan class="ch" style="animation-delay:8.967s">a</tspan><tspan class="ch" style="animation-delay:9.544s">c</tspan><tspan class="ch" style="animation-delay:10.121s">t</tspan></text>
+      <text class="row" x="110" y="312" xml:space="preserve"><tspan class="ch" style="animation-delay:8.762s">C</tspan><tspan class="ch" style="animation-delay:9.339s">o</tspan><tspan class="ch" style="animation-delay:9.916s">n</tspan><tspan class="ch" style="animation-delay:10.493s">t</tspan><tspan class="ch" style="animation-delay:11.070s">4</tspan><tspan class="ch" style="animation-delay:11.647s">c</tspan><tspan class="ch" style="animation-delay:12.224s">t</tspan></text>
+      <text class="row" x="110" y="358" xml:space="preserve"><tspan class="ch" style="animation-delay:6.454s">C</tspan><tspan class="ch" style="animation-delay:7.031s">o</tspan><tspan class="ch" style="animation-delay:7.608s">n</tspan><tspan class="ch" style="animation-delay:8.185s">t</tspan><tspan class="ch" style="animation-delay:8.762s">4</tspan><tspan class="ch" style="animation-delay:9.339s">c</tspan><tspan class="ch" style="animation-delay:9.916s">7</tspan></text>
+      <text class="row" x="110" y="404" xml:space="preserve"><tspan class="ch" style="animation-delay:11.014s">C</tspan><tspan class="ch" style="animation-delay:11.591s">o</tspan><tspan class="ch" style="animation-delay:12.168s">n</tspan><tspan class="ch" style="animation-delay:12.745s">t</tspan><tspan class="ch" style="animation-delay:13.322s">a</tspan><tspan class="ch" style="animation-delay:13.899s">7</tspan><tspan class="ch" style="animation-delay:14.476s">t</tspan></text>
+      <text class="row" x="110" y="450" xml:space="preserve"><tspan class="ch" style="animation-delay:11.163s">C</tspan><tspan class="ch" style="animation-delay:11.740s">o</tspan><tspan class="ch" style="animation-delay:12.317s">n</tspan><tspan class="ch" style="animation-delay:12.894s">t</tspan><tspan class="ch" style="animation-delay:13.471s">a</tspan><tspan class="ch" style="animation-delay:14.048s">c</tspan><tspan class="ch" style="animation-delay:14.625s">7</tspan></text>
+      <text class="row" x="110" y="496" xml:space="preserve"><tspan class="ch" style="animation-delay:12.150s">C</tspan><tspan class="ch" style="animation-delay:12.727s">0</tspan><tspan class="ch" style="animation-delay:13.304s">n</tspan><tspan class="ch" style="animation-delay:13.881s">t</tspan><tspan class="ch" style="animation-delay:14.458s">a</tspan><tspan class="ch" style="animation-delay:15.034s">c</tspan><tspan class="ch" style="animation-delay:15.611s">t</tspan></text>
+      <text class="row" x="110" y="542" xml:space="preserve"><tspan class="ch" style="animation-delay:14.253s">C</tspan><tspan class="ch" style="animation-delay:14.830s">o</tspan><tspan class="ch" style="animation-delay:15.407s">n</tspan><tspan class="ch" style="animation-delay:15.984s">t</tspan><tspan class="ch" style="animation-delay:16.561s">4</tspan><tspan class="ch" style="animation-delay:17.138s">c</tspan><tspan class="ch" style="animation-delay:17.715s">t</tspan></text>
+      <text class="row" x="110" y="588" xml:space="preserve"><tspan class="ch" style="animation-delay:14.458s">C</tspan><tspan class="ch" style="animation-delay:15.034s">o</tspan><tspan class="ch" style="animation-delay:15.611s">n</tspan><tspan class="ch" style="animation-delay:16.188s">t</tspan><tspan class="ch" style="animation-delay:16.765s">a</tspan><tspan class="ch" style="animation-delay:17.342s">c</tspan><tspan class="ch" style="animation-delay:17.919s">7</tspan></text>
+      <text class="row" x="110" y="634" xml:space="preserve"><tspan class="ch" style="animation-delay:12.931s">C</tspan><tspan class="ch" style="animation-delay:13.508s">0</tspan><tspan class="ch" style="animation-delay:14.085s">n</tspan><tspan class="ch" style="animation-delay:14.662s">t</tspan><tspan class="ch" style="animation-delay:15.239s">4</tspan><tspan class="ch" style="animation-delay:15.816s">c</tspan><tspan class="ch" style="animation-delay:16.393s">t</tspan></text>
+      <text class="row" x="110" y="680" xml:space="preserve"><tspan class="ch" style="animation-delay:11.070s">C</tspan><tspan class="ch" style="animation-delay:11.647s">0</tspan><tspan class="ch" style="animation-delay:12.224s">n</tspan><tspan class="ch" style="animation-delay:12.801s">t</tspan><tspan class="ch" style="animation-delay:13.378s">4</tspan><tspan class="ch" style="animation-delay:13.955s">c</tspan><tspan class="ch" style="animation-delay:14.532s">?</tspan></text>
+      <text class="row" x="110" y="726" xml:space="preserve"><tspan class="ch" style="animation-delay:2.602s">C</tspan><tspan class="ch" style="animation-delay:3.179s">o</tspan><tspan class="ch" style="animation-delay:3.756s">n</tspan><tspan class="ch" style="animation-delay:4.333s">t</tspan><tspan class="ch" style="animation-delay:4.910s">a</tspan><tspan class="ch" style="animation-delay:5.487s">c</tspan><tspan class="ch" style="animation-delay:6.064s">t</tspan></text>
+      <text class="row" x="110" y="772" xml:space="preserve"><tspan class="ch" style="animation-delay:18.738s">C</tspan><tspan class="ch" style="animation-delay:0.185s">0</tspan><tspan class="ch" style="animation-delay:0.762s">n</tspan><tspan class="ch" style="animation-delay:1.913s">t</tspan><tspan class="ch" style="animation-delay:2.490s">a</tspan><tspan class="ch" style="animation-delay:3.067s">c</tspan><tspan class="ch" style="animation-delay:3.644s">t</tspan></text>
+      <text class="row" x="110" y="818" xml:space="preserve"><tspan class="ch" style="animation-delay:2.285s">C</tspan><tspan class="ch" style="animation-delay:2.862s">o</tspan><tspan class="ch" style="animation-delay:3.439s">n</tspan><tspan class="ch" style="animation-delay:4.016s">t</tspan><tspan class="ch" style="animation-delay:4.593s">4</tspan><tspan class="ch" style="animation-delay:5.170s">c</tspan><tspan class="ch" style="animation-delay:5.747s">t</tspan></text>
+      <text class="row" x="110" y="864" xml:space="preserve"><tspan class="ch" style="animation-delay:2.490s">C</tspan><tspan class="ch" style="animation-delay:3.067s">o</tspan><tspan class="ch" style="animation-delay:3.644s">n</tspan><tspan class="ch" style="animation-delay:4.221s">t</tspan><tspan class="ch" style="animation-delay:4.798s">a</tspan><tspan class="ch" style="animation-delay:5.375s">c</tspan><tspan class="ch" style="animation-delay:5.952s">7</tspan></text>
+      <text class="row" x="110" y="910" xml:space="preserve"><tspan class="ch" style="animation-delay:0.390s">C</tspan><tspan class="ch" style="animation-delay:0.967s">0</tspan><tspan class="ch" style="animation-delay:2.118s">n</tspan><tspan class="ch" style="animation-delay:2.695s">t</tspan><tspan class="ch" style="animation-delay:3.272s">4</tspan><tspan class="ch" style="animation-delay:3.849s">c</tspan><tspan class="ch" style="animation-delay:4.426s">t</tspan></text>
+      <text class="row" x="110" y="956" xml:space="preserve"><tspan class="ch" style="animation-delay:8.092s">C</tspan><tspan class="ch" style="animation-delay:8.669s">o</tspan><tspan class="ch" style="animation-delay:9.246s">n</tspan><tspan class="ch" style="animation-delay:9.823s">t</tspan><tspan class="ch" style="animation-delay:10.400s">a</tspan><tspan class="ch" style="animation-delay:10.977s">c</tspan><tspan class="ch" style="animation-delay:11.554s">t</tspan></text>
+      <text class="row" x="110" y="1002" xml:space="preserve"><tspan class="ch" style="animation-delay:6.678s">C</tspan><tspan class="ch" style="animation-delay:7.255s">o</tspan><tspan class="ch" style="animation-delay:7.832s">n</tspan><tspan class="ch" style="animation-delay:8.409s">t</tspan><tspan class="ch" style="animation-delay:8.986s">4</tspan><tspan class="ch" style="animation-delay:9.563s">c</tspan><tspan class="ch" style="animation-delay:10.140s">t</tspan></text>
+      <text class="row" x="110" y="1048" xml:space="preserve"><tspan class="ch" style="animation-delay:6.771s">C</tspan><tspan class="ch" style="animation-delay:7.348s">0</tspan><tspan class="ch" style="animation-delay:7.925s">n</tspan><tspan class="ch" style="animation-delay:8.502s">t</tspan><tspan class="ch" style="animation-delay:9.079s">a</tspan><tspan class="ch" style="animation-delay:9.656s">c</tspan><tspan class="ch" style="animation-delay:10.233s">t</tspan></text>
+      <text class="row" x="110" y="1094" xml:space="preserve"><tspan class="ch" style="animation-delay:8.874s">C</tspan><tspan class="ch" style="animation-delay:9.451s">o</tspan><tspan class="ch" style="animation-delay:10.028s">n</tspan><tspan class="ch" style="animation-delay:10.605s">t</tspan><tspan class="ch" style="animation-delay:11.182s">4</tspan><tspan class="ch" style="animation-delay:11.759s">c</tspan><tspan class="ch" style="animation-delay:12.336s">t</tspan></text>
+      <text class="row" x="110" y="1140" xml:space="preserve"><tspan class="ch" style="animation-delay:9.079s">C</tspan><tspan class="ch" style="animation-delay:9.656s">o</tspan><tspan class="ch" style="animation-delay:10.233s">n</tspan><tspan class="ch" style="animation-delay:10.810s">t</tspan><tspan class="ch" style="animation-delay:11.387s">a</tspan><tspan class="ch" style="animation-delay:11.964s">c</tspan><tspan class="ch" style="animation-delay:12.540s">7</tspan></text>
+      <text class="row" x="110" y="1186" xml:space="preserve"><tspan class="ch" style="animation-delay:7.552s">C</tspan><tspan class="ch" style="animation-delay:8.129s">0</tspan><tspan class="ch" style="animation-delay:8.706s">n</tspan><tspan class="ch" style="animation-delay:9.283s">t</tspan><tspan class="ch" style="animation-delay:9.860s">4</tspan><tspan class="ch" style="animation-delay:10.437s">c</tspan><tspan class="ch" style="animation-delay:11.014s">t</tspan></text>
+      <text class="row" x="110" y="1232" xml:space="preserve"><tspan class="ch" style="animation-delay:14.681s">C</tspan><tspan class="ch" style="animation-delay:15.258s">o</tspan><tspan class="ch" style="animation-delay:15.835s">n</tspan><tspan class="ch" style="animation-delay:16.412s">t</tspan><tspan class="ch" style="animation-delay:16.989s">a</tspan><tspan class="ch" style="animation-delay:17.566s">c</tspan><tspan class="ch" style="animation-delay:18.143s">t</tspan></text>
+      <text class="row" x="110" y="1278" xml:space="preserve"><tspan class="ch" style="animation-delay:13.266s">C</tspan><tspan class="ch" style="animation-delay:13.843s">o</tspan><tspan class="ch" style="animation-delay:14.420s">n</tspan><tspan class="ch" style="animation-delay:14.997s">t</tspan><tspan class="ch" style="animation-delay:15.574s">4</tspan><tspan class="ch" style="animation-delay:16.151s">c</tspan><tspan class="ch" style="animation-delay:16.728s">t</tspan></text>
+      <text class="row" x="110" y="1324" xml:space="preserve"><tspan class="ch" style="animation-delay:13.359s">C</tspan><tspan class="ch" style="animation-delay:13.936s">0</tspan><tspan class="ch" style="animation-delay:14.513s">n</tspan><tspan class="ch" style="animation-delay:15.090s">t</tspan><tspan class="ch" style="animation-delay:15.667s">a</tspan><tspan class="ch" style="animation-delay:16.244s">c</tspan><tspan class="ch" style="animation-delay:16.821s">t</tspan></text>
+      <text class="row" x="110" y="1370" xml:space="preserve"><tspan class="ch" style="animation-delay:15.463s">C</tspan><tspan class="ch" style="animation-delay:16.040s">o</tspan><tspan class="ch" style="animation-delay:16.616s">n</tspan><tspan class="ch" style="animation-delay:17.193s">t</tspan><tspan class="ch" style="animation-delay:17.770s">4</tspan><tspan class="ch" style="animation-delay:18.347s">c</tspan><tspan class="ch" style="animation-delay:18.924s">t</tspan></text>
+      <text class="row" x="110" y="1416" xml:space="preserve"><tspan class="ch" style="animation-delay:15.667s">C</tspan><tspan class="ch" style="animation-delay:16.244s">o</tspan><tspan class="ch" style="animation-delay:16.821s">n</tspan><tspan class="ch" style="animation-delay:17.398s">t</tspan><tspan class="ch" style="animation-delay:17.975s">a</tspan><tspan class="ch" style="animation-delay:18.552s">c</tspan><tspan class="ch" style="animation-delay:19.129s">7</tspan></text>
+      <text class="row" x="110" y="1462" xml:space="preserve"><tspan class="ch" style="animation-delay:14.141s">C</tspan><tspan class="ch" style="animation-delay:14.718s">0</tspan><tspan class="ch" style="animation-delay:15.295s">n</tspan><tspan class="ch" style="animation-delay:15.872s">t</tspan><tspan class="ch" style="animation-delay:16.449s">4</tspan><tspan class="ch" style="animation-delay:17.026s">c</tspan><tspan class="ch" style="animation-delay:17.603s">t</tspan></text>
+      <text class="final" x="110" y="1508" xml:space="preserve"><tspan class="ch" style="animation-delay:2.713s">C</tspan><tspan class="ch" style="animation-delay:3.290s">o</tspan><tspan class="ch" style="animation-delay:3.867s">n</tspan><tspan class="ch" style="animation-delay:4.444s">t</tspan><tspan class="ch" style="animation-delay:5.021s">a</tspan><tspan class="ch" style="animation-delay:5.598s">c</tspan><tspan class="ch" style="animation-delay:6.175s">t</tspan></text>
       </g>
     </g>
   </g>
