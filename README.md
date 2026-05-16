@@ -27,38 +27,37 @@
 <div align="center">
   <img src="https://img.shields.io/badge/Focus-Full--stack%20Web-58A6FF?style=flat-square" alt="Focus badge" />
   <img src="https://img.shields.io/badge/Repo%20themes-Stream%20Deck%20%7C%20UI%20Animations-1F6FEB?style=flat-square" alt="Repo themes badge" />
-  <img src="https://img.shields.io/badge/AI%20workflow-LM%20Studio%20%7C%20OpenCLAW%20%7C%20Cursor-58A6FF?style=flat-square" alt="AI workflow badge" />
+  <img src="https://img.shields.io/badge/AI%20workflow-LM%20Studio%20%7C%20OpenCLAW%20%7C%20Cursor-58A6FF?style=flat-square" alt="AI workflow badge" /><br /><br />
+  <sub>Fira Code carousel · rotates stacks, rituals, lore — lines up with the blue graph + neon vibe</sub><br />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira%20Code&size=20&duration=2750&pause=800&color=58A6FF&center=true&vCenter=true&width=980&lines=WHO%20-%20student%20dev%20chasing%20practical%20builds%2C%20clean%20UX%2C%20and%20code%20you%20don%27t%20dread%20refactoring%3BWEB%20-%20JS%20%2B%20React%20%2B%20Node%20%2B%20HTML%2FCSS%3BDATA%20-%20Postgres%20%C2%B7%20MongoDB%20%C2%B7%20SQL%20%2B%20NoSQL%20patterns%3BLANG%20SIDEQUESTS%20-%20Kotlin%2C%20TypeScript%2C%20Python%2C%20Java%20%28%2B%20enterprise%20flashbacks%20occasionally%29%3BLOCAL%20AI%20-%20LM%20Studio%20%2B%20OpenCLAW%20%2B%20Cursor%20for%20local-first%20agent%20tinkering%3BSHIP%20MODE%20-%20tiny%20milestones%20%C2%B7%20maintainability%20%3E%20clever%20scars%20%C2%B7%20VMs%20before%20%27trust%20me%20bro%27%3BSIDE%20QUESTS%20-%20Stream%20Deck%20%2B%20HID%20power%2C%20animations%20%2B%20polish%2C%20distro%20tuning%2C%20local%20LLMs%3BREADME%20LORE%20-%20if%20it%20parses%20configs%2C%20I%27ll%20eventually%20%27optimize%27%20them%20at%202am%3BCOMMIT%20ATHLETE%20-%20staging%20is%20mythical%3B%20vibes%20are%20reproducible-ish" alt="About: stacks, workflows, lore (typing carousel)" />
 </div>
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h4>Who I am</h4>
-      <p>
-        Student developer focused on practical web software with a bias toward clean UX and readable code.
-      </p>
-      <ul>
-        <li>Web stack: JavaScript, React, Node.js, HTML/CSS</li>
-        <li>Data stack: Postgres, MongoDB, SQL + NoSQL patterns</li>
-        <li>Also active with Kotlin, TypeScript, Python, and Java</li>
-        <li>Local AI stack: LM Studio + OpenCLAW + Cursor IDE workflows</li>
-      </ul>
-    </td>
-    <td width="50%" valign="top">
-      <h4>How I work</h4>
-      <ul>
-        <li>Break ideas into small deliverables</li>
-        <li>Prioritize maintainability over cleverness</li>
-        <li>Keep DX and performance in mind from day one</li>
-        <li>Use VMs for isolated testing and configuration experiments</li>
-      </ul>
-      <h4>Beyond coding</h4>
-      <p>
-        Stream Deck + HID battery integrations, theme/animation customization, Linux/Windows setup tuning, and local-LLM tinkering with LM Studio.
-      </p>
-    </td>
-  </tr>
-</table>
+<details>
+<summary><strong>Plain checklist</strong> — same facts, zero animation</summary>
+
+**Who I am** · Student developer focused on practical web software with a bias toward clean UX and readable code.
+
+**Stacks & tools**
+
+| Lane | Detail |
+| --- | --- |
+| Web | JavaScript, React, Node.js, HTML/CSS |
+| Data | Postgres, MongoDB, SQL + NoSQL patterns |
+| Also | Kotlin, TypeScript, Python, Java |
+| Local AI | LM Studio + OpenCLAW + Cursor IDE workflows |
+
+**How I work**
+
+| Habit | What it means |
+| --- | --- |
+| Deliverables | Break ideas into small, shippable slices |
+| Code quality | Prioritize maintainability over cleverness |
+| Product feel | DX and performance matter from day one |
+| Sandbox | VMs for isolated testing & config experiments |
+
+**Beyond coding** · Stream Deck + HID battery integrations, theme / animation tweaks, Linux/Windows setup tuning, local-LLM tinkering with LM Studio.
+
+</details>
 
 <details>
 <summary><strong>Fun mode</strong></summary>
