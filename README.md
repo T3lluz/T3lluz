@@ -8,7 +8,7 @@
   Full-stack student building MERN/PERN apps, Stream Deck tools, local LLM workflows in LM Studio, and UI animation experiments.
 </p>
 
-<img decoding="async" width="910" src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2600&pause=900&color=58A6FF&center=true&vCenter=true&width=1100&lines=Building+with+local+LLMs+in+LM+Studio+and+Cursor+IDE%3BOpenCLAW+is+configured+with+LM+Studio+for+local+agent+flows%3BCurrent+focus%3A+Stream+Deck+plugins%2C+HID+battery+tooling%2C+and+UI+animation%3BAlso+working+with+VM+setups+for+safe+testing+and+reproducible+dev+environments%3BDebug+mode%3A+print%28%29%2C+pray%28%29%2C+and+one+more+coffee." alt="Typing intro" />
+<img width="910" src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2600&pause=900&color=58A6FF&center=true&vCenter=true&width=1100&lines=Public+repos%3A+12+%7C+Followers%3A+5%3BContributed+repos+tracked%3A+0%3BRecently+updated%3A+T3lluz%2C+proslides-overview%2C+MacroTracker%3BTop+langs%3A+Python%2C+HTML%2C+CSS+%7C+Focus%3A+Stream+Deck+plugins%2C+HID+tooling%3BFun+fact%3A+I+tweak+configs+until+the+config+tweaks+me+back.%3BStatus%3A+shipping+small+commits+and+pretending+tabs+are+temporary.%3BDebug+mode%3A+print%28%29%2C+pray%28%29%2C+and+one+more+coffee." alt="Typing intro" />
 
 <br />
 
