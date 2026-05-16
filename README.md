@@ -26,11 +26,11 @@
   <img src="https://img.shields.io/badge/Focus-Full--stack%20Web-58A6FF?style=flat-square" alt="Focus badge" />
   <img src="https://img.shields.io/badge/Repo%20themes-Stream%20Deck%20%7C%20UI%20Animations-1F6FEB?style=flat-square" alt="Repo themes badge" />
   <img src="https://img.shields.io/badge/AI%20workflow-LM%20Studio%20%7C%20OpenCLAW%20%7C%20Cursor-58A6FF?style=flat-square" alt="AI workflow badge" /><br /><br />
-  <table align="center" width="98%">
+  <table align="center" width="92%">
     <tbody>
       <tr>
         <td align="center">
-          <img width="1080" height="158" src="./assets/about/about-carousel.svg" alt="About" />
+          <img width="900" height="116" src="./assets/about/about-carousel.svg" alt="About" />
         </td>
       </tr>
     </tbody>

@@ -3,8 +3,7 @@ from __future__ import annotations
 
 import os
 
-W, H = 1180, 172
-SCALE = 1.42
+W, H = 1000, 128
 TYPE = 0.2
 GAP = 0.03
 HOLD = 6.2
@@ -39,12 +38,10 @@ slides = [
     ],
 ]
 
-ys = [52, 102, 152]
-CLIP_H = 38
-CLIP_X = 20
-CLIP_W = W - 40
-CX = W / 2
-CY = (ys[0] + ys[2]) / 2
+ys = [34, 68, 102]
+CLIP_H = 28
+CLIP_X = 14
+CLIP_W = W - 28
 
 
 def esc(s: str) -> str:
@@ -71,7 +68,7 @@ lines_out.append("  <title>About</title>")
 lines_out.append('  <rect width="100%" height="100%" fill="transparent"/>')
 lines_out.append(
     '  <defs><style type="text/css"><![CDATA['
-    ".ln{font:24px/1.35 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#58A6FF;}"
+    ".ln{font:18px/1.35 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#58A6FF;}"
     "]]></style></defs>"
 )
 
@@ -89,15 +86,11 @@ for si, texts in enumerate(slides):
             f'dur="{sec(0.02)}" begin="{prev_wipe}.end+{sec(BETWEEN)}" fill="freeze"/>'
         )
 
-    lines_out.append(
-        f'    <g transform="translate({CX:.1f},{CY:.1f}) scale({SCALE}) translate({-CX:.1f},{-CY:.1f})">'
-    )
-
     for li, (txt, y) in enumerate(zip(texts, ys)):
         cid = f"cp{si}_{li}"
         rid = f"r{si}_{li}"
         aid = f"type{si}_{li}"
-        y0 = y - 28
+        y0 = y - 22
         lines_out.append(f'    <clipPath id="{cid}">')
         lines_out.append(
             f'      <rect id="{rid}" x="{CLIP_X}" y="{y0}" width="0" height="{CLIP_H}">'
@@ -116,8 +109,6 @@ for si, texts in enumerate(slides):
             f'    <text class="ln" x="{CLIP_X}" y="{y}" clip-path="url(#{cid})">{esc(txt)}</text>'
         )
         last = aid
-
-    lines_out.append("    </g>")
 
     hold_id = f"hold{si}"
     lines_out.append('    <rect width="0" height="0" opacity="0" pointer-events="none">')
