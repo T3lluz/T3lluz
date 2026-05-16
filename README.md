@@ -28,7 +28,7 @@
   <img src="https://img.shields.io/badge/Focus-Full--stack%20Web-58A6FF?style=flat-square" alt="Focus badge" />
   <img src="https://img.shields.io/badge/Repo%20themes-Stream%20Deck%20%7C%20UI%20Animations-1F6FEB?style=flat-square" alt="Repo themes badge" />
   <img src="https://img.shields.io/badge/AI%20workflow-LM%20Studio%20%7C%20OpenCLAW%20%7C%20Cursor-58A6FF?style=flat-square" alt="AI workflow badge" /><br /><br />
-  <img width="920" src="./assets/about/about-carousel.svg" alt="About: three lines per beat, pause, then next slide" />
+  <img width="100%" src="./assets/about/about-carousel.svg" alt="About: three lines per beat, pause, then next slide" />
 </div>
 
 <details>

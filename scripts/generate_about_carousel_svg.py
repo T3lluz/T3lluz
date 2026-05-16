@@ -2,7 +2,7 @@
 """Emit assets/about/about-carousel.svg — 3-line beats, clip typing, hold, wipe, loop."""
 from __future__ import annotations
 
-W, H = 920, 102
+W, H = 1000, 132
 TYPE = 0.2  # clip expand per line (seconds) — three lines in quick succession
 GAP = 0.03  # tiny gap between line clips
 HOLD = 6.2  # pause after 3rd line so the beat can be read
@@ -37,10 +37,10 @@ slides = [
     ],
 ]
 
-ys = [26, 52, 78]
-CLIP_H = 22
-CLIP_X = 10
-CLIP_W = W - 20
+ys = [36, 74, 112]
+CLIP_H = 30
+CLIP_X = 16
+CLIP_W = W - 32
 
 
 def esc(s: str) -> str:
@@ -67,7 +67,7 @@ lines_out.append("  <title>About — three lines per beat</title>")
 lines_out.append('  <rect width="100%" height="100%" fill="transparent"/>')
 lines_out.append(
     '  <defs><style type="text/css"><![CDATA['
-    ".ln{font:14px/1.35 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#58A6FF;}"
+    ".ln{font:18px/1.35 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#58A6FF;}"
     "]]></style></defs>"
 )
 
@@ -91,7 +91,7 @@ for si, texts in enumerate(slides):
         cid = f"cp{si}_{li}"
         rid = f"r{si}_{li}"
         aid = f"type{si}_{li}"
-        y0 = y - 17
+        y0 = y - 22
         lines_out.append(f'    <clipPath id="{cid}">')
         lines_out.append(
             f'      <rect id="{rid}" x="{CLIP_X}" y="{y0}" width="0" height="{CLIP_H}">'
