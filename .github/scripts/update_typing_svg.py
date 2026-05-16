@@ -12,8 +12,10 @@ from pathlib import Path
 
 
 README_PATH = Path("README.md")
-START_MARKER = "<!-- TYPING_SVG_START -->"
-END_MARKER = "<!-- TYPING_SVG_END -->"
+TYPING_IMG = re.compile(
+    r'<img[^>]*src="https://readme-typing-svg\.demolab\.com[^"]*"[^>]*>',
+    flags=re.IGNORECASE,
+)
 
 
 def api_get(url: str, token: str | None) -> dict | list:
@@ -136,7 +138,7 @@ def build_typing_url(lines: list[str]) -> str:
         "color": "58A6FF",
         "center": "true",
         "vCenter": "true",
-        "width": "900",
+        "width": "1100",
         "lines": ";".join(lines),
     }
     query = urllib.parse.urlencode(params, quote_via=urllib.parse.quote_plus)
@@ -212,22 +214,13 @@ def main() -> int:
     ]
 
     svg_url = build_typing_url(lines)
-    replacement = (
-        f'{START_MARKER}\n'
-        f'<img src="{svg_url}" alt="Typing intro" />\n'
-        f"{END_MARKER}"
-    )
+    replacement = f'<img width="910" src="{svg_url}" alt="Typing intro" />'
 
     readme = README_PATH.read_text(encoding="utf-8")
-    pattern = re.compile(
-        rf"{re.escape(START_MARKER)}.*?{re.escape(END_MARKER)}",
-        flags=re.DOTALL,
-    )
+    if not TYPING_IMG.search(readme):
+        raise RuntimeError("README typing image not found")
 
-    if not pattern.search(readme):
-        raise RuntimeError("Typing markers were not found in README.md")
-
-    updated = pattern.sub(replacement, readme)
+    updated = TYPING_IMG.sub(replacement, readme, count=1)
     if updated == readme:
         print("No README changes needed.")
         return 0
