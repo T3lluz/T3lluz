@@ -28,8 +28,7 @@
   <img src="https://img.shields.io/badge/Focus-Full--stack%20Web-58A6FF?style=flat-square" alt="Focus badge" />
   <img src="https://img.shields.io/badge/Repo%20themes-Stream%20Deck%20%7C%20UI%20Animations-1F6FEB?style=flat-square" alt="Repo themes badge" />
   <img src="https://img.shields.io/badge/AI%20workflow-LM%20Studio%20%7C%20OpenCLAW%20%7C%20Cursor-58A6FF?style=flat-square" alt="AI workflow badge" /><br /><br />
-  <sub>Each beat = one typed line with three · clauses (no multiline path quirks) · faster keystrokes · long pause only after a full line so you can read before it wipes</sub><br />
-  <img src="https://readme-typing-svg.demolab.com?font=Fira%20Code&size=15&duration=1200&pause=6800&color=58A6FF&center=false&vCenter=true&width=1040&height=56&lines=%E2%80%BA%20who%3A%20student%20dev%20%C2%B7%20clean%20UX%20%2B%20readable%20code%20%C2%B7%20practical%20web%20software%3B%E2%80%BA%20web%3A%20JS%20React%20Node%20HTML%2FCSS%20%C2%B7%20data%3A%20PG%20Mongo%20SQL%2BNoSQL%20%C2%B7%20langs%3A%20Kotlin%20TS%20Py%20Java%3B%E2%80%BA%20AI%3A%20LM%20Studio%2BOpenCLAW%2BCursor%20%C2%B7%20small%20deliverables%20%C2%B7%20maintainability%20over%20clever%3B%E2%80%BA%20DX%2Bperf%20from%20day%20one%20%C2%B7%20VMs%20for%20isolated%20tests%20%C2%B7%20Stream%20Deck%2BHID%20integrations%3B%E2%80%BA%20UI%2FOS%20tuning%20%C2%B7%20LM%20Studio%20LLM%20tinkering%20%C2%B7%20fun%3A%20tweaks-%3Esaga%20%2B%20print%2Bpray%2Bcoffee" alt="About: five beats, three clauses per line, typing then pause" />
+  <img width="920" src="./assets/about/about-carousel.svg" alt="About: three lines per beat, pause, then next slide" />
 </div>
 
 <details>
