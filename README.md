@@ -8,7 +8,7 @@
   Full-stack student building MERN/PERN apps, Stream Deck tools, local LLM workflows in LM Studio, and UI animation experiments.
 </p>
 
-<img width="910" src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2600&pause=900&color=58A6FF&center=true&vCenter=true&width=1100&lines=Public+repos%3A+14+%7C+Followers%3A+5%3BContributed+repos+tracked%3A+1%3BRecently+updated%3A+T3lluz%2C+MacroTracker%2C+proslides-overview%3BTop+langs%3A+Python%2C+HTML%2C+CSS+%7C+Focus%3A+Stream+Deck+plugins%2C+Battery+integrations%3BFun+fact%3A+I+tweak+configs+until+the+config+tweaks+me+back.%3BStatus%3A+shipping+small+commits+and+pretending+tabs+are+temporary.%3BDebug+mode%3A+print%28%29%2C+pray%28%29%2C+and+one+more+coffee." alt="Typing intro" />
+<img width="910" src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2600&pause=900&color=58A6FF&center=true&vCenter=true&width=1100&lines=Public+repos%3A+15+%7C+Followers%3A+5%3BContributed+repos+tracked%3A+1%3BRecently+updated%3A+T3lluz%2C+Power-Deck%2C+MacroTracker%3BTop+langs%3A+Python%2C+HTML%2C+CSS+%7C+Focus%3A+Stream+Deck+plugins%2C+Battery+integrations%3BFun+fact%3A+I+tweak+configs+until+the+config+tweaks+me+back.%3BStatus%3A+shipping+small+commits+and+pretending+tabs+are+temporary.%3BDebug+mode%3A+print%28%29%2C+pray%28%29%2C+and+one+more+coffee." alt="Typing intro" />
 
 <br />
 
