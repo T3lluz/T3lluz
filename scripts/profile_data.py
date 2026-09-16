@@ -7,7 +7,7 @@ import os
 import urllib.request
 from collections import Counter
 from dataclasses import asdict, dataclass, field
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 USERNAME = os.getenv("PROFILE_USERNAME", "T3lluz")
@@ -27,7 +27,7 @@ DESCRIPTION_OVERRIDES = {
 }
 
 QUERY = """
-query($login: String!) {
+query($login: String!, $from90: DateTime!, $from30: DateTime!) {
   user(login: $login) {
     name
     bio
@@ -39,17 +39,18 @@ query($login: String!) {
     repositories(first: 100, ownerAffiliations: OWNER, isFork: false, privacy: PUBLIC,
                  orderBy: {field: PUSHED_AT, direction: DESC}) {
       totalCount
-      nodes {
-        name
-        description
-        url
-        pushedAt
-        stargazerCount
-        isArchived
-        primaryLanguage { name color }
-        languages(first: 12, orderBy: {field: SIZE, direction: DESC}) {
-          edges { size node { name color } }
-        }
+      nodes { ...RepoFields }
+    }
+    last90: contributionsCollection(from: $from90) {
+      commitContributionsByRepository(maxRepositories: 25) {
+        contributions { totalCount }
+        repository { ...RepoFields }
+      }
+    }
+    last30: contributionsCollection(from: $from30) {
+      commitContributionsByRepository(maxRepositories: 25) {
+        contributions { totalCount }
+        repository { nameWithOwner }
       }
     }
     contributionsCollection {
@@ -63,6 +64,21 @@ query($login: String!) {
         weeks { contributionDays { date contributionCount } }
       }
     }
+  }
+}
+
+fragment RepoFields on Repository {
+  name
+  nameWithOwner
+  isPrivate
+  description
+  url
+  pushedAt
+  stargazerCount
+  isArchived
+  primaryLanguage { name color }
+  languages(first: 12, orderBy: {field: SIZE, direction: DESC}) {
+    edges { size node { name color } }
   }
 }
 """
@@ -103,6 +119,9 @@ class Profile:
     weekly: list[tuple[str, int]]
     languages: list[tuple[str, float, str]]
     recent: list[Repo] = field(default_factory=list)
+    # Languages weighted by my commits in the last 90 days, and repos ranked by commits in the last 30.
+    recent_languages: list[tuple[str, float, str]] = field(default_factory=list)
+    active: list[tuple[Repo, int]] = field(default_factory=list)
     generated_on: str = ""
 
     @property
@@ -113,13 +132,25 @@ class Profile:
         return f"{months // 12}y {months % 12}m"
 
     def top_languages(self, n: int = 3) -> list[str]:
-        return [name for name, _, _ in self.languages[:n] if name != "Other"]
+        """Most-used languages lately (falls back to all-time code size)."""
+        source = self.recent_languages or self.languages
+        return [name for name, _, _ in source[:n] if name != "Other"]
+
+    @property
+    def focus(self) -> list[tuple[Repo, int]]:
+        """What I'm working on: most commits this month, else most recently pushed."""
+        return self.active or [(r, 0) for r in self.recent[:3]]
 
 
 def _graphql(token: str) -> dict:
+    now = datetime.now(timezone.utc)
     req = urllib.request.Request(
         "https://api.github.com/graphql",
-        data=json.dumps({"query": QUERY, "variables": {"login": USERNAME}}).encode(),
+        data=json.dumps({"query": QUERY, "variables": {
+            "login": USERNAME,
+            "from90": (now - timedelta(days=90)).isoformat(),
+            "from30": (now - timedelta(days=30)).isoformat(),
+        }}).encode(),
         headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
         method="POST",
     )
@@ -149,6 +180,35 @@ def _include(name: str) -> bool:
     return name not in EXCLUDED_REPOS and not name.startswith(EXCLUDED_PREFIXES)
 
 
+def _repo(r: dict) -> Repo:
+    return Repo(
+        name=r["name"],
+        description=(DESCRIPTION_OVERRIDES.get(r["name"]) or r["description"] or "").strip(),
+        url=r["url"],
+        pushed_at=r["pushedAt"],
+        stars=r["stargazerCount"],
+        language=(r["primaryLanguage"] or {}).get("name", ""),
+        language_color=(r["primaryLanguage"] or {}).get("color") or "#8b949e",
+    )
+
+
+def _shares(weights: Counter[str], colors: dict[str, str], top: int = 6) -> list[tuple[str, float, str]]:
+    total = sum(weights.values()) or 1
+    out = [(n, w / total * 100, colors[n]) for n, w in weights.most_common(top)]
+    other = 100 - sum(pct for _, pct, _ in out)
+    if other >= 0.5:
+        out.append(("Other", other, "#6e7681"))
+    return out
+
+
+def _public_commits(window: dict) -> list[tuple[dict, int]]:
+    return [
+        (item["repository"], item["contributions"]["totalCount"])
+        for item in window["commitContributionsByRepository"]
+        if not item["repository"].get("isPrivate") and _include(item["repository"]["nameWithOwner"].split("/")[-1])
+    ]
+
+
 def build_profile(user: dict, today: date) -> Profile:
     repos = [r for r in user["repositories"]["nodes"] if not r["isArchived"]]
     cc = user["contributionsCollection"]
@@ -171,25 +231,26 @@ def build_profile(user: dict, today: date) -> Profile:
         for edge in r["languages"]["edges"]:
             sizes[edge["node"]["name"]] += edge["size"]
             colors[edge["node"]["name"]] = edge["node"]["color"] or "#8b949e"
-    total = sum(sizes.values()) or 1
-    langs = [(n, s / total * 100, colors[n]) for n, s in sizes.most_common(6)]
-    other = 100 - sum(p for _, p, _ in langs)
-    if other >= 0.5:
-        langs.append(("Other", other, "#6e7681"))
+    langs = _shares(sizes, colors)
 
-    recent = [
-        Repo(
-            name=r["name"],
-            description=(DESCRIPTION_OVERRIDES.get(r["name"]) or r["description"] or "").strip(),
-            url=r["url"],
-            pushed_at=r["pushedAt"],
-            stars=r["stargazerCount"],
-            language=(r["primaryLanguage"] or {}).get("name", ""),
-            language_color=(r["primaryLanguage"] or {}).get("color") or "#8b949e",
-        )
-        for r in repos
-        if _include(r["name"])
+    # Recent languages: each repo's language mix, weighted by how many commits I made there.
+    recent_weights: Counter[str] = Counter()
+    last90 = _public_commits(user["last90"])
+    for repo, commits in last90:
+        edges = repo["languages"]["edges"]
+        repo_total = sum(e["size"] for e in edges) or 1
+        for e in edges:
+            recent_weights[e["node"]["name"]] += commits * e["size"] / repo_total
+            colors[e["node"]["name"]] = e["node"]["color"] or "#8b949e"
+    by_name = {repo["nameWithOwner"]: repo for repo, _ in last90}
+    active = [
+        (_repo(by_name[repo["nameWithOwner"]]), commits)
+        for repo, commits in _public_commits(user["last30"])
+        if repo["nameWithOwner"] in by_name
     ]
+    active.sort(key=lambda rc: -rc[1])
+
+    recent = [_repo(r) for r in repos if _include(r["name"])]
 
     return Profile(
         login=USERNAME,
@@ -214,6 +275,8 @@ def build_profile(user: dict, today: date) -> Profile:
         weekly=weekly,
         languages=langs,
         recent=recent,
+        recent_languages=_shares(recent_weights, colors),
+        active=active,
         generated_on=today.isoformat(),
     )
 

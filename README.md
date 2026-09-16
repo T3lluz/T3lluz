@@ -5,74 +5,81 @@
 
 <div align="center">
 
-<img src="./assets/banner/terminal-banner.svg" width="100%" alt="T3lluz terminal banner: 1,346 contributions in the last year" />
+<img src="./assets/banner/ascii-banner.svg" width="100%" alt="Sliding ASCII banner: now building DailyDash" />
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-hey-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-hey-light.svg" />
-  <img src="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-hey-dark.svg" alt="Hey, I'm T3lluz" width="280" height="64" />
+  <img src="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-hey-dark.svg" alt="Hey, I'm T3lluz" width="280" height="56" />
 </picture>
 
 <p>
-  Computer engineering (bachelor) · based in Norway.<br />
-  I build the tools I want to use every day:
-  Android apps, React web apps, KDE Plasma widgets and Stream Deck plugins.
+  Computer engineering (bachelor) from Norway who builds the tools I want to use every day.<br />
+  Right now that's [DailyDash](https://github.com/T3lluz/DailyDash), [ChroMods](https://github.com/T3lluz/ChroMods), [PorcoRosso](https://github.com/T3lluz/PorcoRosso), mostly in JavaScript, Kotlin, CSS.
 </p>
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira%20Code&weight=500&size=20&duration=2800&pause=1200&color=58A6FF&center=true&vCenter=true&width=760&height=40&lines=1%2C346%20contributions%20in%20the%20last%20year%20and%20counting%3BCurrently%20building%3A%20Cinema-Info%20%28JavaScript%29%3B16%20public%20repos%20%C2%B7%20mostly%20Kotlin%2C%20JavaScript%2C%20TypeScript%3BLongest%20streak%20this%20year%3A%2022%20days%3BI%20build%20the%20tools%20I%20want%20to%20use%20every%20day" alt="Live GitHub facts" />
+<img width="910" src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2600&pause=1100&color=58A6FF&center=true&vCenter=true&width=1100&lines=Now+building%3A+DailyDash+%E2%80%94+Android+dashboard%3A+health%2C+weather%2C+F1%2C+GitHub+and%E2%80%A6%3BAlso+shipping%3A+ChroMods+%28JavaScript%29+%2B+PorcoRosso+%28JavaScript%29%3BRecently+writing%3A+JavaScript%2C+Kotlin%2C+CSS%3BLast+12+months%3A+1%2C347+contributions+%C2%B7+990+commits+%C2%B7+201+PRs%3BI+build+the+tools+I+want+to+use+every+day." alt="Typing intro: what I'm working on right now" />
 
-<p>
-  <a href="https://github.com/T3lluz?tab=repositories"><img src="https://img.shields.io/badge/public_repos-16-58A6FF?style=flat-square&logo=github&logoColor=white" alt="16 public repos" /></a>
-  <img src="https://img.shields.io/badge/contributions_(12m)-1346-1F6FEB?style=flat-square" alt="1346 contributions in the last 12 months" />
-  <img src="https://img.shields.io/badge/pull_requests_(12m)-201-A371F7?style=flat-square" alt="201 pull requests in the last 12 months" />
-</p>
+<br />
+
+<a href="https://x.com/T3lluz_"><img src="https://img.shields.io/badge/X-111111?style=flat-square&logo=x&logoColor=white" alt="X" /></a>
+<a href="https://www.linkedin.com/in/fredrik-stalsberg-427821151/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+<a href="https://github.com/T3lluz"><img src="https://img.shields.io/badge/GitHub-T3lluz-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" /></a>
 
 </div>
 
 ---
 
 <div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-about-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-about-light.svg" />
-  <img src="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-about-dark.svg" alt="About me" width="193" height="64" />
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/about/about-carousel-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/about/about-carousel-light.svg" />
-  <img src="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/about/about-carousel-dark.svg" alt="About T3lluz" width="1000" height="150" />
-</picture>
-
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-about-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-about-light.svg" />
+    <img src="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-about-dark.svg" alt="About" width="141" height="56" />
+  </picture><br /><br />
+  <img src="https://img.shields.io/badge/Now%20building-DailyDash-58A6FF?style=flat-square" alt="Now building: DailyDash" />
+  <img src="https://img.shields.io/badge/Recently%20writing-JavaScript%20%7C%20Kotlin%20%7C%20CSS-1F6FEB?style=flat-square" alt="Recently writing: JavaScript | Kotlin | CSS" />
+  <img src="https://img.shields.io/badge/Active%20repos%20this%20month-8-58A6FF?style=flat-square" alt="Active repos this month: 8" /><br /><br />
+  <table align="center" width="100%">
+    <tbody>
+      <tr>
+        <td align="center">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/about/about-carousel-dark.svg" />
+            <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/about/about-carousel-light.svg" />
+            <img src="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/about/about-carousel-dark.svg" alt="About T3lluz" width="1000" height="150" />
+          </picture>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <details>
-<summary><strong>Plain-text version</strong></summary>
+<summary><strong>Plain checklist</strong></summary>
 
 **cat whoami.txt**
 
 - bachelor in computer engineering · based in Norway
-- 4y 9m on GitHub · 1,346 contributions in the last year
+- 4y 9m on GitHub · 1,347 contributions in the last year
 - I build the tools I actually want to use, then keep polishing them
 
-**ls ~/projects --sort=recent**
+**git log --since="1 month" --stat**
 
-- Cinema-Info — Live cinema schedule with seats, times and posters for Buen K…
-- DailyDash — Android dashboard: health, weather, F1, GitHub and servers on…
-- PorcoRosso — React 19 + Vite site published on GitHub Pages
+- DailyDash (46 commits this month) — Android dashboard: health, weather, F1, Git…
+- ChroMods (36 commits this month) — Chromium css theming for requested sites
+- PorcoRosso (18 commits this month) — React 19 + Vite site published on GitHub Pa…
 
-**tokei ~/code --sort code**
+**tokei ~/code --recent**
 
-- languages: Kotlin 42% · JavaScript 19% · TypeScript 12% · CSS 7%
+- last 90 days: JavaScript 40% · Kotlin 24% · CSS 15% · TypeScript 13%
 - web: React 19 · Vite · TypeScript · Tailwind · Supabase
 - apps: Kotlin + Jetpack Compose · Qt/QML Plasma widgets · Python
 
 **gh stats --year**
 
-- 989 commits · 201 pull requests · 22 issues
+- 990 commits · 201 pull requests · 22 issues
 - longest streak this year: 22 days in a row
-- 111 active days · most productive on Fridays
+- 112 active days · most productive on Fridays
 
 **cat ~/.enjoy**
 
@@ -85,121 +92,95 @@
 ---
 
 <div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-building-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-building-light.svg" />
-  <img src="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-building-dark.svg" alt="Now building" width="238" height="64" />
-</picture>
-
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-pulse-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-pulse-light.svg" />
+    <img src="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-pulse-dark.svg" alt="GitHub Pulse" width="246" height="56" />
+  </picture><br /><br />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/stats/pulse-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/stats/pulse-light.svg" />
+    <img src="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/stats/pulse-dark.svg" alt="1347 contributions, 990 commits and 201 pull requests in the last year. Languages: JavaScript (40%), Kotlin (24%), CSS (15%), TypeScript (13%), Python (3%), QML (2%)" width="1000" height="390" />
+  </picture>
 </div>
 
-| Project | What it is | Lang | Last push |
-| --- | --- | --- | --- |
-| [**Cinema-Info**](https://github.com/T3lluz/Cinema-Info) | Live cinema schedule with seats, times and posters for Buen Kino | JavaScript | Sep 2026 |
-| [**DailyDash**](https://github.com/T3lluz/DailyDash) | Android dashboard: health, weather, F1, GitHub and servers on one screen | Kotlin | Sep 2026 |
-| [**PorcoRosso**](https://github.com/T3lluz/PorcoRosso) | React 19 + Vite site published on GitHub Pages | JavaScript | Sep 2026 |
-| [**Power-Deck**](https://github.com/T3lluz/Power-Deck) | Plasma panel widget for ROG laptop power modes and hardware controls. | QML | Aug 2026 |
-| [**ChroMods**](https://github.com/T3lluz/ChroMods) | Chromium css theming for requested sites | JavaScript | Aug 2026 |
-| [**YTMQ**](https://github.com/T3lluz/YTMQ) | Youtube music shared queue connection | TypeScript | Aug 2026 |
-
-<sub>Sorted by most recent push · updated automatically every day.</sub>
-
----
-
 <div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-pulse-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-pulse-light.svg" />
-  <img src="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-pulse-dark.svg" alt="GitHub pulse" width="243" height="64" />
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/stats/pulse-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/stats/pulse-light.svg" />
-  <img src="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/stats/pulse-dark.svg" alt="1346 contributions, 989 commits and 201 pull requests in the last year. Languages: Kotlin (42%), JavaScript (19%), TypeScript (12%), CSS (7%), QML (7%), Python (6%)" width="1000" height="390" />
-</picture>
-
-<br /><br />
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/snake/github-contribution-grid-snake-neon.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/snake/github-contribution-grid-snake.svg" />
-  <img alt="Snake eating my contribution graph" src="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/snake/github-contribution-grid-snake.svg" />
-</picture>
-
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/snake/github-contribution-grid-snake-neon.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/snake/github-contribution-grid-snake.svg" />
+    <img alt="Snake eating my contribution graph" src="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/snake/github-contribution-grid-snake.svg" />
+  </picture>
 </div>
 
 ---
 
 <div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-stack-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-stack-light.svg" />
+    <img src="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-stack-dark.svg" alt="Stack and tools" width="294" height="56" />
+  </picture><br /><br />
+  <table align="center" width="100%">
+    <tbody>
+      <tr valign="top">
+        <td align="center" width="50%">
+          <b>Recently writing</b><br /><br />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript" width="40" height="40" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/kotlin/kotlin-original.svg" alt="Kotlin" title="Kotlin" width="40" height="40" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/css3/css3-original.svg" alt="CSS" title="CSS" width="40" height="40" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/typescript/typescript-original.svg" alt="TypeScript" title="TypeScript" width="40" height="40" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/python/python-original.svg" alt="Python" title="Python" width="40" height="40" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/qt/qt-original.svg" alt="QML" title="QML" width="40" height="40" />
+        </td>
+        <td align="center" width="50%">
+          <b>Building with</b><br /><br />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/react/react-original.svg" alt="React" title="React" width="40" height="40" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/vitejs/vitejs-original.svg" alt="Vite" title="Vite" width="40" height="40" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" title="Tailwind CSS" width="40" height="40" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/nodejs/nodejs-original.svg" alt="Node.js" title="Node.js" width="40" height="40" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/supabase/supabase-original.svg" alt="Supabase" title="Supabase" width="40" height="40" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" title="PostgreSQL" width="40" height="40" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/jetpackcompose/jetpackcompose-original.svg" alt="Jetpack Compose" title="Jetpack Compose" width="40" height="40" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/android/android-original.svg" alt="Android" title="Android" width="40" height="40" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/qt/qt-original.svg" alt="Qt / QML" title="Qt / QML" width="40" height="40" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/playwright/playwright-original.svg" alt="Playwright" title="Playwright" width="40" height="40" />
+        </td>
+      </tr>
+      <tr>
+        <td align="center" colspan="2">
+          <b>Environment and tooling</b><br /><br />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/linux/linux-original.svg" alt="Linux" title="Linux" width="40" height="40" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/archlinux/archlinux-original.svg" alt="Arch Linux" title="Arch Linux" width="40" height="40" />
+          <img src="https://api.iconify.design/simple-icons:kde.svg?color=%231D99F3" alt="KDE Plasma" title="KDE Plasma" width="40" height="40" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/git/git-original.svg" alt="Git" title="Git" width="40" height="40" />
+          <img src="https://api.iconify.design/simple-icons:githubactions.svg?color=%232088FF" alt="GitHub Actions" title="GitHub Actions" width="40" height="40" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/vscode/vscode-original.svg" alt="VS Code" title="VS Code" width="40" height="40" />
+          <img src="https://api.iconify.design/simple-icons:cursor.svg?color=%2393C5FD" alt="Cursor" title="Cursor" width="40" height="40" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/androidstudio/androidstudio-original.svg" alt="Android Studio" title="Android Studio" width="40" height="40" />
+          <img src="https://api.iconify.design/simple-icons:elgato.svg?color=%2358A6FF" alt="Stream Deck" title="Stream Deck" width="40" height="40" />
+          <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/chrome/chrome-original.svg" alt="Chrome extensions" title="Chrome extensions" width="40" height="40" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-stack-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-stack-light.svg" />
-  <img src="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-stack-dark.svg" alt="Stack & tools" width="261" height="64" />
-</picture>
-
-**Languages I ship in** <sub>(ordered by how much code is in my repos)</sub>
-
-<p>
-  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/kotlin/kotlin-original.svg" alt="Kotlin" title="Kotlin" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/typescript/typescript-original.svg" alt="TypeScript" title="TypeScript" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/css3/css3-original.svg" alt="CSS" title="CSS" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/qt/qt-original.svg" alt="QML" title="QML" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/python/python-original.svg" alt="Python" title="Python" width="40" height="40" />
-</p>
-
-**Frameworks & platforms**
-
-<p>
-  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/react/react-original.svg" alt="React" title="React" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/vitejs/vitejs-original.svg" alt="Vite" title="Vite" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" title="Tailwind CSS" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/nodejs/nodejs-original.svg" alt="Node.js" title="Node.js" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/supabase/supabase-original.svg" alt="Supabase" title="Supabase" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" title="PostgreSQL" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/jetpackcompose/jetpackcompose-original.svg" alt="Jetpack Compose" title="Jetpack Compose" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/android/android-original.svg" alt="Android" title="Android" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/qt/qt-original.svg" alt="Qt / QML" title="Qt / QML" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/playwright/playwright-original.svg" alt="Playwright" title="Playwright" width="40" height="40" />
-</p>
-
-**Daily setup**
-
-<p>
-  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/linux/linux-original.svg" alt="Linux" title="Linux" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/archlinux/archlinux-original.svg" alt="Arch Linux" title="Arch Linux" width="40" height="40" />
-  <img src="https://api.iconify.design/simple-icons:kde.svg?color=%231D99F3" alt="KDE Plasma" title="KDE Plasma" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/git/git-original.svg" alt="Git" title="Git" width="40" height="40" />
-  <img src="https://api.iconify.design/simple-icons:githubactions.svg?color=%232088FF" alt="GitHub Actions" title="GitHub Actions" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/vscode/vscode-original.svg" alt="VS Code" title="VS Code" width="40" height="40" />
-  <img src="https://api.iconify.design/simple-icons:cursor.svg?color=%2393C5FD" alt="Cursor" title="Cursor" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/androidstudio/androidstudio-original.svg" alt="Android Studio" title="Android Studio" width="40" height="40" />
-  <img src="https://api.iconify.design/simple-icons:elgato.svg?color=%2358A6FF" alt="Stream Deck" title="Stream Deck" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/chrome/chrome-original.svg" alt="Chrome extensions" title="Chrome extensions" width="40" height="40" />
-</p>
-
+  <p><b>Local AI workflow</b></p>
+  <p><code>LM Studio</code> · <code>OpenCLAW</code> · <code>Cursor IDE</code> · <code>VM-based test setups</code></p>
 </div>
 
 ---
 
 <div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-contact-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-contact-light.svg" />
+    <img src="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-contact-dark.svg" alt="Contact" width="177" height="56" />
+  </picture><br /><br />
+  <a href="https://github.com/T3lluz"><img src="https://img.shields.io/badge/GitHub-T3lluz-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub profile" /></a>
+  <a href="mailto:fstalsberg@gmail.com"><img src="https://img.shields.io/badge/Email-fstalsberg%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Fredrik" /></a>
+  <img src="https://img.shields.io/badge/Discord-T3lluz1337-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord T3lluz1337" />
+</div>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-contact-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-contact-light.svg" />
-  <img src="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/titles/glitch-contact-dark.svg" alt="Get in touch" width="239" height="64" />
-</picture>
-
-<a href="https://github.com/T3lluz"><img src="https://img.shields.io/badge/GitHub-T3lluz-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
-<a href="https://www.linkedin.com/in/fredrik-stalsberg-427821151/"><img src="https://img.shields.io/badge/LinkedIn-Fredrik_Stalsberg-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-<a href="https://x.com/T3lluz_"><img src="https://img.shields.io/badge/X-@T3lluz__-111111?style=for-the-badge&logo=x&logoColor=white" alt="X" /></a>
-<a href="mailto:fstalsberg@gmail.com"><img src="https://img.shields.io/badge/Email-fstalsberg%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
-<img src="https://img.shields.io/badge/Discord-T3lluz1337-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord: T3lluz1337" />
-
-<sub>Always up for talking about side projects, Linux desktops and good tooling.</sub>
-
+<div align="center">
+  <sub>Open to collaboration, side projects, and cool build ideas.</sub>
 </div>

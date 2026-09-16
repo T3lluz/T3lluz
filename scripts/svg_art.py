@@ -1,22 +1,66 @@
-"""Data-driven SVGs for the profile: terminal banner, about carousel and the pulse card."""
+"""Data-driven SVGs for the profile: sliding ASCII banner, about carousel and the pulse card."""
 
 from __future__ import annotations
 
-import random
+import re
 from datetime import date
 
 from profile_data import Profile
-from svg_common import MONO, SANS, THEMES, discrete, discrete_translate, esc, num, reveal_steps
+from svg_common import MONO, SANS, THEMES, discrete, discrete_translate, esc, num
 
-# figlet -f "ANSI Shadow" T3LLUZ — drawn as vectors so it renders identically in every browser/font.
-LOGO = [
-    "████████╗██████╗ ██╗     ██╗     ██╗   ██╗███████╗",
-    "╚══██╔══╝╚════██╗██║     ██║     ██║   ██║╚══███╔╝",
-    "   ██║    █████╔╝██║     ██║     ██║   ██║  ███╔╝ ",
-    "   ██║    ╚═══██╗██║     ██║     ██║   ██║ ███╔╝  ",
-    "   ██║   ██████╔╝███████╗███████╗╚██████╔╝███████╗",
-    "   ╚═╝   ╚═════╝ ╚══════╝╚══════╝ ╚═════╝ ╚══════╝",
+try:
+    import pyfiglet
+except ImportError:  # pragma: no cover
+    pyfiglet = None
+
+# Hand-drawn ASCII icons (monospace, padded to a rectangle when rendered).
+TUX = [
+    "    .--.    ",
+    "   |o_o |   ",
+    "   |:_/ |   ",
+    "  //   \\ \\  ",
+    " (|     | ) ",
+    "/'\\_   _/`\\ ",
+    "\\___)=(___/ ",
 ]
+ARCH = [
+    "      /\\      ",
+    "     /  \\     ",
+    "    /\\   \\    ",
+    "   /      \\   ",
+    "  /   ,,   \\  ",
+    " /   |  |  -\\ ",
+    "/_-''    ''-_\\",
+]
+TERMINAL = [
+    " ______________ ",
+    "|.------------.|",
+    "|| >_         ||",
+    "||            ||",
+    "||            ||",
+    "|'------------'|",
+    " '------------' ",
+]
+CHIP = [
+    "   | | | | |   ",
+    " .-'-'-'-'-'-. ",
+    "-|  .-----.  |-",
+    "-|  | </> |  |-",
+    "-|  '-----'  |-",
+    " '-.-.-.-.-.-' ",
+    "   | | | | |   ",
+]
+
+
+def figlet(word: str) -> list[str]:
+    """ANSI Shadow rows for a word (only █ and double box-drawing characters)."""
+    if pyfiglet is None:
+        raise SystemExit("pyfiglet is required: pip install -r scripts/requirements.txt")
+    rows = [r.rstrip() for r in pyfiglet.figlet_format(word.upper(), font="ansi_shadow", width=1000).split("\n")]
+    while rows and not rows[-1]:
+        rows.pop()
+    width = max(len(r) for r in rows)
+    return [r.ljust(width) for r in rows]
 
 
 def _box_segments(ch: str, x: float, y: float, w: float, h: float) -> str:
@@ -33,14 +77,14 @@ def _box_segments(ch: str, x: float, y: float, w: float, h: float) -> str:
     out = []
     for pts in shapes.get(ch, []):
         coords = [num(v) for v in pts]
-        pairs = [f"{coords[i]} {coords[i + 1]}" for i in range(0, len(coords), 2)]
-        out.append("M" + "L".join(pairs))
+        out.append("M" + "L".join(f"{coords[i]} {coords[i + 1]}" for i in range(0, len(coords), 2)))
     return "".join(out)
 
 
-def logo_paths(x0: float, y0: float, cw: float, ch: float) -> tuple[str, str]:
+def art_paths(rows: list[str], x0: float, y0: float, cw: float, ch: float) -> tuple[str, str]:
+    """Vector version of ANSI Shadow art: solid blocks + thin double-line shadows."""
     blocks, lines = [], []
-    for r, row in enumerate(LOGO):
+    for r, row in enumerate(rows):
         c = 0
         while c < len(row):
             if row[c] == "█":
@@ -76,165 +120,139 @@ def _age(pushed_at: str, today: date) -> str:
     return f"{days // 30} months ago"
 
 
+def activity(p: Profile, idx: int) -> str:
+    """'Kotlin · 46 commits this month' for the idx-th project I'm focused on."""
+    repo, commits = p.focus[idx]
+    lang = f"{repo.language} · " if repo.language else ""
+    if commits:
+        return f"{lang}{commits} commit{'s' * (commits != 1)} this month"
+    return f"{lang}pushed {_age(repo.pushed_at, date.fromisoformat(p.generated_on))}"
+
+
 # --------------------------------------------------------------------------- banner
 
+def banner_items(p: Profile) -> list[tuple[str, list[str], str]]:
+    projects = [i for i, (r, _) in enumerate(p.focus) if re.fullmatch(r"[A-Za-z0-9-]{1,13}", r.name)]
+    langs = [(n, pct) for n, pct, _ in (p.recent_languages or p.languages) if n != "Other"]
+    role = p.bio.replace("Bachelor - ", "").lower() if p.bio else "software engineering"
+    items = [("word", figlet(p.login), f"{role} · {(p.location or 'norway').lower()}"),
+             ("icon", TUX, "linux desktop tinkerer · kde plasma")]
+    if projects:
+        items.append(("word", figlet(p.focus[projects[0]][0].name), f"now building · {activity(p, projects[0])}"))
+    items.append(("icon", TERMINAL, f"{_fmt(p.contributions)} contributions in the last 12 months"))
+    if len(projects) > 1:
+        items.append(("word", figlet(p.focus[projects[1]][0].name), f"also shipping · {activity(p, projects[1])}"))
+    items.append(("icon", CHIP, "recently writing " + " · ".join(n for n, _ in langs[:3])))
+    if langs:
+        items.append(("word", figlet(langs[0][0]), f"top language · last 90 days · {langs[0][1]:.0f}% of my commits"))
+    items.append(("icon", ARCH, f"{p.active_days} active days · best streak {p.longest_streak} days"))
+    return items
+
+
 def banner(p: Profile) -> str:
-    W, H = 1200, 420
+    W, H = 1200, 320
     t = THEMES["dark"]
-    today = date.fromisoformat(p.generated_on)
-    cw, chh = 12.0, 22.0
-    lx, ly = 48, 118
-    blocks, shadow = logo_paths(lx, ly, cw, chh)
-    logo_w = len(LOGO[0]) * cw
-    logo_h = len(LOGO) * chh
-    rng = random.Random(p.generated_on)
+    cw, ch = 10.0, 19.0          # ANSI Shadow cell
+    icon_fs, icon_lh = 16, 17.0  # ASCII icon text
+    icon_cw = icon_fs * 0.6
+    art_top, art_h = 94, 6 * ch
+    cap_y, cap_fs = 246, 14
+    gap = 90
 
-    now = p.recent[0] if p.recent else None
-    info = [
-        ("OS", "Linux · KDE Plasma"),
-        ("Host", f"GitHub · {p.location}" if p.location else "GitHub"),
-        ("Uptime", f"{p.years_on_github} of pushing code"),
-        ("Focus", p.bio.replace("Bachelor - ", "BSc ") if p.bio else "Software engineering"),
-        ("Langs", " · ".join(p.top_languages(4))),
-        ("Repos", f"{p.public_repos} public · {p.stars} stars · {p.merged_prs} merged PRs"),
-        ("Year", f"{_fmt(p.contributions)} contributions · {_fmt(p.commits)} commits"),
-        ("Streak", f"{p.current_streak} day{'s' * (p.current_streak != 1)} now · best {p.longest_streak}"
-         if p.current_streak > 1 else f"best {p.longest_streak} days · {p.active_days} active days"),
-        ("Now", f"{now.name} ({now.language})" if now else "something new"),
-    ]
-    ix, iy, row_h, fs = 700, 112, 23, 15
-    char_w = fs * 0.6
-    info_svg = [
-        f'<text x="{ix}" y="{iy}" font-size="{fs}" fill="{t["accent"]}" font-weight="700">t3lluz<tspan fill="{t["muted"]}">@</tspan>github</text>',
-        f'<text x="{ix}" y="{iy + 12}" font-size="{fs}" fill="{t["border"]}">{"─" * 20}</text>',
-    ]
-    clips = []
-    for i, (label, value) in enumerate(info):
-        y = iy + 34 + i * row_h
-        line = f"{label}: {value}"
-        line = _clip(line, 52)
-        value = line[len(label) + 2:]
-        clips.append(f'<clipPath id="info{i}"><rect x="{ix}" y="{y - 16}" height="22" width="0">'
-                     f'{reveal_steps(len(line) * char_w + 4, len(line), 1.3 + i * 0.16, 0.012)}</rect></clipPath>')
-        info_svg.append(
-            f'<text x="{ix}" y="{y}" font-size="{fs}" clip-path="url(#info{i})">'
-            f'<tspan fill="{t["accent3"]}" font-weight="700">{esc(label)}</tspan>'
-            f'<tspan fill="{t["muted"]}">: </tspan><tspan fill="{t["text"]}">{esc(value)}</tspan></text>'
-        )
-    palette = ["#0d1117", "#ff7b72", "#7ee787", "#d29922", "#58a6ff", "#bc8cff", "#39d0d8", "#e6edf3"]
-    py = iy + 34 + len(info) * row_h - 6
-    for i, color in enumerate(palette):
-        info_svg.append(
-            f'<rect x="{ix + i * 30}" y="{py}" width="26" height="14" rx="2" fill="{color}" stroke="{t["border"]}" opacity="0">'
-            f'<set attributeName="opacity" to="1" begin="{num(3.0 + i * 0.05)}s" fill="freeze"/></rect>'
-        )
+    x = 0.0
+    blocks, shadows, icons, captions = [], [], [], []
+    for kind, rows, caption in banner_items(p):
+        cols = max(len(r) for r in rows)
+        art_w = cols * (cw if kind == "word" else icon_cw)
+        cap_w = len(caption) * cap_fs * 0.6 + 26
+        slot = max(art_w, cap_w)
+        ax = x + (slot - art_w) / 2
+        if kind == "word":
+            b, s = art_paths(rows, ax, art_top, cw, ch)
+            blocks.append(b)
+            shadows.append(s)
+        else:
+            top = art_top + (art_h - len(rows) * icon_lh) / 2 + icon_fs * 0.8
+            for li, row in enumerate(rows):
+                if row.strip():
+                    icons.append(f'<text x="{num(ax)}" y="{num(top + li * icon_lh)}" textLength="{num(cols * icon_cw)}" '
+                                 f'lengthAdjust="spacingAndGlyphs" xml:space="preserve">{esc(row.ljust(cols))}</text>')
+        captions.append(f'<text x="{num(x + slot / 2)}" y="{cap_y}" text-anchor="middle">'
+                        f'<tspan fill="{t["accent"]}">// </tspan>{esc(caption)}</text>')
+        x += slot + gap
+    loop_w = x
+    dur = loop_w / 62
 
-    # Ticker: live facts, scrolled seamlessly (two copies, exact width via textLength).
-    items = [f"{_fmt(p.contributions)} contributions in the last year",
-             f"{_fmt(p.commits)} commits · {_fmt(p.pull_requests)} pull requests",
-             f"longest streak: {p.longest_streak} days"]
-    if p.best_day[1]:
-        items.append(f"best day: {p.best_day[1]} contributions on {date.fromisoformat(p.best_day[0]):%d %b %Y}")
-    if p.busiest_weekday:
-        items.append(f"most productive on {p.busiest_weekday}s")
-    items += [f"{r.name} updated {_age(r.pushed_at, today)}" for r in p.recent[:4]]
-    items.append(f"refreshed {p.generated_on}")
-    tick_fs = 14
-    tick_cw = tick_fs * 0.6
-    sep = "   ◆   "
-    tick = sep.join(items) + sep
-    while len(tick) * tick_cw < W:
-        tick += tick
-    tick_w = len(tick) * tick_cw
-    tick_y = H - 34
+    strip = (f'<path d="{"".join(blocks)}" fill="#fff"/>'
+             f'<path d="{"".join(shadows)}" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="1.5" stroke-linejoin="round"/>'
+             f'<g font-family="{MONO}" font-size="{icon_fs}" font-weight="700" fill="#fff">{"".join(icons)}</g>')
+    slide = (f'<animateTransform attributeName="transform" type="translate" from="44 0" to="{num(44 - loop_w)} 0" '
+             f'dur="{num(dur)}s" repeatCount="indefinite"/>')
 
-    glitch_starts = [4.2, 4.5, 7.6]
-    loop = 9.0
-    def slice_layer(i: int) -> str:
-        band_y = ly + rng.uniform(0, logo_h - 20)
-        band_h = rng.uniform(8, 22)
+    # Occasional glitch: two thin bands of the strip jump sideways with a colour tint.
+    glitch = []
+    loop = 8.0
+    bands = [(art_top + 20, 14, "#ff2e88", -14, (5.2, 5.5)), (art_top + 70, 10, "#00e5ff", 10, (5.3, 7.1))]
+    for i, (by, bh, color, dx, starts) in enumerate(bands):
         op = [(0.0, 0)]
         tr = [(0.0, (0, 0))]
-        for s in glitch_starts:
-            dx = rng.choice([-1, 1]) * rng.uniform(8, 26)
-            op += [(s, 1), (s + 0.18, 0)]
-            tr += [(s, (dx, 0)), (s + 0.06, (-dx / 2, 0)), (s + 0.12, (dx / 3, 0)), (s + 0.18, (0, 0))]
-        return (f'<clipPath id="lslice{i}"><rect x="0" y="{num(band_y)}" width="{W}" height="{num(band_h)}"/></clipPath>'
-                f'<g clip-path="url(#lslice{i})" opacity="0">{discrete("opacity", loop, op, "3s")}'
-                f'<g>{discrete_translate(loop, tr, "3s")}<use href="#logoShadow"/><use href="#logoBlocks" fill="url(#logoFill)"/></g></g>')
+        for s in starts:
+            op += [(s, 1), (s + 0.16, 0)]
+            tr += [(s, (dx, 0)), (s + 0.06, (-dx / 2, 0)), (s + 0.11, (dx / 3, 0)), (s + 0.16, (0, 0))]
+        glitch.append(
+            f'<clipPath id="band{i}"><rect x="0" y="{by}" width="{W}" height="{bh}"/></clipPath>'
+            f'<g clip-path="url(#band{i})" opacity="0">{discrete("opacity", loop, op)}'
+            f'<g>{discrete_translate(loop, tr)}<rect width="{W}" height="{H}" fill="{color}" mask="url(#stripMask)"/></g></g>'
+        )
 
-    def split(color: str, sign: int) -> str:
-        op = [(0.0, 0)]
-        tr = [(0.0, (0, 0))]
-        for s in glitch_starts:
-            op += [(s, 0.9), (s + 0.2, 0)]
-            tr += [(s, (sign * 5, 0)), (s + 0.08, (-sign * 3, 1)), (s + 0.14, (sign * 2, 0)), (s + 0.2, (0, 0))]
-        return (f'<g opacity="0" style="mix-blend-mode:screen">{discrete("opacity", loop, op, "3s")}'
-                f'<use href="#logoBlocks" fill="{color}">{discrete_translate(loop, tr, "3s")}</use></g>')
-
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="T3lluz terminal banner with live GitHub stats">
-  <title>T3lluz · {_fmt(p.contributions)} contributions in the last year</title>
+    focus = p.focus[0][0].name if p.focus else ""
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Sliding ASCII banner for T3lluz with live GitHub activity">
+  <title>T3lluz · now building {esc(focus)} · {_fmt(p.contributions)} contributions in the last year</title>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d1117"/><stop offset="1" stop-color="#111827"/></linearGradient>
-    <linearGradient id="logoFill" x1="{lx}" y1="0" x2="{lx + logo_w}" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#00e5ff"/><stop offset=".5" stop-color="#58a6ff"/><stop offset="1" stop-color="#a371f7"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d1117"/><stop offset="1" stop-color="#161b22"/></linearGradient>
+    <linearGradient id="ink" x1="0" y1="0" x2="{W}" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00e5ff"/><stop offset=".35" stop-color="#58a6ff"/>
+      <stop offset=".65" stop-color="#a371f7"/><stop offset="1" stop-color="#00e5ff"/>
     </linearGradient>
-    <linearGradient id="shine" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".75"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <linearGradient id="rule" x1="0" x2="1"><stop offset="0" stop-color="#58a6ff" stop-opacity=".4"/><stop offset="1" stop-color="#58a6ff" stop-opacity=".04"/></linearGradient>
     <linearGradient id="fadeL" x1="0" x2="1"><stop offset="0" stop-color="#0a0f16"/><stop offset="1" stop-color="#0a0f16" stop-opacity="0"/></linearGradient>
     <linearGradient id="fadeR" x1="0" x2="1"><stop offset="0" stop-color="#0a0f16" stop-opacity="0"/><stop offset="1" stop-color="#0a0f16"/></linearGradient>
-    <filter id="neon" x="-5%" y="-20%" width="110%" height="140%">
-      <feGaussianBlur stdDeviation="4" result="b"/>
+    <filter id="neon" x="-5%" y="-30%" width="110%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#fff" opacity=".035"/></pattern>
-    <path id="logoBlocks" d="{blocks}"/>
-    <path id="logoShadow" d="{shadow}" fill="none" stroke="#1f6feb" stroke-width="1.6" stroke-linejoin="round"/>
-    <clipPath id="logoClip"><use href="#logoBlocks"/></clipPath>
-    <clipPath id="logoReveal"><rect x="{lx - 4}" y="{ly - 4}" height="{logo_h + 8}" width="0">{reveal_steps(logo_w + 8, len(LOGO[0]), 0.9, 0.018)}</rect></clipPath>
-    <clipPath id="cmd"><rect x="48" y="62" height="24" width="0">{reveal_steps(9 * 17 + 2, 17, 0.2, 0.035)}</rect></clipPath>
-    <clipPath id="tagline"><rect x="{lx}" y="{ly + logo_h + 14}" height="26" width="0">{reveal_steps(600, 60, 2.2, 0.014)}</rect></clipPath>
-    <clipPath id="tickerClip"><rect x="30" y="{tick_y - 22}" width="{W - 60}" height="32"/></clipPath>
-    {''.join(clips)}
+    <pattern id="scan" width="4" height="3" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#fff" opacity=".035"/></pattern>
+    <g id="strip">{strip}</g>
+    <mask id="stripMask" maskUnits="userSpaceOnUse" x="0" y="0" width="{W}" height="{H}">
+      <g>{slide}<use href="#strip"/><use href="#strip" x="{num(loop_w)}"/></g>
+    </mask>
+    <clipPath id="stripClip"><rect x="32" y="70" width="{W - 64}" height="196" rx="6"/></clipPath>
   </defs>
-  <rect width="{W}" height="{H}" rx="16" fill="url(#bg)"/>
-  <rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="15.5" fill="none" stroke="#30363d"/>
-  <rect x="16" y="16" width="{W - 32}" height="{H - 32}" rx="11" fill="#0a0f16" stroke="#1f2a38"/>
-  <rect x="16" y="16" width="{W - 32}" height="30" rx="11" fill="#111822"/>
-  <rect x="16" y="36" width="{W - 32}" height="10" fill="#111822"/>
-  <circle cx="36" cy="31" r="5.5" fill="#ff5f57"/><circle cx="54" cy="31" r="5.5" fill="#febc2e"/><circle cx="72" cy="31" r="5.5" fill="#28c840"/>
-  <text x="{W / 2}" y="36" text-anchor="middle" font-family="{MONO}" font-size="13" fill="{t['muted']}">t3lluz@github: ~</text>
 
-  <g font-family="{MONO}">
-    <text x="48" y="80" font-size="15" clip-path="url(#cmd)"><tspan fill="#7ee787">❯</tspan><tspan fill="{t['text']}"> fastfetch</tspan><tspan fill="{t['muted']}"> --live</tspan></text>
+  <rect width="{W}" height="{H}" rx="14" fill="url(#bg)"/>
+  <rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="13" fill="none" stroke="#30363d"/>
+  <rect x="20" y="20" width="{W - 40}" height="{H - 40}" rx="10" fill="#0b1118" stroke="#1f2a38"/>
+  <rect x="20" y="52" width="{W - 40}" height="1" fill="url(#rule)"/>
+  <rect x="20" y="58" width="{W - 40}" height="1" fill="url(#rule)"/>
+  <rect x="28" y="66" width="{W - 56}" height="204" rx="8" fill="#0a0f16" stroke="#172231"/>
+  <circle cx="38" cy="36" r="5.2" fill="#ff6b6b"/><circle cx="56" cy="36" r="5.2" fill="#f7b955"/><circle cx="74" cy="36" r="5.2" fill="#7ee787"/>
+  <text x="{W / 2}" y="41" text-anchor="middle" font-family="{MONO}" font-size="13" fill="{t['muted']}">t3lluz@github: ~/projects</text>
 
-    <g clip-path="url(#logoReveal)">
-      <g filter="url(#neon)"><use href="#logoShadow"/><use href="#logoBlocks" fill="url(#logoFill)"/></g>
-      <g clip-path="url(#logoClip)">
-        <rect x="-300" y="{ly}" width="220" height="{logo_h + 2}" fill="url(#shine)" transform="skewX(-20)">
-          <animate attributeName="x" begin="2.4s" dur="7s" repeatCount="indefinite" values="{lx - 300};{lx + logo_w + 220};{lx + logo_w + 220}" keyTimes="0;.22;1"/>
-        </rect>
-      </g>
-      {split('#ff2e88', -1)}{split('#00e5ff', 1)}
-      {slice_layer(0)}{slice_layer(1)}{slice_layer(2)}
+  <g clip-path="url(#stripClip)">
+    <g filter="url(#neon)"><rect width="{W}" height="{H}" fill="url(#ink)" mask="url(#stripMask)"/></g>
+    {''.join(glitch)}
+    <g font-family="{MONO}" font-size="{cap_fs}" fill="{t['muted']}">
+      <g>{slide}{''.join(captions)}<g transform="translate({num(loop_w)} 0)">{''.join(captions)}</g></g>
     </g>
-    <text x="{lx}" y="{ly + logo_h + 32}" font-size="15" fill="{t['muted']}" clip-path="url(#tagline)"><tspan fill="{t['accent']}">//</tspan> building the tools I want to use every day</text>
-    <text x="{lx}" y="{ly + logo_h + 74}" font-size="15"><tspan fill="#7ee787">❯</tspan><tspan fill="{t['text']}"> git push</tspan><tspan fill="{t['muted']}"> --daily</tspan>
-      <tspan fill="{t['accent']}">▋<animate attributeName="opacity" values="1;0" dur="1.1s" calcMode="discrete" repeatCount="indefinite"/></tspan></text>
-
-    {''.join(info_svg)}
-
-    <rect x="16" y="{tick_y - 26}" width="{W - 32}" height="1" fill="#1f2a38"/>
-    <g clip-path="url(#tickerClip)">
-      <g>
-        <animateTransform attributeName="transform" type="translate" from="0 0" to="{num(-tick_w)} 0" dur="{num(tick_w / 55)}s" repeatCount="indefinite"/>
-        <text x="40" y="{tick_y}" font-size="{tick_fs}" fill="{t['muted']}" textLength="{num(tick_w)}" lengthAdjust="spacing" xml:space="preserve">{esc(tick)}</text>
-        <text x="{num(40 + tick_w)}" y="{tick_y}" font-size="{tick_fs}" fill="{t['muted']}" textLength="{num(tick_w)}" lengthAdjust="spacing" xml:space="preserve">{esc(tick)}</text>
-      </g>
-      <rect x="30" y="{tick_y - 22}" width="60" height="32" fill="url(#fadeL)"/>
-      <rect x="{W - 90}" y="{tick_y - 22}" width="60" height="32" fill="url(#fadeR)"/>
-    </g>
+    <rect x="32" y="70" width="70" height="196" fill="url(#fadeL)"/>
+    <rect x="{W - 102}" y="70" width="70" height="196" fill="url(#fadeR)"/>
   </g>
-  <rect x="16" y="46" width="{W - 32}" height="{H - 62}" fill="url(#scan)" pointer-events="none"/>
+  <rect x="28" y="66" width="{W - 56}" height="204" fill="url(#scan)"/>
+
+  <g font-family="{MONO}" font-size="13">
+    <text x="36" y="292" fill="{t['muted']}"><tspan fill="#7ee787">❯</tspan> live · refreshed {p.generated_on}<tspan fill="{t['accent']}"> ▋<animate attributeName="opacity" values="1;0" dur="1.1s" calcMode="discrete" repeatCount="indefinite"/></tspan></text>
+    <text x="{W - 36}" y="292" text-anchor="end" fill="{t['muted']}">{esc(f"now building: {focus}" if focus else "")}</text>
+  </g>
 </svg>
 """
 
@@ -242,8 +260,10 @@ def banner(p: Profile) -> str:
 # --------------------------------------------------------------------------- about carousel
 
 def about_slides(p: Profile) -> list[tuple[str, list[str]]]:
-    langs = " · ".join(f"{n} {pct:.0f}%" for n, pct, _ in p.languages[:4] if n != "Other")
-    building = [f"› {r.name} — {_clip(r.description, 62) or r.language}" for r in p.recent[:3]]
+    recent = [(n, pct) for n, pct, _ in (p.recent_languages or p.languages) if n != "Other"]
+    langs = " · ".join(f"{n} {pct:.0f}%" for n, pct in recent[:4])
+    building = [f"› {r.name} ({activity(p, i).split(' · ')[-1]}) — {_clip(r.description, 44) or r.language}"
+                for i, (r, _) in enumerate(p.focus[:3])]
     streak = (f"› on a {p.current_streak}-day streak right now (best: {p.longest_streak})"
               if p.current_streak > 1 else f"› longest streak this year: {p.longest_streak} days in a row")
     return [
@@ -252,9 +272,9 @@ def about_slides(p: Profile) -> list[tuple[str, list[str]]]:
             f"› {p.years_on_github} on GitHub · {_fmt(p.contributions)} contributions in the last year",
             "› I build the tools I actually want to use, then keep polishing them",
         ]),
-        ("ls ~/projects --sort=recent", building),
-        ("tokei ~/code --sort code", [
-            f"› languages: {langs}",
+        ("git log --since=\"1 month\" --stat", building),
+        ("tokei ~/code --recent", [
+            f"› last 90 days: {langs}",
             "› web: React 19 · Vite · TypeScript · Tailwind · Supabase",
             "› apps: Kotlin + Jetpack Compose · Qt/QML Plasma widgets · Python",
         ]),

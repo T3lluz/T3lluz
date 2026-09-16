@@ -12,19 +12,18 @@ from pathlib import Path
 from svg_common import SANS, THEMES, discrete, discrete_translate, esc, num
 
 SIZE = 30
-HEIGHT = 64
-BASELINE = 42
+HEIGHT = 56
+BASELINE = 40
 GLYPHS = "#%&@$*+=?/\\<>[]{}01Ø§¥¤"
 FRAME = 0.06
 
 # name, text, loop duration (s) — different loops keep the titles from glitching in sync.
 TITLES = [
     ("hey", "Hey, I'm T3lluz", 11.0),
-    ("about", "About me", 12.4),
-    ("building", "Now building", 13.1),
-    ("pulse", "GitHub pulse", 12.7),
-    ("stack", "Stack & tools", 13.9),
-    ("contact", "Get in touch", 11.7),
+    ("about", "About", 12.4),
+    ("pulse", "GitHub Pulse", 12.7),
+    ("stack", "Stack and tools", 13.9),
+    ("contact", "Contact", 11.7),
 ]
 
 
@@ -120,18 +119,12 @@ def build(name: str, text: str, dur: float, theme: str) -> tuple[str, int]:
             f'<use href="#txt-{name}" fill="url(#fill-{name})">{discrete_translate(dur, tr)}</use></g>'
         )
 
-    underline_w = length * 0.72
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{HEIGHT}" viewBox="0 0 {width} {HEIGHT}" role="img" aria-label="{esc(text)}">
   <title>{esc(text)}</title>
   <defs>
     <linearGradient id="fill-{name}" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="{t['title_a']}"/>
       <stop offset="1" stop-color="{t['title_b']}"/>
-    </linearGradient>
-    <linearGradient id="line-{name}" x1="0" x2="1">
-      <stop offset="0" stop-color="{t['accent']}" stop-opacity="0"/>
-      <stop offset=".5" stop-color="{t['accent']}"/>
-      <stop offset="1" stop-color="{t['accent2']}" stop-opacity="0"/>
     </linearGradient>
     <filter id="glow-{name}" x="-10%" y="-40%" width="120%" height="180%">
       <feGaussianBlur stdDeviation="{3.2 if theme == 'dark' else 1.4}" result="b"/>
@@ -153,10 +146,6 @@ def build(name: str, text: str, dur: float, theme: str) -> tuple[str, int]:
       <animate attributeName="y" dur="{num(dur)}s" repeatCount="indefinite" values="-4;-4;{HEIGHT};{HEIGHT}" keyTimes="0;{num((decode_end + 0.2) / dur)};{num((decode_end + 1.1) / dur)};1"/>
     </rect>
   </g>
-  <rect x="{num(cx)}" y="{HEIGHT - 10}" width="0" height="2" rx="1" fill="url(#line-{name})">
-    <animate attributeName="width" dur="{num(dur)}s" repeatCount="indefinite" values="0;0;{num(underline_w)};{num(underline_w)}" keyTimes="0;{num(decode_end / dur)};{num((decode_end + 0.5) / dur)};1"/>
-    <animate attributeName="x" dur="{num(dur)}s" repeatCount="indefinite" values="{num(cx)};{num(cx)};{num(cx - underline_w / 2)};{num(cx - underline_w / 2)}" keyTimes="0;{num(decode_end / dur)};{num((decode_end + 0.5) / dur)};1"/>
-  </rect>
 </svg>
 """
     return svg, width
