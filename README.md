@@ -81,8 +81,8 @@
 **`stack --detect --recent`**
 
 - last 90 days: JavaScript 40% · Kotlin 24% · CSS 15% · TypeScript 13%
-- web: Supabase · Node.js · Playwright · Vite · React
-- apps: Android · Ktor · Jetpack Compose · Room / SQLite · Qt / QML
+- web: Supabase · Node.js · Playwright · React · Vite
+- apps: Room / SQLite · Android · Jetpack Compose · Ktor · Qt / QML
 
 **`gh stats --year`**
 
@@ -148,17 +148,17 @@
           <b>Building with</b><br /><sub>detected in my active repos</sub><br /><br />
           <a href="https://www.postgresql.org"><img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" title="PostgreSQL" width="40" height="40" /></a>
           <a href="https://supabase.com"><img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/supabase/supabase-original.svg" alt="Supabase" title="Supabase" width="40" height="40" /></a>
-          <a href="https://developer.android.com"><img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/android/android-original.svg" alt="Android" title="Android" width="40" height="40" /></a>
-          <a href="https://ktor.io"><img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/ktor/ktor-original.svg" alt="Ktor" title="Ktor" width="40" height="40" /></a>
-          <a href="https://developer.android.com/compose"><img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/jetpackcompose/jetpackcompose-original.svg" alt="Jetpack Compose" title="Jetpack Compose" width="40" height="40" /></a>
           <a href="https://developer.android.com/training/data-storage/room"><img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/sqlite/sqlite-original.svg" alt="Room / SQLite" title="Room / SQLite" width="40" height="40" /></a>
+          <a href="https://developer.android.com"><img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/android/android-original.svg" alt="Android" title="Android" width="40" height="40" /></a>
+          <a href="https://developer.android.com/compose"><img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/jetpackcompose/jetpackcompose-original.svg" alt="Jetpack Compose" title="Jetpack Compose" width="40" height="40" /></a>
+          <a href="https://ktor.io"><img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/ktor/ktor-original.svg" alt="Ktor" title="Ktor" width="40" height="40" /></a>
           <a href="https://nodejs.org"><img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/nodejs/nodejs-original.svg" alt="Node.js" title="Node.js" width="40" height="40" /></a>
           <a href="https://playwright.dev"><img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/playwright/playwright-original.svg" alt="Playwright" title="Playwright" width="40" height="40" /></a>
-          <a href="https://vite.dev"><img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/vitejs/vitejs-original.svg" alt="Vite" title="Vite" width="40" height="40" /></a>
           <a href="https://react.dev"><img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/react/react-original.svg" alt="React" title="React" width="40" height="40" /></a>
+          <a href="https://vite.dev"><img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/vitejs/vitejs-original.svg" alt="Vite" title="Vite" width="40" height="40" /></a>
           <a href="https://developer.chrome.com/docs/extensions"><img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/chrome/chrome-original.svg" alt="Chrome extensions" title="Chrome extensions" width="40" height="40" /></a>
-          <a href="https://tailwindcss.com"><img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" title="Tailwind CSS" width="40" height="40" /></a>
-          <br /><sub>PostgreSQL · Supabase · Android · Ktor · Jetpack Compose · Room / SQLite · Node.js · Playwright · Vite · React · Chrome extensions · Tailwind CSS</sub>
+          <a href="https://reactrouter.com"><img src="https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/reactrouter/reactrouter-original.svg" alt="React Router" title="React Router" width="40" height="40" /></a>
+          <br /><sub>PostgreSQL · Supabase · Room / SQLite · Android · Jetpack Compose · Ktor · Node.js · Playwright · React · Vite · Chrome extensions · React Router</sub>
         </td>
       </tr>
       <tr>
