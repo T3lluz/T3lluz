@@ -68,8 +68,9 @@ TECH = {
     "vscode": ("VS Code", devicon("vscode"), "https://code.visualstudio.com"),
     "cursor": ("Cursor", iconify("cursor", "E6EDF3"), "https://cursor.com"),
     "claude": ("Claude Code", f"{LOBE}/claude-color.svg", "https://claude.com/claude-code"),
-    "lmstudio": ("LM Studio", iconify("lmstudio", "8B7CF6"), "https://lmstudio.ai"),
-    "openclaw": ("OpenCLAW", f"{LOBE}/openclaw-color.svg", "https://openclaw.ai"),
+    "lmstudio": ("LM Studio", iconify("lmstudio", "58A6FF"), "https://lmstudio.ai"),
+    "hermes": ("Hermes Agent", "https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/icons/hermes.svg",
+               "https://hermes-agent.nousresearch.com"),
     # Always-on environment (self-reported).
     "linux": ("Linux", devicon("linux"), "https://kernel.org"),
     "arch": ("Arch Linux", devicon("archlinux"), "https://archlinux.org"),

@@ -17,12 +17,12 @@ BASELINE = 40
 GLYPHS = "#%&@$*+=?/\\<>[]{}01Ø§¥¤"
 FRAME = 0.06
 
-# name, text, loop duration (s) — different loops keep the titles from glitching in sync.
+# name, text, loop duration (s); different loops keep the titles from glitching in sync.
 TITLES = [
     ("hey", "Hey, I'm T3lluz", 11.0),
     ("about", "About", 12.4),
-    ("pulse", "GitHub Pulse", 12.7),
-    ("stack", "Stack and tools", 13.9),
+    ("pulse", "Activity", 12.7),
+    ("stack", "Stack", 13.9),
     ("contact", "Contact", 11.7),
 ]
 
@@ -127,8 +127,8 @@ def build(name: str, text: str, dur: float, theme: str) -> tuple[str, int]:
       <stop offset="1" stop-color="{t['title_b']}"/>
     </linearGradient>
     <filter id="glow-{name}" x="-10%" y="-40%" width="120%" height="180%">
-      <feGaussianBlur stdDeviation="{3.2 if theme == 'dark' else 1.4}" result="b"/>
-      <feColorMatrix in="b" type="matrix" values="0 0 0 0 {0.35 if theme == 'dark' else 0.04} 0 0 0 0 {0.65 if theme == 'dark' else 0.41} 0 0 0 0 1 0 0 0 {0.55 if theme == 'dark' else 0.25} 0" result="c"/>
+      <feGaussianBlur stdDeviation="{2 if theme == 'dark' else 1}" result="b"/>
+      <feColorMatrix in="b" type="matrix" values="0 0 0 0 {0.35 if theme == 'dark' else 0.04} 0 0 0 0 {0.65 if theme == 'dark' else 0.41} 0 0 0 0 1 0 0 0 {0.3 if theme == 'dark' else 0.12} 0" result="c"/>
       <feMerge><feMergeNode in="c"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
     <text id="txt-{name}" {text_attrs}>{esc(text)}</text>

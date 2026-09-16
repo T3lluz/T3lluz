@@ -7,17 +7,17 @@ from xml.sax.saxutils import escape
 MONO = "ui-monospace, 'Cascadia Code', 'JetBrains Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace"
 SANS = "-apple-system, 'Segoe UI', 'Noto Sans', Helvetica, Arial, system-ui, sans-serif"
 
-# Light/dark tokens follow GitHub's own Primer surfaces so the art sits naturally on the page.
+# Light/dark tokens: GitHub's Primer surfaces with a blue-only accent scale.
 THEMES = {
     "dark": dict(
         surface="#0d1117", panel="#0b1118", border="#21262d", grid="#21262d",
-        text="#e6edf3", muted="#8b949e", accent="#58a6ff", accent2="#a371f7", accent3="#39d0d8",
-        title_a="#e6f3ff", title_b="#79c0ff", red="#ff2e88", cyan="#00e5ff", blend="screen",
+        text="#e6edf3", muted="#8b949e", accent="#58a6ff", accent2="#a5d6ff", accent3="#79c0ff",
+        title_a="#cae8ff", title_b="#79c0ff", red="#1f6feb", cyan="#a5d6ff", blend="screen",
     ),
     "light": dict(
         surface="#ffffff", panel="#f6f8fa", border="#d0d7de", grid="#eaeef2",
-        text="#1f2328", muted="#59636e", accent="#0969da", accent2="#8250df", accent3="#1b7c83",
-        title_a="#0a3069", title_b="#0969da", red="#e5007a", cyan="#0098b3", blend="multiply",
+        text="#1f2328", muted="#59636e", accent="#0969da", accent2="#0a3069", accent3="#0550ae",
+        title_a="#0a3069", title_b="#0969da", red="#0550ae", cyan="#54aeff", blend="multiply",
     ),
 }
 
@@ -60,3 +60,9 @@ def reveal_steps(width: float, chars: int, begin: float, per_char: float = 0.028
     values = ";".join(num(step * i) for i in range(chars + 1))
     return (f'<animate attributeName="width" begin="{num(begin)}s" dur="{num(chars * per_char)}s" '
             f'calcMode="discrete" values="{values}" fill="freeze"/>')
+
+
+BLUE_RAMP = {
+    "dark": ["#1f6feb", "#388bfd", "#58a6ff", "#79c0ff", "#a5d6ff", "#cae8ff", "#6e7681"],
+    "light": ["#0a3069", "#0550ae", "#0969da", "#218bff", "#54aeff", "#80ccff", "#8c959f"],
+}

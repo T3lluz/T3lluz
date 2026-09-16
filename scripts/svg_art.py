@@ -7,7 +7,7 @@ from datetime import date, datetime
 
 import icons
 from profile_data import Profile
-from svg_common import MONO, SANS, THEMES, discrete, discrete_translate, esc, num
+from svg_common import BLUE_RAMP, MONO, SANS, THEMES, discrete, discrete_translate, esc, num
 
 try:
     import pyfiglet
@@ -98,9 +98,9 @@ APP_TECH = ("compose", "android", "sqlite", "ktor", "qt", "kde", "streamdeck", "
 
 
 def activity(p: Profile, idx: int) -> str:
-    """'Kotlin · 46 commits this month' for the idx-th project I'm focused on."""
+    """'Kotlin, 46 commits this month' for the idx-th project I'm working on."""
     repo, commits = p.focus[idx]
-    lang = f"{repo.language} · " if repo.language else ""
+    lang = f"{repo.language}, " if repo.language else ""
     if commits:
         return f"{lang}{commits} commit{'s' * (commits != 1)} this month"
     return f"{lang}pushed {age(repo.pushed_at, p.generated_at)}"
@@ -112,133 +112,116 @@ def banner_items(p: Profile) -> list[tuple[str, object, str]]:
     """(kind, payload, caption): 'word' -> figlet rows, 'icon' -> Simple Icons slug."""
     role = p.bio.replace("Bachelor - ", "").lower() if p.bio else "software engineering"
     items: list[tuple[str, object, str]] = [
-        ("word", figlet(p.login), f"{role} · {(p.location or 'norway').lower()}"),
-        ("icon", "github", f"{_fmt(p.contributions)} contributions in the last 12 months"),
+        ("word", figlet(p.login), f"{role}, {(p.location or 'norway').lower()}"),
+        ("icon", "github", f"{_fmt(p.contributions)} contributions in the last year"),
     ]
-    labels = ["now building", "also shipping"]
+    labels = ["working on", "also working on"]
     for i, (repo, _) in enumerate(p.focus[:2]):
         if re.fullmatch(r"[A-Za-z0-9-]{1,13}", repo.name):
-            items.append(("word", figlet(repo.name), f"{labels[i]} · {activity(p, i)}"))
+            items.append(("word", figlet(repo.name), f"{labels[i]}: {activity(p, i)}"))
         else:
-            items.append(("icon", "git", f"{labels[i]}: {repo.name} · {activity(p, i)}"))
+            items.append(("icon", "git", f"{labels[i]} {repo.name}: {activity(p, i)}"))
         commit = latest_commit(p, repo.name)
-        caption = (f"latest commit: {_clip(commit['message'], 44)} · {age(commit['date'], p.generated_at)}" if commit
-                   else f"{repo.language} · {_clip(repo.description, 40)}")
+        caption = (f'last commit: "{_clip(commit["message"], 44)}", {age(commit["date"], p.generated_at)}' if commit
+                   else f"{repo.language}: {_clip(repo.description, 40)}")
         items.append(("icon", icons.language_slug(repo.language) or "git", caption))
     if "kde" in p.tech:
         widgets = sum(1 for r in p.recent if r.language == "QML")
-        items.append(("icon", "kdeplasma", f"linux desktop hacking · {widgets} plasma widgets"))
+        items.append(("icon", "kdeplasma", f"{widgets} kde plasma widgets"))
     langs = p.top_languages(3)
     if langs:
-        items.append(("icon", "git", f"recently writing {' · '.join(langs)}"))
+        items.append(("icon", "git", f"mostly writing {', '.join(langs)}"))
     items.append(("icon", "githubactions",
-                  f"{_fmt(p.commits)} commits · {p.pull_requests} PRs · best streak {p.longest_streak} days"))
+                  f"{_fmt(p.commits)} commits, {p.pull_requests} pull requests this year"))
     return [(k, v, c) for k, v, c in items if k == "word" or icons.simple_icon_path(v)]
 
 
 def banner(p: Profile) -> str:
-    W, H = 1200, 320
+    W, H = 1200, 260
     t = THEMES["dark"]
+    bg = "#0a0d12"
     cw, ch = 10.0, 19.0  # ANSI Shadow cell
     icon_size = 100
-    art_top, art_h = 94, 6 * ch
-    cap_y, cap_fs = 246, 14
+    art_top, art_h = 36, 6 * ch
+    cap_y, cap_fs = 190, 14
     gap = 90
 
     x = 0.0
     blocks, shadows, logos, captions = [], [], [], []
     for kind, payload, caption in banner_items(p):
         art_w = max(len(r) for r in payload) * cw if kind == "word" else icon_size
-        cap_w = len(caption) * cap_fs * 0.6 + 26
-        slot = max(art_w, cap_w)
+        slot = max(art_w, len(caption) * cap_fs * 0.6 + 10)
         ax = x + (slot - art_w) / 2
         if kind == "word":
             blk, shd = art_paths(payload, ax, art_top, cw, ch)
             blocks.append(blk)
             shadows.append(shd)
         else:
-            # Brand mark styled like the letters: solid face plus an offset outline as its "shadow".
+            # Logo drawn like the letters: solid face plus an offset outline as its shadow.
             scale = icon_size / 24
             top = art_top + (art_h - icon_size) / 2 - 4
             d = icons.simple_icon_path(payload)
             logos.append(f'<path transform="translate({num(ax + 5)} {num(top + 5)}) scale({num(scale)})" d="{d}" '
-                         f'fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="{num(1.5 / scale)}"/>'
+                         f'fill="none" stroke="#fff" stroke-opacity=".4" stroke-width="{num(1.5 / scale)}"/>'
                          f'<path transform="translate({num(ax)} {num(top)}) scale({num(scale)})" d="{d}" fill="#fff"/>')
-        captions.append(f'<text x="{num(x + slot / 2)}" y="{cap_y}" text-anchor="middle">'
-                        f'<tspan fill="{t["accent"]}">// </tspan>{esc(caption)}</text>')
+        captions.append(f'<text x="{num(x + slot / 2)}" y="{cap_y}" text-anchor="middle">{esc(caption)}</text>')
         x += slot + gap
     loop_w = x
     dur = loop_w / 62
 
     strip = (f'<path d="{"".join(blocks)}" fill="#fff"/>'
-             f'<path d="{"".join(shadows)}" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="1.5" stroke-linejoin="round"/>'
+             f'<path d="{"".join(shadows)}" fill="none" stroke="#fff" stroke-opacity=".4" stroke-width="1.5" stroke-linejoin="round"/>'
              f'{"".join(logos)}')
-    slide = (f'<animateTransform attributeName="transform" type="translate" from="44 0" to="{num(44 - loop_w)} 0" '
+    slide = (f'<animateTransform attributeName="transform" type="translate" from="24 0" to="{num(24 - loop_w)} 0" '
              f'dur="{num(dur)}s" repeatCount="indefinite"/>')
 
-    # Occasional glitch: two thin bands of the strip jump sideways with a colour tint.
+    # Now and then two thin bands of the strip jump sideways.
     glitch = []
     loop = 8.0
-    bands = [(art_top + 20, 14, "#ff2e88", -14, (5.2, 5.5)), (art_top + 70, 10, "#00e5ff", 10, (5.3, 7.1))]
-    for i, (by, bh, color, dx, starts) in enumerate(bands):
+    bands = [(art_top + 20, 14, "#cae8ff", -14, (5.2, 5.5)), (art_top + 70, 10, "#1f6feb", 10, (5.3, 7.1))]
+    for n, (by, bh, color, dx, starts) in enumerate(bands):
         op = [(0.0, 0)]
         tr = [(0.0, (0, 0))]
-        for s in starts:
-            op += [(s, 1), (s + 0.16, 0)]
-            tr += [(s, (dx, 0)), (s + 0.06, (-dx / 2, 0)), (s + 0.11, (dx / 3, 0)), (s + 0.16, (0, 0))]
+        for st in starts:
+            op += [(st, 1), (st + 0.16, 0)]
+            tr += [(st, (dx, 0)), (st + 0.06, (-dx / 2, 0)), (st + 0.11, (dx / 3, 0)), (st + 0.16, (0, 0))]
         glitch.append(
-            f'<clipPath id="band{i}"><rect x="0" y="{by}" width="{W}" height="{bh}"/></clipPath>'
-            f'<g clip-path="url(#band{i})" opacity="0">{discrete("opacity", loop, op)}'
+            f'<clipPath id="band{n}"><rect x="0" y="{by}" width="{W}" height="{bh}"/></clipPath>'
+            f'<g clip-path="url(#band{n})" opacity="0">{discrete("opacity", loop, op)}'
             f'<g>{discrete_translate(loop, tr)}<rect width="{W}" height="{H}" fill="{color}" mask="url(#stripMask)"/></g></g>'
         )
 
     focus = p.focus[0][0].name if p.focus else ""
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Sliding ASCII banner for T3lluz with live GitHub activity">
-  <title>T3lluz · now building {esc(focus)} · {_fmt(p.contributions)} contributions in the last year</title>
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="T3lluz: sliding ASCII banner with GitHub activity">
+  <title>T3lluz, working on {esc(focus)}, {_fmt(p.contributions)} contributions in the last year</title>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d1117"/><stop offset="1" stop-color="#161b22"/></linearGradient>
-    <linearGradient id="ink" x1="0" y1="0" x2="{W}" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#00e5ff"/><stop offset=".35" stop-color="#58a6ff"/>
-      <stop offset=".65" stop-color="#a371f7"/><stop offset="1" stop-color="#00e5ff"/>
+    <linearGradient id="ink" x1="0" y1="{art_top}" x2="0" y2="{art_top + art_h}" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#a5d6ff"/><stop offset="1" stop-color="#388bfd"/>
     </linearGradient>
-    <linearGradient id="rule" x1="0" x2="1"><stop offset="0" stop-color="#58a6ff" stop-opacity=".4"/><stop offset="1" stop-color="#58a6ff" stop-opacity=".04"/></linearGradient>
-    <linearGradient id="fadeL" x1="0" x2="1"><stop offset="0" stop-color="#0a0f16"/><stop offset="1" stop-color="#0a0f16" stop-opacity="0"/></linearGradient>
-    <linearGradient id="fadeR" x1="0" x2="1"><stop offset="0" stop-color="#0a0f16" stop-opacity="0"/><stop offset="1" stop-color="#0a0f16"/></linearGradient>
-    <filter id="neon" x="-5%" y="-30%" width="110%" height="160%">
-      <feGaussianBlur stdDeviation="3" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <pattern id="scan" width="4" height="3" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#fff" opacity=".035"/></pattern>
+    <linearGradient id="fadeL" x1="0" x2="1"><stop offset="0" stop-color="{bg}"/><stop offset="1" stop-color="{bg}" stop-opacity="0"/></linearGradient>
+    <linearGradient id="fadeR" x1="0" x2="1"><stop offset="0" stop-color="{bg}" stop-opacity="0"/><stop offset="1" stop-color="{bg}"/></linearGradient>
     <g id="strip">{strip}</g>
     <mask id="stripMask" maskUnits="userSpaceOnUse" x="0" y="0" width="{W}" height="{H}">
       <g>{slide}<use href="#strip"/><use href="#strip" x="{num(loop_w)}"/></g>
     </mask>
-    <clipPath id="stripClip"><rect x="32" y="70" width="{W - 64}" height="196" rx="6"/></clipPath>
+    <clipPath id="stripClip"><rect x="0" y="0" width="{W}" height="{cap_y + 16}"/></clipPath>
   </defs>
 
-  <rect width="{W}" height="{H}" rx="14" fill="url(#bg)"/>
-  <rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="13" fill="none" stroke="#30363d"/>
-  <rect x="20" y="20" width="{W - 40}" height="{H - 40}" rx="10" fill="#0b1118" stroke="#1f2a38"/>
-  <rect x="20" y="52" width="{W - 40}" height="1" fill="url(#rule)"/>
-  <rect x="20" y="58" width="{W - 40}" height="1" fill="url(#rule)"/>
-  <rect x="28" y="66" width="{W - 56}" height="204" rx="8" fill="#0a0f16" stroke="#172231"/>
-  <circle cx="38" cy="36" r="5.2" fill="#ff6b6b"/><circle cx="56" cy="36" r="5.2" fill="#f7b955"/><circle cx="74" cy="36" r="5.2" fill="#7ee787"/>
-  <text x="{W / 2}" y="41" text-anchor="middle" font-family="{MONO}" font-size="13" fill="{t['muted']}">t3lluz@github: ~/projects</text>
+  <rect width="{W}" height="{H}" rx="6" fill="{bg}"/>
 
   <g clip-path="url(#stripClip)">
-    <g filter="url(#neon)"><rect width="{W}" height="{H}" fill="url(#ink)" mask="url(#stripMask)"/></g>
+    <rect width="{W}" height="{H}" fill="url(#ink)" mask="url(#stripMask)"/>
     {''.join(glitch)}
     <g font-family="{MONO}" font-size="{cap_fs}" fill="{t['muted']}">
       <g>{slide}{''.join(captions)}<g transform="translate({num(loop_w)} 0)">{''.join(captions)}</g></g>
     </g>
-    <rect x="32" y="70" width="70" height="196" fill="url(#fadeL)"/>
-    <rect x="{W - 102}" y="70" width="70" height="196" fill="url(#fadeR)"/>
+    <rect x="0" y="0" width="60" height="{cap_y + 16}" fill="url(#fadeL)"/>
+    <rect x="{W - 60}" y="0" width="60" height="{cap_y + 16}" fill="url(#fadeR)"/>
   </g>
-  <rect x="28" y="66" width="{W - 56}" height="204" fill="url(#scan)"/>
 
-  <g font-family="{MONO}" font-size="13">
-    <text x="36" y="292" fill="{t['muted']}"><tspan fill="#7ee787">❯</tspan> live · refreshed {p.generated_at[:10]} {p.generated_at[11:16]} UTC<tspan fill="{t['accent']}"> ▋<animate attributeName="opacity" values="1;0" dur="1.1s" calcMode="discrete" repeatCount="indefinite"/></tspan></text>
-    <text x="{W - 36}" y="292" text-anchor="end" fill="{t['muted']}">{esc(f"now building: {focus}" if focus else "")}</text>
+  <g font-family="{MONO}" font-size="13" fill="{t['muted']}">
+    <text x="24" y="{H - 22}"><tspan fill="{t['accent']}">t3lluz@github</tspan>:~$ updated {p.generated_at[:10]} {p.generated_at[11:16]} UTC<tspan fill="{t['text']}"> _<animate attributeName="opacity" values="1;0" dur="1.1s" calcMode="discrete" repeatCount="indefinite"/></tspan></text>
+    <text x="{W - 24}" y="{H - 22}" text-anchor="end">{esc(f"working on {focus}" if focus else "")}</text>
   </g>
 </svg>
 """
@@ -248,36 +231,36 @@ def banner(p: Profile) -> str:
 
 def about_slides(p: Profile) -> list[tuple[str, list[str]]]:
     recent = [(n, pct) for n, pct, _ in (p.recent_languages or p.languages) if n != "Other"]
-    langs = " · ".join(f"{n} {pct:.0f}%" for n, pct in recent[:4])
-    building = [f"› {r.name} ({activity(p, i).split(' · ')[-1]}) — {_clip(r.description, 40) or r.language}"
-                for i, (r, _) in enumerate(p.focus[:3])]
+    langs = ", ".join(f"{n} {pct:.0f}%" for n, pct in recent[:4])
+    working = [f"› {r.name}: {activity(p, i).split(', ')[-1]}" + (f", {_clip(r.description, 44)}" if r.description else "")
+               for i, (r, _) in enumerate(p.focus[:3])]
     log = [f"› {c['repo']}: {_clip(c['message'], 58)} ({age(c['date'], p.generated_at)})"
            for c in p.latest_commits[:3]]
-    streak = (f"› on a {p.current_streak}-day streak right now (best: {p.longest_streak})"
-              if p.current_streak > 1 else f"› longest streak this year: {p.longest_streak} days in a row")
+    streak = (f"› current streak: {p.current_streak} days (best {p.longest_streak})"
+              if p.current_streak > 1 else f"› longest streak: {p.longest_streak} days")
     stack = [f"› last 90 days: {langs}"]
     for label, keys in (("web", WEB_TECH), ("apps", APP_TECH)):
         found = tech_labels(p, keys)
         if found:
-            stack.append(f"› {label}: {' · '.join(found[:5])}")
+            stack.append(f"› {label}: {', '.join(found[:5])}")
     slides = [
-        ("cat whoami.txt", [
-            f"› {p.bio.replace('Bachelor - ', 'bachelor in ').lower() or 'software engineer'} · based in {p.location or 'Norway'}",
-            f"› {p.years_on_github} on GitHub · {_fmt(p.contributions)} contributions in the last year",
-            "› I build the tools I actually want to use, then keep polishing them",
+        ("whoami", [
+            f"› {p.bio.replace('Bachelor - ', 'bachelor in ').lower() or 'software engineer'}, {p.location or 'Norway'}",
+            f"› on GitHub for {p.years_on_github}",
+            f"› {_fmt(p.contributions)} contributions in the last year",
         ]),
-        ("git log --author=t3lluz --oneline -3", log),
-        ('git shortlog --since="1 month"', building),
-        ("stack --detect --recent", stack),
-        ("gh stats --year", [
-            f"› {_fmt(p.commits)} commits · {_fmt(p.pull_requests)} pull requests · {p.issues} issues",
+        ("git log --oneline -3", log),
+        ("ls ~/projects --active", working),
+        ("cat stack.txt", stack),
+        ("gh stats", [
+            f"› {_fmt(p.commits)} commits, {_fmt(p.pull_requests)} pull requests, {p.issues} issues",
             streak,
-            f"› {p.active_days} active days · most productive on {p.busiest_weekday}s",
+            f"› {p.active_days} active days, most of them on {p.busiest_weekday}s",
         ]),
-        ("cat ~/.enjoy", [
-            "› turning small daily annoyances into polished little tools",
-            "› Linux desktop hacking: Plasma widgets, Stream Deck plugins, HID",
-            "› sweating the details: motion, theming and how an app feels",
+        ("cat interests.txt", [
+            "› android apps",
+            "› kde plasma widgets and stream deck plugins",
+            "› browser extensions and small web apps",
         ]),
     ]
     return [(cmd, lines) for cmd, lines in slides if lines]
@@ -371,7 +354,7 @@ def pulse(p: Profile, theme: str) -> str:
     slot = (cx1 - cx0) / max(len(weeks), 1)
     bw = max(slot - 2, 2)
     out.append(f'<text x="{cx0}" y="40" font-size="14" font-weight="600" fill="{t["text"]}">Weekly contributions</text>')
-    out.append(f'<text x="{cx1}" y="40" font-size="12" text-anchor="end" fill="{t["muted"]}">last 12 months · updated {p.generated_on}</text>')
+    out.append(f'<text x="{cx1}" y="40" font-size="12" text-anchor="end" fill="{t["muted"]}">last 12 months, updated {p.generated_on}</text>')
     for frac in (0.5, 1.0):
         gy = base - (base - top) * frac
         out.append(f'<line x1="{cx0}" x2="{cx1}" y1="{num(gy)}" y2="{num(gy)}" stroke="{t["grid"]}" stroke-dasharray="2 4"/>')
@@ -402,12 +385,14 @@ def pulse(p: Profile, theme: str) -> str:
 
     # Language split across my own repos.
     ly, lx0, lw = 330, 24, W - 48
-    out.append(f'<text x="{lx0}" y="{ly - 10}" font-size="12" fill="{t["muted"]}">Languages across my repos (by code size)</text>')
+    out.append(f'<text x="{lx0}" y="{ly - 10}" font-size="12" fill="{t["muted"]}">Languages in my repos, by code size</text>')
     out.append(f'<clipPath id="langclip-{theme}"><rect x="{lx0}" y="{ly}" width="{lw}" height="10" rx="5"/></clipPath>')
     segs, legend = [], []
     x = lx0
     lgx = lx0
-    for name, pct, color in p.languages:
+    ramp = BLUE_RAMP[theme]
+    for rank, (name, pct, _) in enumerate(p.languages):
+        color = ramp[-1] if name == "Other" else ramp[min(rank, len(ramp) - 2)]
         w = lw * pct / 100
         segs.append(f'<rect x="{num(x)}" y="{ly}" width="{num(max(w - 2, 1))}" height="10" fill="{color}"/>')
         x += w
