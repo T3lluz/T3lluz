@@ -3,8 +3,9 @@
 from __future__ import annotations
 
 import re
-from datetime import date
+from datetime import date, datetime
 
+import icons
 from profile_data import Profile
 from svg_common import MONO, SANS, THEMES, discrete, discrete_translate, esc, num
 
@@ -12,45 +13,6 @@ try:
     import pyfiglet
 except ImportError:  # pragma: no cover
     pyfiglet = None
-
-# Hand-drawn ASCII icons (monospace, padded to a rectangle when rendered).
-TUX = [
-    "    .--.    ",
-    "   |o_o |   ",
-    "   |:_/ |   ",
-    "  //   \\ \\  ",
-    " (|     | ) ",
-    "/'\\_   _/`\\ ",
-    "\\___)=(___/ ",
-]
-ARCH = [
-    "      /\\      ",
-    "     /  \\     ",
-    "    /\\   \\    ",
-    "   /      \\   ",
-    "  /   ,,   \\  ",
-    " /   |  |  -\\ ",
-    "/_-''    ''-_\\",
-]
-TERMINAL = [
-    " ______________ ",
-    "|.------------.|",
-    "|| >_         ||",
-    "||            ||",
-    "||            ||",
-    "|'------------'|",
-    " '------------' ",
-]
-CHIP = [
-    "   | | | | |   ",
-    " .-'-'-'-'-'-. ",
-    "-|  .-----.  |-",
-    "-|  | </> |  |-",
-    "-|  '-----'  |-",
-    " '-.-.-.-.-.-' ",
-    "   | | | | |   ",
-]
-
 
 def figlet(word: str) -> list[str]:
     """ANSI Shadow rows for a word (only █ and double box-drawing characters)."""
@@ -107,17 +69,32 @@ def _clip(text: str, limit: int) -> str:
     return text if len(text) <= limit else text[: limit - 1].rstrip() + "…"
 
 
-def _age(pushed_at: str, today: date) -> str:
-    days = (today - date.fromisoformat(pushed_at[:10])).days
-    if days <= 0:
-        return "today"
-    if days == 1:
-        return "yesterday"
+def age(stamp: str, now: str) -> str:
+    """Human 'x ago' between an ISO timestamp and the build time."""
+    then = datetime.fromisoformat(stamp.replace("Z", "+00:00"))
+    minutes = int((datetime.fromisoformat(now) - then).total_seconds() // 60)
+    if minutes < 60:
+        return "just now" if minutes < 5 else f"{minutes} min ago"
+    if minutes < 48 * 60:
+        return f"{minutes // 60}h ago"
+    days = minutes // 1440
     if days < 14:
         return f"{days} days ago"
     if days < 60:
         return f"{days // 7} weeks ago"
     return f"{days // 30} months ago"
+
+
+def latest_commit(p: Profile, repo: str | None = None) -> dict | None:
+    return next((c for c in p.latest_commits if repo is None or c["repo"] == repo), None)
+
+
+def tech_labels(p: Profile, keys: tuple[str, ...]) -> list[str]:
+    return [icons.TECH[k][0] for k in p.tech if k in keys]
+
+
+WEB_TECH = ("react", "vite", "tailwind", "supabase", "reactrouter", "nextjs", "electron", "chrome", "playwright", "node")
+APP_TECH = ("compose", "android", "sqlite", "ktor", "qt", "kde", "streamdeck", "docker")
 
 
 def activity(p: Profile, idx: int) -> str:
@@ -126,57 +103,67 @@ def activity(p: Profile, idx: int) -> str:
     lang = f"{repo.language} · " if repo.language else ""
     if commits:
         return f"{lang}{commits} commit{'s' * (commits != 1)} this month"
-    return f"{lang}pushed {_age(repo.pushed_at, date.fromisoformat(p.generated_on))}"
+    return f"{lang}pushed {age(repo.pushed_at, p.generated_at)}"
 
 
 # --------------------------------------------------------------------------- banner
 
-def banner_items(p: Profile) -> list[tuple[str, list[str], str]]:
-    projects = [i for i, (r, _) in enumerate(p.focus) if re.fullmatch(r"[A-Za-z0-9-]{1,13}", r.name)]
-    langs = [(n, pct) for n, pct, _ in (p.recent_languages or p.languages) if n != "Other"]
+def banner_items(p: Profile) -> list[tuple[str, object, str]]:
+    """(kind, payload, caption): 'word' -> figlet rows, 'icon' -> Simple Icons slug."""
     role = p.bio.replace("Bachelor - ", "").lower() if p.bio else "software engineering"
-    items = [("word", figlet(p.login), f"{role} · {(p.location or 'norway').lower()}"),
-             ("icon", TUX, "linux desktop tinkerer · kde plasma")]
-    if projects:
-        items.append(("word", figlet(p.focus[projects[0]][0].name), f"now building · {activity(p, projects[0])}"))
-    items.append(("icon", TERMINAL, f"{_fmt(p.contributions)} contributions in the last 12 months"))
-    if len(projects) > 1:
-        items.append(("word", figlet(p.focus[projects[1]][0].name), f"also shipping · {activity(p, projects[1])}"))
-    items.append(("icon", CHIP, "recently writing " + " · ".join(n for n, _ in langs[:3])))
+    items: list[tuple[str, object, str]] = [
+        ("word", figlet(p.login), f"{role} · {(p.location or 'norway').lower()}"),
+        ("icon", "github", f"{_fmt(p.contributions)} contributions in the last 12 months"),
+    ]
+    labels = ["now building", "also shipping"]
+    for i, (repo, _) in enumerate(p.focus[:2]):
+        if re.fullmatch(r"[A-Za-z0-9-]{1,13}", repo.name):
+            items.append(("word", figlet(repo.name), f"{labels[i]} · {activity(p, i)}"))
+        else:
+            items.append(("icon", "git", f"{labels[i]}: {repo.name} · {activity(p, i)}"))
+        commit = latest_commit(p, repo.name)
+        caption = (f"latest commit: {_clip(commit['message'], 44)} · {age(commit['date'], p.generated_at)}" if commit
+                   else f"{repo.language} · {_clip(repo.description, 40)}")
+        items.append(("icon", icons.language_slug(repo.language) or "git", caption))
+    if "kde" in p.tech:
+        widgets = sum(1 for r in p.recent if r.language == "QML")
+        items.append(("icon", "kdeplasma", f"linux desktop hacking · {widgets} plasma widgets"))
+    langs = p.top_languages(3)
     if langs:
-        items.append(("word", figlet(langs[0][0]), f"top language · last 90 days · {langs[0][1]:.0f}% of my commits"))
-    items.append(("icon", ARCH, f"{p.active_days} active days · best streak {p.longest_streak} days"))
-    return items
+        items.append(("icon", "git", f"recently writing {' · '.join(langs)}"))
+    items.append(("icon", "githubactions",
+                  f"{_fmt(p.commits)} commits · {p.pull_requests} PRs · best streak {p.longest_streak} days"))
+    return [(k, v, c) for k, v, c in items if k == "word" or icons.simple_icon_path(v)]
 
 
 def banner(p: Profile) -> str:
     W, H = 1200, 320
     t = THEMES["dark"]
-    cw, ch = 10.0, 19.0          # ANSI Shadow cell
-    icon_fs, icon_lh = 16, 17.0  # ASCII icon text
-    icon_cw = icon_fs * 0.6
+    cw, ch = 10.0, 19.0  # ANSI Shadow cell
+    icon_size = 100
     art_top, art_h = 94, 6 * ch
     cap_y, cap_fs = 246, 14
     gap = 90
 
     x = 0.0
-    blocks, shadows, icons, captions = [], [], [], []
-    for kind, rows, caption in banner_items(p):
-        cols = max(len(r) for r in rows)
-        art_w = cols * (cw if kind == "word" else icon_cw)
+    blocks, shadows, logos, captions = [], [], [], []
+    for kind, payload, caption in banner_items(p):
+        art_w = max(len(r) for r in payload) * cw if kind == "word" else icon_size
         cap_w = len(caption) * cap_fs * 0.6 + 26
         slot = max(art_w, cap_w)
         ax = x + (slot - art_w) / 2
         if kind == "word":
-            b, s = art_paths(rows, ax, art_top, cw, ch)
-            blocks.append(b)
-            shadows.append(s)
+            blk, shd = art_paths(payload, ax, art_top, cw, ch)
+            blocks.append(blk)
+            shadows.append(shd)
         else:
-            top = art_top + (art_h - len(rows) * icon_lh) / 2 + icon_fs * 0.8
-            for li, row in enumerate(rows):
-                if row.strip():
-                    icons.append(f'<text x="{num(ax)}" y="{num(top + li * icon_lh)}" textLength="{num(cols * icon_cw)}" '
-                                 f'lengthAdjust="spacingAndGlyphs" xml:space="preserve">{esc(row.ljust(cols))}</text>')
+            # Brand mark styled like the letters: solid face plus an offset outline as its "shadow".
+            scale = icon_size / 24
+            top = art_top + (art_h - icon_size) / 2 - 4
+            d = icons.simple_icon_path(payload)
+            logos.append(f'<path transform="translate({num(ax + 5)} {num(top + 5)}) scale({num(scale)})" d="{d}" '
+                         f'fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="{num(1.5 / scale)}"/>'
+                         f'<path transform="translate({num(ax)} {num(top)}) scale({num(scale)})" d="{d}" fill="#fff"/>')
         captions.append(f'<text x="{num(x + slot / 2)}" y="{cap_y}" text-anchor="middle">'
                         f'<tspan fill="{t["accent"]}">// </tspan>{esc(caption)}</text>')
         x += slot + gap
@@ -185,7 +172,7 @@ def banner(p: Profile) -> str:
 
     strip = (f'<path d="{"".join(blocks)}" fill="#fff"/>'
              f'<path d="{"".join(shadows)}" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="1.5" stroke-linejoin="round"/>'
-             f'<g font-family="{MONO}" font-size="{icon_fs}" font-weight="700" fill="#fff">{"".join(icons)}</g>')
+             f'{"".join(logos)}')
     slide = (f'<animateTransform attributeName="transform" type="translate" from="44 0" to="{num(44 - loop_w)} 0" '
              f'dur="{num(dur)}s" repeatCount="indefinite"/>')
 
@@ -250,7 +237,7 @@ def banner(p: Profile) -> str:
   <rect x="28" y="66" width="{W - 56}" height="204" fill="url(#scan)"/>
 
   <g font-family="{MONO}" font-size="13">
-    <text x="36" y="292" fill="{t['muted']}"><tspan fill="#7ee787">❯</tspan> live · refreshed {p.generated_on}<tspan fill="{t['accent']}"> ▋<animate attributeName="opacity" values="1;0" dur="1.1s" calcMode="discrete" repeatCount="indefinite"/></tspan></text>
+    <text x="36" y="292" fill="{t['muted']}"><tspan fill="#7ee787">❯</tspan> live · refreshed {p.generated_at[:10]} {p.generated_at[11:16]} UTC<tspan fill="{t['accent']}"> ▋<animate attributeName="opacity" values="1;0" dur="1.1s" calcMode="discrete" repeatCount="indefinite"/></tspan></text>
     <text x="{W - 36}" y="292" text-anchor="end" fill="{t['muted']}">{esc(f"now building: {focus}" if focus else "")}</text>
   </g>
 </svg>
@@ -262,22 +249,26 @@ def banner(p: Profile) -> str:
 def about_slides(p: Profile) -> list[tuple[str, list[str]]]:
     recent = [(n, pct) for n, pct, _ in (p.recent_languages or p.languages) if n != "Other"]
     langs = " · ".join(f"{n} {pct:.0f}%" for n, pct in recent[:4])
-    building = [f"› {r.name} ({activity(p, i).split(' · ')[-1]}) — {_clip(r.description, 44) or r.language}"
+    building = [f"› {r.name} ({activity(p, i).split(' · ')[-1]}) — {_clip(r.description, 40) or r.language}"
                 for i, (r, _) in enumerate(p.focus[:3])]
+    log = [f"› {c['repo']}: {_clip(c['message'], 58)} ({age(c['date'], p.generated_at)})"
+           for c in p.latest_commits[:3]]
     streak = (f"› on a {p.current_streak}-day streak right now (best: {p.longest_streak})"
               if p.current_streak > 1 else f"› longest streak this year: {p.longest_streak} days in a row")
-    return [
+    stack = [f"› last 90 days: {langs}"]
+    for label, keys in (("web", WEB_TECH), ("apps", APP_TECH)):
+        found = tech_labels(p, keys)
+        if found:
+            stack.append(f"› {label}: {' · '.join(found[:5])}")
+    slides = [
         ("cat whoami.txt", [
             f"› {p.bio.replace('Bachelor - ', 'bachelor in ').lower() or 'software engineer'} · based in {p.location or 'Norway'}",
             f"› {p.years_on_github} on GitHub · {_fmt(p.contributions)} contributions in the last year",
             "› I build the tools I actually want to use, then keep polishing them",
         ]),
-        ("git log --since=\"1 month\" --stat", building),
-        ("tokei ~/code --recent", [
-            f"› last 90 days: {langs}",
-            "› web: React 19 · Vite · TypeScript · Tailwind · Supabase",
-            "› apps: Kotlin + Jetpack Compose · Qt/QML Plasma widgets · Python",
-        ]),
+        ("git log --author=t3lluz --oneline -3", log),
+        ('git shortlog --since="1 month"', building),
+        ("stack --detect --recent", stack),
         ("gh stats --year", [
             f"› {_fmt(p.commits)} commits · {_fmt(p.pull_requests)} pull requests · {p.issues} issues",
             streak,
@@ -289,6 +280,7 @@ def about_slides(p: Profile) -> list[tuple[str, list[str]]]:
             "› sweating the details: motion, theming and how an app feels",
         ]),
     ]
+    return [(cmd, lines) for cmd, lines in slides if lines]
 
 
 def about(p: Profile, theme: str) -> str:
@@ -356,8 +348,8 @@ def pulse(p: Profile, theme: str) -> str:
         (_fmt(p.pull_requests), "pull requests"),
         (f"{p.longest_streak}d", "longest streak"),
         (str(p.active_days), "active days"),
-        (f"{p.current_streak}d" if p.current_streak else p.recent[0].name if p.recent else "–",
-         "current streak" if p.current_streak else "latest push"),
+        (f"{p.current_streak}d" if p.current_streak else p.focus[0][0].name if p.focus else "–",
+         "current streak" if p.current_streak else "top repo this month"),
     ]
     out = []
     for i, (value, label) in enumerate(tiles):
@@ -420,7 +412,11 @@ def pulse(p: Profile, theme: str) -> str:
         segs.append(f'<rect x="{num(x)}" y="{ly}" width="{num(max(w - 2, 1))}" height="10" fill="{color}"/>')
         x += w
         label = f"{name} {pct:.1f}%"
-        legend.append(f'<circle cx="{num(lgx + 5)}" cy="{ly + 31}" r="5" fill="{color}"/>'
+        slug = icons.language_slug(name)
+        path = icons.simple_icon_path(slug) if slug else None
+        mark = (f'<path transform="translate({num(lgx - 1)} {ly + 25}) scale(.5)" d="{path}" fill="{color}"/>' if path
+                else f'<circle cx="{num(lgx + 5)}" cy="{ly + 31}" r="5" fill="{color}"/>')
+        legend.append(mark +
                       f'<text x="{num(lgx + 15)}" y="{ly + 35}" font-size="12" fill="{t["text"]}">{esc(name)} '
                       f'<tspan fill="{t["muted"]}">{pct:.1f}%</tspan></text>')
         lgx += 15 + len(label) * 7 + 22

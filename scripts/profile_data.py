@@ -10,6 +10,8 @@ from dataclasses import asdict, dataclass, field
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
+import repo_insights
+
 USERNAME = os.getenv("PROFILE_USERNAME", "T3lluz")
 
 # Repos that should not count as "my code" or "what I'm building".
@@ -29,6 +31,7 @@ DESCRIPTION_OVERRIDES = {
 QUERY = """
 query($login: String!, $from90: DateTime!, $from30: DateTime!) {
   user(login: $login) {
+    id
     name
     bio
     location
@@ -70,6 +73,7 @@ query($login: String!, $from90: DateTime!, $from30: DateTime!) {
 fragment RepoFields on Repository {
   name
   nameWithOwner
+  owner { login }
   isPrivate
   description
   url
@@ -123,6 +127,11 @@ class Profile:
     recent_languages: list[tuple[str, float, str]] = field(default_factory=list)
     active: list[tuple[Repo, int]] = field(default_factory=list)
     generated_on: str = ""
+    generated_at: str = ""
+    # Latest commits of mine across active public repos, newest first.
+    latest_commits: list[dict] = field(default_factory=list)
+    # Detected tech (keys from icons.TECH), ranked by my recent commits in repos using it.
+    tech: list[str] = field(default_factory=list)
 
     @property
     def years_on_github(self) -> str:
@@ -142,15 +151,10 @@ class Profile:
         return self.active or [(r, 0) for r in self.recent[:3]]
 
 
-def _graphql(token: str) -> dict:
-    now = datetime.now(timezone.utc)
+def _post(token: str, query: str, variables: dict) -> dict:
     req = urllib.request.Request(
         "https://api.github.com/graphql",
-        data=json.dumps({"query": QUERY, "variables": {
-            "login": USERNAME,
-            "from90": (now - timedelta(days=90)).isoformat(),
-            "from30": (now - timedelta(days=30)).isoformat(),
-        }}).encode(),
+        data=json.dumps({"query": query, "variables": variables}).encode(),
         headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
         method="POST",
     )
@@ -158,7 +162,22 @@ def _graphql(token: str) -> dict:
         payload = json.loads(resp.read().decode())
     if payload.get("errors"):
         raise RuntimeError(f"GraphQL error: {payload['errors']}")
-    return payload["data"]["user"]
+    return payload["data"]
+
+
+def _fetch(token: str) -> dict:
+    now = datetime.now(timezone.utc)
+    user = _post(token, QUERY, {
+        "login": USERNAME,
+        "from90": (now - timedelta(days=90)).isoformat(),
+        "from30": (now - timedelta(days=30)).isoformat(),
+    })["user"]
+    # Second round: peek inside the repos I've actually been committing to.
+    names = [repo["name"] for repo, _ in _public_commits(user["last90"]) if repo["owner"]["login"] == USERNAME][:12]
+    if not names:
+        names = [r["name"] for r in user["repositories"]["nodes"] if _include(r["name"])][:6]
+    details = _post(token, repo_insights.details_query(USERNAME, names), {"uid": user["id"]})
+    return {"user": user, "details": details}
 
 
 def _streaks(days: list[tuple[str, int]]) -> tuple[int, int]:
@@ -209,7 +228,9 @@ def _public_commits(window: dict) -> list[tuple[dict, int]]:
     ]
 
 
-def build_profile(user: dict, today: date) -> Profile:
+def build_profile(raw: dict, now: datetime) -> Profile:
+    user, details = raw["user"], raw["details"]
+    today = now.date()
     repos = [r for r in user["repositories"]["nodes"] if not r["isArchived"]]
     cc = user["contributionsCollection"]
     cal = cc["contributionCalendar"]
@@ -252,6 +273,18 @@ def build_profile(user: dict, today: date) -> Profile:
 
     recent = [_repo(r) for r in repos if _include(r["name"])]
 
+    commit_weight = {repo["name"]: n for repo, n in last90}
+    language_of = {r["name"]: (r["primaryLanguage"] or {}).get("name", "") for r in repos}
+    tech_weight: Counter[str] = Counter()
+    latest: list[dict] = []
+    for repo in details.values():
+        if not repo:
+            continue
+        for key in repo_insights.detect(repo, language_of.get(repo["name"], "")):
+            tech_weight[key] += commit_weight.get(repo["name"], 0) + 1
+        latest += repo_insights.commits(repo)
+    latest.sort(key=lambda c: c["date"], reverse=True)
+
     return Profile(
         login=USERNAME,
         bio=(user.get("bio") or "").strip(),
@@ -278,21 +311,24 @@ def build_profile(user: dict, today: date) -> Profile:
         recent_languages=_shares(recent_weights, colors),
         active=active,
         generated_on=today.isoformat(),
+        generated_at=now.isoformat(timespec="minutes"),
+        latest_commits=latest[:8],
+        tech=[k for k, _ in tech_weight.most_common()],
     )
 
 
 def load_profile(cache: Path | None = None) -> Profile:
-    """Fetch from GitHub; with a cache path, reuse the raw response between local runs."""
+    """Fetch from GitHub; with a cache path, reuse the raw responses between local runs."""
     if cache and cache.exists():
-        user = json.loads(cache.read_text(encoding="utf-8"))
+        raw = json.loads(cache.read_text(encoding="utf-8"))
     else:
         token = os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN")
         if not token:
             raise SystemExit("Set GITHUB_TOKEN (or GH_TOKEN) to query the GitHub GraphQL API.")
-        user = _graphql(token)
+        raw = _fetch(token)
         if cache:
-            cache.write_text(json.dumps(user), encoding="utf-8")
-    return build_profile(user, datetime.now(timezone.utc).date())
+            cache.write_text(json.dumps(raw), encoding="utf-8")
+    return build_profile(raw, datetime.now(timezone.utc))
 
 
 if __name__ == "__main__":
