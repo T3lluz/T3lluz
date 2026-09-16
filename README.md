@@ -18,7 +18,7 @@
   Right now that's [DailyDash](https://github.com/T3lluz/DailyDash), [ChroMods](https://github.com/T3lluz/ChroMods), [PorcoRosso](https://github.com/T3lluz/PorcoRosso), mostly in JavaScript, Kotlin, CSS.
 </p>
 
-<img width="910" src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2600&pause=1100&color=58A6FF&center=true&vCenter=true&width=1100&lines=Now+building%3A+DailyDash+%E2%80%94+Android+dashboard%3A+health%2C+weather%2C+F1%2C+GitHub+and%E2%80%A6%3BAlso+shipping%3A+ChroMods+%28JavaScript%29+%2B+PorcoRosso+%28JavaScript%29%3BRecently+writing%3A+JavaScript%2C+Kotlin%2C+CSS%3BLast+12+months%3A+1%2C347+contributions+%C2%B7+990+commits+%C2%B7+201+PRs%3BI+build+the+tools+I+want+to+use+every+day." alt="Typing intro: what I'm working on right now" />
+<img width="910" src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2600&pause=1100&color=58A6FF&center=true&vCenter=true&width=1100&lines=Now+building%3A+DailyDash+%E2%80%94+Android+dashboard%3A+health%2C+weather%2C+F1%2C+GitHub+and%E2%80%A6%3BAlso+shipping%3A+ChroMods+%28JavaScript%29+%2B+PorcoRosso+%28JavaScript%29%3BRecently+writing%3A+JavaScript%2C+Kotlin%2C+CSS%3BLast+12+months%3A+1%2C348+contributions+%C2%B7+991+commits+%C2%B7+201+PRs%3BI+build+the+tools+I+want+to+use+every+day." alt="Typing intro: what I'm working on right now" />
 
 <br />
 
@@ -60,7 +60,7 @@
 **cat whoami.txt**
 
 - bachelor in computer engineering · based in Norway
-- 4y 9m on GitHub · 1,347 contributions in the last year
+- 4y 9m on GitHub · 1,348 contributions in the last year
 - I build the tools I actually want to use, then keep polishing them
 
 **git log --since="1 month" --stat**
@@ -77,7 +77,7 @@
 
 **gh stats --year**
 
-- 990 commits · 201 pull requests · 22 issues
+- 991 commits · 201 pull requests · 22 issues
 - longest streak this year: 22 days in a row
 - 112 active days · most productive on Fridays
 
@@ -100,7 +100,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/stats/pulse-dark.svg" />
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/stats/pulse-light.svg" />
-    <img src="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/stats/pulse-dark.svg" alt="1347 contributions, 990 commits and 201 pull requests in the last year. Languages: JavaScript (40%), Kotlin (24%), CSS (15%), TypeScript (13%), Python (3%), QML (2%)" width="1000" height="390" />
+    <img src="https://raw.githubusercontent.com/T3lluz/T3lluz/main/assets/stats/pulse-dark.svg" alt="1348 contributions, 991 commits and 201 pull requests in the last year. Languages: JavaScript (40%), Kotlin (24%), CSS (15%), TypeScript (13%), Python (3%), QML (2%)" width="1000" height="390" />
   </picture>
 </div>
 
