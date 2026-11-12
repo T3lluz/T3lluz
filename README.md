@@ -5,7 +5,7 @@
 <!-- Every image is as wide as the page and top-aligned, so the dark backgrounds join into
      one surface. Rows of two windows switch to a stacked image on phones. -->
 <p>
-  <a href="https://github.com/T3lluz"><img src="https://raw.githubusercontent.com/T3lluz/T3lluz/images/hero.svg" width="100%" align="top" alt="T3lluz. Bachelor in computer engineering, from Norway. Working on DailyDash, omarchy-batteries and omarchy-sonus." /></a>
+  <a href="https://github.com/T3lluz"><img src="https://raw.githubusercontent.com/T3lluz/T3lluz/images/hero.svg" width="100%" align="top" alt="T3lluz. Bachelor in computer engineering, from Norway. Working on DailyDash, omarchy-batteries and omarchy-rog-deck." /></a>
   <a href="https://github.com/T3lluz?tab=repositories"><picture><source media="(min-width: 1012px), (min-width: 600px) and (max-width: 767px)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/images/now.svg" /><img src="https://raw.githubusercontent.com/T3lluz/T3lluz/images/now-phone.svg" width="100%" align="top" alt="The repos I committed to most in the last 30 days, and my latest commits" /></picture></a>
   <a href="https://github.com/T3lluz"><picture><source media="(min-width: 1012px), (min-width: 600px) and (max-width: 767px)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/images/year.svg" /><img src="https://raw.githubusercontent.com/T3lluz/T3lluz/images/year-phone.svg" width="100%" align="top" alt="Commits, pull requests and weekly contributions over the last 12 months, and the languages I wrote" /></picture></a>
   <a href="https://github.com/T3lluz"><img src="https://raw.githubusercontent.com/T3lluz/T3lluz/images/snake.svg" width="100%" align="top" alt="Snake eating my contribution graph" /></a>
@@ -29,8 +29,8 @@
 
 - [DailyDash](https://github.com/T3lluz/DailyDash): Android dashboard: health, weather, F1, GitHub and servers on one screen
 - [omarchy-batteries](https://github.com/T3lluz/omarchy-batteries): Every battery in the Omarchy bar: the laptop (rate, time left, health, history), AirPods bud by bud, mouse, keyboard, headset, controller, phone. Pick what the bar shows.
-- [omarchy-sonus](https://github.com/T3lluz/omarchy-sonus): Sonar-style PipeWire mixer in the Omarchy bar: Game, Chat, Media and Aux channels, drag-and-drop app routing, and a 10-band EQ per channel.
 - [omarchy-rog-deck](https://github.com/T3lluz/omarchy-rog-deck): Omarchy bar widget and control panel for ASUS ROG laptops: animated power modes, temps and fans, keyboard lighting with auto-off, AniMe Matrix, FN-lock, battery limit, GPU mode.
+- [omarchy-sonus](https://github.com/T3lluz/omarchy-sonus): Sonar-style PipeWire mixer in the Omarchy bar: Game, Chat, Media and Aux channels, drag-and-drop app routing, and a 10-band EQ per channel.
 
 **Pull requests elsewhere**
 
