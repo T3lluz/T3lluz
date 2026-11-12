@@ -2,14 +2,14 @@
 
 <div align="center">
 
-<!-- Paired windows share a line with nothing between them and every image is top-aligned,
-     so the dark backgrounds join into one surface. -->
+<!-- Every image is as wide as the page and top-aligned, so the dark backgrounds join into
+     one surface. Rows of two windows switch to a stacked image on phones. -->
 <p>
-  <a href="https://github.com/T3lluz"><img src="https://raw.githubusercontent.com/T3lluz/T3lluz/images/hero.svg" width="828" align="top" alt="T3lluz. Bachelor in computer engineering, from Norway. Working on DailyDash, omarchy-batteries and omarchy-sonus." /></a>
-  <a href="https://github.com/T3lluz?tab=repositories"><img src="https://raw.githubusercontent.com/T3lluz/T3lluz/images/projects.svg" width="414" align="top" alt="The repos I committed to most in the last 30 days" /></a><a href="https://github.com/T3lluz"><img src="https://raw.githubusercontent.com/T3lluz/T3lluz/images/log.svg" width="414" align="top" alt="My latest commits" /></a>
-  <a href="https://github.com/T3lluz"><img src="https://raw.githubusercontent.com/T3lluz/T3lluz/images/activity.svg" width="414" align="top" alt="Commits, pull requests and weekly contributions over the last 12 months" /></a><a href="https://github.com/T3lluz?tab=repositories"><img src="https://raw.githubusercontent.com/T3lluz/T3lluz/images/languages.svg" width="414" align="top" alt="Languages I wrote in the last 90 days" /></a>
-  <a href="https://github.com/T3lluz"><img src="https://raw.githubusercontent.com/T3lluz/T3lluz/images/snake.svg" width="828" align="top" alt="Snake eating my contribution graph" /></a>
-  <a href="https://github.com/T3lluz?tab=repositories"><img src="https://raw.githubusercontent.com/T3lluz/T3lluz/images/stack.svg" width="414" align="top" alt="Frameworks and tools used in my recent repos" /></a><a href="https://github.com/search?q=is%3Apr+author%3AT3lluz+-user%3AT3lluz&type=pullrequests"><img src="https://raw.githubusercontent.com/T3lluz/T3lluz/images/upstream.svg" width="414" align="top" alt="My pull requests to other people's repos" /></a>
+  <a href="https://github.com/T3lluz"><img src="https://raw.githubusercontent.com/T3lluz/T3lluz/images/hero.svg" width="100%" align="top" alt="T3lluz. Bachelor in computer engineering, from Norway. Working on DailyDash, omarchy-batteries and omarchy-sonus." /></a>
+  <a href="https://github.com/T3lluz?tab=repositories"><picture><source media="(min-width: 1012px), (min-width: 600px) and (max-width: 767px)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/images/now.svg" /><img src="https://raw.githubusercontent.com/T3lluz/T3lluz/images/now-phone.svg" width="100%" align="top" alt="The repos I committed to most in the last 30 days, and my latest commits" /></picture></a>
+  <a href="https://github.com/T3lluz"><picture><source media="(min-width: 1012px), (min-width: 600px) and (max-width: 767px)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/images/year.svg" /><img src="https://raw.githubusercontent.com/T3lluz/T3lluz/images/year-phone.svg" width="100%" align="top" alt="Commits, pull requests and weekly contributions over the last 12 months, and the languages I wrote" /></picture></a>
+  <a href="https://github.com/T3lluz"><img src="https://raw.githubusercontent.com/T3lluz/T3lluz/images/snake.svg" width="100%" align="top" alt="Snake eating my contribution graph" /></a>
+  <a href="https://github.com/search?q=is%3Apr+author%3AT3lluz+-user%3AT3lluz&type=pullrequests"><picture><source media="(min-width: 1012px), (min-width: 600px) and (max-width: 767px)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/images/tools.svg" /><img src="https://raw.githubusercontent.com/T3lluz/T3lluz/images/tools-phone.svg" width="100%" align="top" alt="Frameworks and tools used in my recent repos, and my pull requests to other people's repos" /></picture></a>
 </p>
 
 <p>

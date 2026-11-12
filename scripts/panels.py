@@ -12,10 +12,6 @@ from theme import (BG, BLUE, BOTTOM, DESK, DIM, FAINT, FG, FULL, GREEN, HALF, LI
                    RAISE, SMALL, SOFT, TEAL, TOP, V, X0, Y0, YELLOW, bar_line, brand, chip, desk, discrete, esc, fit,
                    glitch, has_brand, logo, logo_def, lucide, num, svg, text, tile, tw, window, x1, NARROW_CSS)
 
-TABS = [("home", "house"), ("projects", "folder-git-2"), ("log", "git-commit-horizontal"), ("activity", "activity"),
-        ("stack", "package"), ("upstream", "git-pull-request")]
-
-
 def _stars(count: int) -> str:
     return f"{count / 1000:.1f}k" if count >= 1000 else str(count)
 
@@ -69,31 +65,18 @@ def _prompt_lines(p: Profile, width: float) -> list[str]:
 
 
 def hero(p: Profile) -> str:
-    """The site's top bar and the big clock row, with my name where the clock is."""
-    width, bar, body = FULL, 42, 132
-    height = bar + body
+    """The site's big clock row, with the cube and my name where the clock is."""
+    width, height = FULL, 132
     left, right = X0, width - X0
-    place = p.location or "Norway"
+    place = (p.location or "Norway").lower()
 
-    wide = [f'<line x1="0" x2="{width}" y1="{bar + 0.5}" y2="{bar + 0.5}" stroke="{LINE}"/>', logo(left, 11, 20)]
-    x = left + 28
-    name = p.login.lower()
-    wide.append(text(x, 25.5, name, FG, 13.5, 700))
-    x += tw(name, 13.5) + 16
-    for i, (label, icon) in enumerate(TABS):
-        w = 31 + tw(label) + 10
-        if i == 0:
-            wide.append(f'<rect x="{num(x + 0.5)}" y="7.5" width="{num(w - 1)}" height="27" rx="4" fill="{BG}" stroke="{LINE2}"/>')
-        wide.append(lucide(icon, x + 10, 14, 14, FG if i == 0 else DIM))
-        wide.append(text(x + 31, 25.5, label, FG if i == 0 else DIM))
-        x += w + 2
-    wide.append(text(right, 25.5, place, SOFT, anchor="end"))
-    wide.append(lucide("map-pin", right - tw(place) - 21, 14, 14, DIM))
-
-    wide.append(glitch(p.login, left, bar + 60, size=46, weight=300, fill=SOFT, seed="hero", loop=9.5, slices=2, backdrop=DESK))
-    wide.append(text(left, bar + 86, f"{TAGLINE} · on github since {p.since}", DIM))
-    wide.append(_typed(_prompt_lines(p, right - left), left, bar + 114))
-
+    # The cube has 10/64 of air inside its box, so it is pulled out to the content edge.
+    wide = [
+        logo(left - 7, 18, 46),
+        glitch(p.login, left + 48, 58, size=46, weight=300, fill=SOFT, seed="hero", loop=9.5, slices=2, backdrop=DESK),
+        text(left, 86, f"{TAGLINE} · {place}", DIM),
+        _typed(_prompt_lines(p, right - left), left, 114),
+    ]
     # Three numbers on the right, on the same two baselines as the name and the line under it.
     stats = [
         (str(p.active_count), "active repos", 29),
@@ -104,17 +87,17 @@ def hero(p: Profile) -> str:
     x = right - sum(widths) - 28 * (len(stats) - 1)
     for (value, label, inset), w in zip(stats, widths):
         if inset:
-            wide.append(lucide("circle-check", x, bar + 41, 21, GREEN))
-        wide.append(text(x + inset, bar + 60, value, SOFT, 26, 300))
-        wide.append(text(x, bar + 86, label, DIM, 12.5))
+            wide.append(lucide("circle-check", x, 39, 21, GREEN))
+        wide.append(text(x + inset, 58, value, SOFT, 26, 300))
+        wide.append(text(x, 86, label, DIM, 12.5))
         x += w + 28
 
     # Twice the window inset, because on a phone this image is drawn at half the scale of the windows.
     nleft = 2 * X0
     narrow = [
-        logo(nleft - 9, 26, 64),
-        glitch(p.login, nleft + 72, 82, size=64, weight=300, fill=SOFT, seed="hero-narrow", loop=9.5, slices=2, backdrop=DESK),
-        text(nleft, 140, f"{TAGLINE} · {place.lower()}", DIM, 28),
+        logo(nleft - 9, 12, 64),
+        glitch(p.login, nleft + 72, 68, size=64, weight=300, fill=SOFT, seed="hero-narrow", loop=9.5, slices=2, backdrop=DESK),
+        text(nleft, 112, f"{TAGLINE} · {place}", DIM, 28),
     ]
     body = (f'{logo_def()}{desk(width, height)}<g class="wide">{"".join(wide)}</g>'
             f'<g class="narrow">{"".join(narrow)}</g>')
@@ -294,7 +277,7 @@ def stack(p: Profile, height: int, build: int) -> str:
     groups = sum(1 for g in detect.GROUPS if p.stack.get(g))
     spare = height - _stack_height(p, build)
     body, _ = _stack_body(p, build, min(spare / max(groups - 1, 1), 16))
-    return window(HALF, height, "stack", "package", MAGENTA, body, "from my repos", foot=M - V)
+    return window(HALF, height, "stack", "package", MAGENTA, body, "from my repos")
 
 
 UPSTREAM_ROW = 44
@@ -329,8 +312,7 @@ def upstream(p: Profile, height: int) -> str:
         out.append(text(tx, y + 33, fit(pr["title"], right - tx, SMALL, words=True), DIM, SMALL))
     if not p.upstream:
         out.append(text(X0, Y0 + 14, "No pull requests elsewhere lately.", DIM))
-    return window(HALF, height, "upstream", "git-pull-request", ORANGE, "".join(out), "pull requests elsewhere",
-                  foot=M - V)
+    return window(HALF, height, "upstream", "git-pull-request", ORANGE, "".join(out), "pull requests elsewhere")
 
 
 def snake(p: Profile, raw: str) -> str:

@@ -18,25 +18,35 @@ import detect
 import panels
 from config import INTRO, LINKS, USERNAME
 from data import Profile, load_profile
-from theme import FULL, HALF
+from theme import M, V, row
 
 ROOT = Path(__file__).resolve().parent.parent
 RAW = f"https://raw.githubusercontent.com/{USERNAME}/{USERNAME}/images"
 PROFILE = f"https://github.com/{USERNAME}"
 
 
+# Rows come in two shapes. Wide viewports get the side-by-side one. The second range is a phone
+# held sideways or a small tablet, where GitHub's page is one column and wide enough again.
+WIDE = "(min-width: 1012px), (min-width: 600px) and (max-width: 767px)"
+ROWS = {
+    "now": "The repos I committed to most in the last 30 days, and my latest commits",
+    "year": "Commits, pull requests and weekly contributions over the last 12 months, and the languages I wrote",
+    "tools": "Frameworks and tools used in my recent repos, and my pull requests to other people's repos",
+}
+
+
 def images(p: Profile, snake_svg: str | None) -> dict[str, str]:
     row_a, row_b = 300, 282
     row_c, build_chips = panels.bottom_row(p)
-    out = {
-        "hero.svg": panels.hero(p),
-        "projects.svg": panels.projects(p, row_a),
-        "log.svg": panels.log(p, row_a),
-        "activity.svg": panels.activity(p, row_b),
-        "languages.svg": panels.languages(p, row_b),
-        "stack.svg": panels.stack(p, row_c, build_chips),
-        "upstream.svg": panels.upstream(p, row_c),
+    rows = {
+        "now": row(panels.projects(p, row_a), panels.log(p, row_a), row_a, ROWS["now"]),
+        "year": row(panels.activity(p, row_b), panels.languages(p, row_b), row_b, ROWS["year"]),
+        "tools": row(panels.stack(p, row_c, build_chips), panels.upstream(p, row_c), row_c, ROWS["tools"], foot=M - V),
     }
+    out = {"hero.svg": panels.hero(p)}
+    for name, (wide, tall) in rows.items():
+        out[f"{name}.svg"] = wide
+        out[f"{name}-phone.svg"] = tall
     if snake_svg:
         out["snake.svg"] = panels.snake(p, snake_svg)
     for label, (markup, _, _) in panels.buttons().items():
@@ -49,8 +59,12 @@ def _listing(names: list[str]) -> str:
 
 
 def readme(p: Profile, base: str) -> str:
-    def window(name: str, alt: str, href: str, width: int = HALF) -> str:
-        return f'<a href="{href}"><img src="{base}/{name}.svg" width="{width}" align="top" alt="{alt}" /></a>'
+    def image(name: str, alt: str, href: str) -> str:
+        return f'<a href="{href}"><img src="{base}/{name}.svg" width="100%" align="top" alt="{alt}" /></a>'
+
+    def pair(name: str, href: str) -> str:
+        return (f'<a href="{href}"><picture><source media="{WIDE}" srcset="{base}/{name}.svg" />'
+                f'<img src="{base}/{name}-phone.svg" width="100%" align="top" alt="{ROWS[name]}" /></picture></a>')
 
     links = []
     for label, _, _, url in LINKS:
@@ -71,14 +85,14 @@ def readme(p: Profile, base: str) -> str:
 
 <div align="center">
 
-<!-- Paired windows share a line with nothing between them and every image is top-aligned,
-     so the dark backgrounds join into one surface. -->
+<!-- Every image is as wide as the page and top-aligned, so the dark backgrounds join into
+     one surface. Rows of two windows switch to a stacked image on phones. -->
 <p>
-  {window("hero", f"{p.login}. {INTRO} Working on {working}.", PROFILE, FULL)}
-  {window("projects", "The repos I committed to most in the last 30 days", f"{PROFILE}?tab=repositories")}{window("log", "My latest commits", PROFILE)}
-  {window("activity", "Commits, pull requests and weekly contributions over the last 12 months", PROFILE)}{window("languages", "Languages I wrote in the last 90 days", f"{PROFILE}?tab=repositories")}
-  {window("snake", "Snake eating my contribution graph", PROFILE, FULL)}
-  {window("stack", "Frameworks and tools used in my recent repos", f"{PROFILE}?tab=repositories")}{window("upstream", "My pull requests to other people's repos", f"https://github.com/search?q=is%3Apr+author%3A{USERNAME}+-user%3A{USERNAME}&type=pullrequests")}
+  {image("hero", f"{p.login}. {INTRO} Working on {working}.", PROFILE)}
+  {pair("now", f"{PROFILE}?tab=repositories")}
+  {pair("year", PROFILE)}
+  {image("snake", "Snake eating my contribution graph", PROFILE)}
+  {pair("tools", f"https://github.com/search?q=is%3Apr+author%3A{USERNAME}+-user%3A{USERNAME}&type=pullrequests")}
 </p>
 
 <p>

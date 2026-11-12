@@ -23,7 +23,6 @@ query($login: String!, $from90: DateTime!, $from30: DateTime!) {
   user(login: $login) {
     id
     location
-    createdAt
     repositories(first: 100, ownerAffiliations: OWNER, isFork: false, privacy: PUBLIC,
                  orderBy: {field: PUSHED_AT, direction: DESC}) {
       totalCount
@@ -90,7 +89,6 @@ class Repo:
 class Profile:
     login: str
     location: str
-    since: int
     public_repos: int
     contributions: int
     commits: int
@@ -278,7 +276,6 @@ def build_profile(raw: dict, now: datetime) -> Profile:
     return Profile(
         login=USERNAME,
         location=(user.get("location") or "").strip(),
-        since=int(user["createdAt"][:4]),
         public_repos=user["repositories"]["totalCount"],
         contributions=cc["contributionCalendar"]["totalContributions"],
         commits=cc["totalCommitContributions"],

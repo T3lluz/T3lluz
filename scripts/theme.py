@@ -26,9 +26,9 @@ FONT = "'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace"
 FS, SMALL = 13, 12
 ADVANCE = 0.6  # JetBrains Mono: every glyph is 0.6em wide
 
-# Two half windows sit side by side on desktop and stack on a phone. Every image is a piece of
-# the site's desk with the window inset by M sideways and V up and down. The images touch on
-# all sides, so windows end up the site's 14px apart both ways (2M sideways, 2V + TOP down).
+# Every image is a piece of the site's desk, 828 wide, shown at the full width of the page.
+# Windows are inset by M sideways and V up and down. Images touch, so windows end up the
+# site's 14px apart both ways (2M sideways, 2V + TOP down).
 HALF, FULL = 414, 828
 M, V, TOP, PAD = 7, 3, 8, 16
 X0 = M + PAD
@@ -226,10 +226,11 @@ NARROW_CSS = ".narrow{display:none}@media (max-width:520px){.wide{display:none}.
 
 
 def window(width: int, height: int, title: str, icon: str, accent: str, body: str, tag: str = "", label: str = "",
-           narrow_css: str = "", foot: int = 0) -> str:
+           narrow_css: str = "") -> str:
     """A window from the site: 1px border, and the title sitting on the top edge.
 
-    `foot` adds desk under the frame, for the last row, where nothing follows to pad it.
+    A half-width window comes back as bare markup for `row()` to place. A full-width one is a
+    finished image.
     """
     top = V + TOP + 0.5
     right = width - M - 0.5
@@ -245,7 +246,7 @@ def window(width: int, height: int, title: str, icon: str, accent: str, body: st
         side = (f'<rect x="{num(right - 9 - tag_w)}" y="{top - 8}" width="{num(tag_w)}" height="16" fill="{BG}"/>'
                 f'{text(right - 15, top + 4.5, tag, DIM, anchor="end")}')
     if width <= HALF:
-        return svg(width, height + foot, label or title, desk(width, height + foot) + frame + head + side + body)
+        return frame + head + side + body
 
     # On a phone a full-width image is drawn at half the scale of a half-width one. Its narrow
     # variant doubles the frame's insets, corners, title and tag, so it matches the windows around it.
@@ -255,6 +256,20 @@ def window(width: int, height: int, title: str, icon: str, accent: str, body: st
     return svg(width, height, label or title,
                f'{desk(width, height)}<g class="wide">{frame}</g><g class="narrow">{wide_frame}</g>{body}'
                f'<g class="wide">{head}{side}</g><g class="narrow">{doubled}</g>', NARROW_CSS + narrow_css)
+
+
+def row(left: str, right: str, height: int, label: str, foot: int = 0) -> tuple[str, str]:
+    """Two half windows as one image, in two shapes: side by side for desktop, stacked for phones.
+
+    GitHub's README column is anywhere from 575 to 846px wide on desktop. One image per row at
+    width 100% always fills it, where two fixed-width images wrap into a single column as soon
+    as it gets narrower than both. `foot` adds desk under the last row.
+    """
+    wide = svg(FULL, height + foot, label,
+               f'{desk(FULL, height + foot)}{left}<g transform="translate({HALF} 0)">{right}</g>')
+    tall = svg(HALF, 2 * height + foot, label,
+               f'{desk(HALF, 2 * height + foot)}{left}<g transform="translate(0 {height})">{right}</g>')
+    return wide, tall
 
 
 def tile(x: float, y: float, w: float, h: float) -> str:
