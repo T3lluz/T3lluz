@@ -42,8 +42,8 @@
 
 **Stack**
 
-- Languages, last 90 days: Kotlin, JavaScript, CSS, Python, QML, TypeScript
-- Build: Android, Jetpack Compose, Ktor, Room, Qt Quick, Node.js, Quickshell, Playwright, WebExtensions, Supabase, Postgres, React, Vite, Tailwind, Deno, .NET, WinUI 3
+- Languages, last 90 days: Kotlin, JavaScript, Python, CSS, QML, TypeScript
+- Build: Android, Jetpack Compose, Ktor, Room, Qt Quick, Node.js, Quickshell, Playwright, WebExtensions, React, Vite, Supabase, Postgres, Tailwind, Deno, .NET, WinUI 3
 - System: Linux, Arch, Omarchy, Hyprland, PipeWire, Docker, Tailscale
 - Tools: Git, GitHub Actions, Gradle, Android Studio, Cursor, Claude Code, Hermes Agent, T3 Code
 
