@@ -42,10 +42,10 @@
 
 **Stack**
 
-- Languages, last 90 days: Kotlin, JavaScript, Python, CSS, QML, C#
-- Build: Android, Jetpack Compose, Ktor, Room, Qt Quick, Quickshell, Node.js, Playwright, WebExtensions, Supabase, Postgres, React, Vite, .NET, WinUI 3
+- Languages, last 90 days: Kotlin, JavaScript, Python, QML, CSS, C#
+- Build: Android, Jetpack Compose, Ktor, Room, Qt Quick, Quickshell, Node.js, Supabase, Postgres, React, Vite, WebExtensions, .NET, WinUI 3, Playwright
 - System: Linux, Arch, Hyprland, Omarchy, Tailscale, PipeWire, Docker
-- Tools: Git, GitHub Actions, Gradle, Android Studio, Cursor, Claude Code, Hermes Agent, T3 Code
+- Tools: Git, GitHub Actions, Gradle, Android Studio, Claude Code, Cursor, Hermes Agent, T3 Code
 
 </details>
 
