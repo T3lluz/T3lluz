@@ -30,7 +30,7 @@
 - [Weave](https://github.com/T3lluz/Weave): Your computer, run from your Android phone: its screen, a trackpad, your phone's keyboard, shortcuts Claude makes from a few words, sound and the clipboard. For Windows and Linux (Hyprland).
 - [DailyDash](https://github.com/T3lluz/DailyDash): Android dashboard: health, weather, F1, GitHub and servers on one screen
 - [omarchy-batteries](https://github.com/T3lluz/omarchy-batteries): Every battery in the Omarchy bar: the laptop (rate, time left, health, history), AirPods bud by bud, mouse, keyboard, headset, controller, phone. Pick what the bar shows.
-- [omarchy-rog-deck](https://github.com/T3lluz/omarchy-rog-deck): Omarchy bar widget and control panel for ASUS ROG laptops: animated power modes, temps and fans, keyboard lighting with auto-off, AniMe Matrix, FN-lock, battery limit, GPU mode.
+- [omarchy-sonus](https://github.com/T3lluz/omarchy-sonus): Sonar-style PipeWire mixer in the Omarchy bar: Game, Chat, Media and Aux channels, drag-and-drop app routing, and a 10-band EQ per channel.
 
 **Pull requests elsewhere**
 
@@ -42,7 +42,7 @@
 
 **Stack**
 
-- Languages, last 90 days: Kotlin, JavaScript, Python, QML, CSS, C#
+- Languages, last 90 days: Kotlin, JavaScript, QML, Python, CSS, C#
 - Build: Android, Jetpack Compose, Ktor, Room, Qt Quick, Quickshell, Node.js, Supabase, Postgres, React, Vite, WebExtensions, .NET, WinUI 3, Playwright
 - System: Linux, Arch, Hyprland, Omarchy, Tailscale, PipeWire, Docker
 - Tools: Git, GitHub Actions, Gradle, Android Studio, Claude Code, Cursor, Hermes Agent, T3 Code
