@@ -5,7 +5,7 @@
 <!-- Every image is as wide as the page and top-aligned, so the dark backgrounds join into
      one surface. Rows of two windows switch to a stacked image on phones. -->
 <p>
-  <a href="https://github.com/T3lluz"><img src="https://raw.githubusercontent.com/T3lluz/T3lluz/images/hero.svg" width="100%" align="top" alt="T3lluz. Bachelor in computer engineering, from Norway. Working on Weave, DailyDash and omarchy-batteries." /></a>
+  <a href="https://github.com/T3lluz"><img src="https://raw.githubusercontent.com/T3lluz/T3lluz/images/hero.svg" width="100%" align="top" alt="T3lluz. Bachelor in computer engineering, from Norway. Working on Weave, omarchy-batteries and omarchy-sonus." /></a>
   <a href="https://github.com/T3lluz?tab=repositories"><picture><source media="(min-width: 1012px), (min-width: 600px) and (max-width: 767px)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/images/now.svg" /><img src="https://raw.githubusercontent.com/T3lluz/T3lluz/images/now-phone.svg" width="100%" align="top" alt="The repos I committed to most in the last 30 days, and my latest commits" /></picture></a>
   <a href="https://github.com/T3lluz"><picture><source media="(min-width: 1012px), (min-width: 600px) and (max-width: 767px)" srcset="https://raw.githubusercontent.com/T3lluz/T3lluz/images/year.svg" /><img src="https://raw.githubusercontent.com/T3lluz/T3lluz/images/year-phone.svg" width="100%" align="top" alt="Commits, pull requests and weekly contributions over the last 12 months, and the languages I wrote" /></picture></a>
   <a href="https://github.com/T3lluz"><img src="https://raw.githubusercontent.com/T3lluz/T3lluz/images/snake.svg" width="100%" align="top" alt="Snake eating my contribution graph" /></a>
@@ -28,9 +28,9 @@
 **Working on**
 
 - [Weave](https://github.com/T3lluz/Weave): Your computer, run from your Android phone: its screen, a trackpad, your phone's keyboard, shortcuts Claude makes from a few words, sound and the clipboard. For Windows and Linux (Hyprland).
-- [DailyDash](https://github.com/T3lluz/DailyDash): Android dashboard: health, weather, F1, GitHub and servers on one screen
 - [omarchy-batteries](https://github.com/T3lluz/omarchy-batteries): Every battery in the Omarchy bar: the laptop (rate, time left, health, history), AirPods bud by bud, mouse, keyboard, headset, controller, phone. Pick what the bar shows.
 - [omarchy-sonus](https://github.com/T3lluz/omarchy-sonus): Sonar-style PipeWire mixer in the Omarchy bar: Game, Chat, Media and Aux channels, drag-and-drop app routing, and a 10-band EQ per channel.
+- [omarchy-rog-deck](https://github.com/T3lluz/omarchy-rog-deck): Omarchy bar widget and control panel for ASUS ROG laptops: animated power modes, temps and fans, keyboard lighting with auto-off, AniMe Matrix, FN-lock, battery limit, GPU mode.
 
 **Pull requests elsewhere**
 
@@ -42,10 +42,10 @@
 
 **Stack**
 
-- Languages, last 90 days: Kotlin, JavaScript, QML, Python, CSS, C#
-- Build: Android, Jetpack Compose, Ktor, Room, Qt Quick, Quickshell, Node.js, Supabase, Postgres, React, Vite, WebExtensions, Playwright, .NET, WinUI 3
+- Languages, last 90 days: JavaScript, QML, Python, Kotlin, CSS, C#
+- Build: Qt Quick, Quickshell, Android, Jetpack Compose, Node.js, Supabase, Postgres, React, Vite, WebExtensions, Playwright, .NET, WinUI 3
 - System: Linux, Arch, Hyprland, Omarchy, Tailscale, PipeWire, Docker
-- Tools: Git, GitHub Actions, Gradle, Android Studio, Claude Code, Cursor, Hermes Agent, T3 Code
+- Tools: Git, GitHub Actions, Gradle, Claude Code, Cursor, Hermes Agent, T3 Code
 
 </details>
 
