@@ -42,7 +42,7 @@
 
 **Stack**
 
-- Languages, last 90 days: JavaScript, QML, Python, Kotlin, CSS, C#
+- Languages, last 90 days: JavaScript, Python, QML, Kotlin, CSS, C#
 - Build: Qt Quick, Quickshell, Android, Jetpack Compose, Node.js, Supabase, Postgres, React, Vite, WebExtensions, Playwright, .NET, WinUI 3
 - System: Linux, Arch, Hyprland, Omarchy, Tailscale, PipeWire, Docker
 - Tools: Git, GitHub Actions, Gradle, Claude Code, Cursor, Hermes Agent, T3 Code
